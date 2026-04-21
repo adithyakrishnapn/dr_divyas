@@ -1,0 +1,28 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg1" x1="80" y1="40" x2="1090" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE4F1"/>
+      <stop offset="1" stop-color="#F7D7FF"/>
+    </linearGradient>
+    <linearGradient id="skin1" x1="620" y1="170" x2="620" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFDCCB"/>
+      <stop offset="1" stop-color="#F7BFA6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="56" fill="url(#bg1)"/>
+  <circle cx="182" cy="160" r="88" fill="#FFC5DE" fill-opacity="0.6"/>
+  <circle cx="1020" cy="680" r="120" fill="#FFCFED" fill-opacity="0.55"/>
+  <rect x="240" y="520" width="720" height="140" rx="64" fill="#FFF7FC"/>
+  <ellipse cx="620" cy="380" rx="220" ry="210" fill="url(#skin1)"/>
+  <ellipse cx="620" cy="620" rx="140" ry="48" fill="#F4A98A"/>
+  <circle cx="545" cy="350" r="18" fill="#7C3D2E"/>
+  <circle cx="695" cy="350" r="18" fill="#7C3D2E"/>
+  <path d="M542 450C585 485 653 485 696 450" stroke="#A35740" stroke-width="14" stroke-linecap="round"/>
+  <rect x="448" y="250" width="344" height="56" rx="28" fill="#FFFFFF" fill-opacity="0.82"/>
+  <circle cx="500" cy="282" r="8" fill="#FF8EBC"/>
+  <circle cx="545" cy="282" r="8" fill="#FF8EBC"/>
+  <circle cx="590" cy="282" r="8" fill="#FF8EBC"/>
+  <circle cx="635" cy="282" r="8" fill="#FF8EBC"/>
+  <path d="M902 242L926 283L972 294L939 327L945 374L902 354L859 374L865 327L832 294L878 283L902 242Z" fill="#FFD65D"/>
+  <text x="80" y="740" fill="#A05676" font-size="40" font-family="Arial, sans-serif">Hydra Glow Session</text>
+</svg>

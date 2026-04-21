@@ -1,0 +1,25 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg3" x1="50" y1="70" x2="1120" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE8F5"/>
+      <stop offset="1" stop-color="#F4E2FF"/>
+    </linearGradient>
+    <linearGradient id="jar" x1="605" y1="260" x2="605" y2="628" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF9FE"/>
+      <stop offset="1" stop-color="#FFE7F5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="56" fill="url(#bg3)"/>
+  <circle cx="210" cy="610" r="130" fill="#FFD9ED" fill-opacity="0.65"/>
+  <circle cx="1010" cy="170" r="120" fill="#FFDCF2" fill-opacity="0.58"/>
+  <rect x="420" y="230" width="370" height="420" rx="84" fill="url(#jar)" stroke="#F6C4E1" stroke-width="8"/>
+  <rect x="475" y="170" width="260" height="84" rx="38" fill="#FAD5E9"/>
+  <circle cx="605" cy="430" r="98" fill="#FFE8F5"/>
+  <path d="M560 425C583 395 627 395 650 425C670 451 648 495 605 516C562 495 540 451 560 425Z" fill="#FF7FB6"/>
+  <circle cx="515" cy="372" r="16" fill="#FFE3F2"/>
+  <circle cx="695" cy="505" r="18" fill="#FFE3F2"/>
+  <circle cx="640" cy="365" r="13" fill="#FFD3E8"/>
+  <path d="M254 200L274 236L314 244L284 274L289 314L254 296L219 314L224 274L194 244L234 236L254 200Z" fill="#FFD65D"/>
+  <path d="M942 550L960 580L992 587L968 611L973 642L942 626L911 642L916 611L892 587L924 580L942 550Z" fill="#FFD65D"/>
+  <text x="80" y="740" fill="#A05676" font-size="40" font-family="Arial, sans-serif">Pigmentation Reset</text>
+</svg>

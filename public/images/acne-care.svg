@@ -1,0 +1,29 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="90" y1="40" x2="1080" y2="780" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFEAF3"/>
+      <stop offset="1" stop-color="#FADDFD"/>
+    </linearGradient>
+    <linearGradient id="coat" x1="620" y1="360" x2="620" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FFEFF9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="56" fill="url(#bg2)"/>
+  <rect x="160" y="130" width="280" height="180" rx="32" fill="#FFFFFF" fill-opacity="0.76"/>
+  <rect x="200" y="170" width="200" height="24" rx="12" fill="#FFD3E6"/>
+  <rect x="200" y="214" width="150" height="18" rx="9" fill="#F8E1F4"/>
+  <ellipse cx="620" cy="290" rx="130" ry="124" fill="#FFD2BF"/>
+  <rect x="430" y="365" width="380" height="330" rx="100" fill="url(#coat)"/>
+  <circle cx="570" cy="280" r="12" fill="#7B3C2B"/>
+  <circle cx="670" cy="280" r="12" fill="#7B3C2B"/>
+  <path d="M575 335C605 355 635 355 665 335" stroke="#A35A43" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="605" cy="305" r="10" fill="#F89DB2"/>
+  <circle cx="698" cy="318" r="9" fill="#F58AA4"/>
+  <circle cx="548" cy="324" r="8" fill="#F58AA4"/>
+  <rect x="560" y="430" width="120" height="120" rx="28" fill="#FFE8F4"/>
+  <path d="M620 458V522M588 490H652" stroke="#E95F98" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="980" cy="210" r="76" fill="#FFE0F0"/>
+  <path d="M980 170V250M940 210H1020" stroke="#E95F98" stroke-width="16" stroke-linecap="round"/>
+  <text x="80" y="740" fill="#A05676" font-size="40" font-family="Arial, sans-serif">Acne Rescue Care</text>
+</svg>
