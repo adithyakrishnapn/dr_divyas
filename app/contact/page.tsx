@@ -110,7 +110,9 @@ export default function ContactPage() {
                   <Icon className="h-7 w-7 text-white" />
                 </motion.div>
                 <h3 className="text-lg font-bold text-amber-900 mb-2">{title}</h3>
-                <p className="text-slate-700 mb-4">{content}</p>
+                <p className={`text-slate-700 mb-4 ${title === "Email" ? "break-all" : ""}`}>
+                  {content}
+                </p>
                 {linkText && (
                   <motion.a
                     href={link}
