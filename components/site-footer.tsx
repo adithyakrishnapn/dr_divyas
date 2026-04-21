@@ -143,7 +143,7 @@ export function SiteFooter() {
 
         <div className="border-t border-amber-600/20 py-8">
           <div className="page-shell flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400">
-            <p>&copy; 2024 Dr Divya's Skin & Hair Clinic. All rights reserved.</p>
+            <p>&copy; 2026 Dr Divya's Skin & Hair Clinic. All rights reserved.</p>
             <div className="flex gap-6">
               <Link href="#" className="hover:text-amber-400 transition-smooth">
                 Privacy Policy
