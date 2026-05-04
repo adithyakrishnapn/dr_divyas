@@ -4,6 +4,7 @@ import "./globals.css";
 import { siteConfig } from "@/lib/site";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { ContactPopup } from "@/components/contact-popup";
 
 const headingFont = Playfair_Display({
   variable: "--font-heading",
@@ -24,6 +25,13 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  keywords: [
+    "dermatologist coimbatore",
+    "skin clinic",
+    "hair treatment",
+    "acne treatment",
+    "pigmentation treatment",
+  ],
   alternates: { canonical: "/" },
   openGraph: {
     title: siteConfig.name,
@@ -50,6 +58,7 @@ export default function RootLayout({
       <body className="min-h-full text-slate-800">
         <div className="flex min-h-full flex-col">
           <SiteHeader />
+          <ContactPopup />
           <div className="flex-1">{children}</div>
           <SiteFooter />
         </div>

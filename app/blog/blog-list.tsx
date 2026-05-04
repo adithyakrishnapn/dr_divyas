@@ -70,7 +70,7 @@ export function BlogList({ posts }: BlogListProps) {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {posts.map((post, idx) => (
+            {posts.map((post) => (
               <motion.article
                 key={post.slug}
                 className="group"

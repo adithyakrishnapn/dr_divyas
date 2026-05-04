@@ -15,7 +15,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-amber-100/50">
       <div className="page-shell flex items-center justify-between py-4">
         <Link href="/" className="flex flex-col">
-          <span className="text-2xl font-bold text-gradient-gold">Dr Divya's</span>
+          <span className="text-2xl font-bold text-gradient-gold">Dr Divya&apos;s</span>
           <span className="text-xs font-semibold text-amber-700">Skin & Hair Clinic</span>
         </Link>
 

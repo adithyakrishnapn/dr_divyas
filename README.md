@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dr Divya's Skin Clinic Website
 
-## Getting Started
+This project is built with Next.js App Router and includes:
 
-First, run the development server:
+- SEO-optimized pages with route-level metadata.
+- Firestore-backed blog management.
+- Firebase Auth protected admin dashboard.
+- Blog analytics (view counts + lead insights).
+- Site-wide popup contact form and contact capture API.
+
+## 1. Setup
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Create your local environment file:
+
+```bash
+cp .env.example .env.local
+```
+
+3. Fill all Firebase values in `.env.local`:
+
+- `NEXT_PUBLIC_FIREBASE_*` values from Firebase web app settings.
+- `FIREBASE_*` values from Firebase service account credentials.
+
+## 2. Firebase Requirements
+
+1. Enable Firebase Authentication with Email/Password provider.
+2. Create at least one admin user in Firebase Auth.
+3. Enable Cloud Firestore.
+4. Firestore collections used by the app:
+
+- `blogs`
+- `contactLeads`
+
+## 3. Run the App
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 4. Admin URLs
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Login: `/admin/login`
+- Dashboard: `/admin/dashboard`
+- New blog post form: `/admin/blogs/new`
 
-## Learn More
+## 5. Notes
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Blog content supports safe HTML tags for internal linking and richer formatting.
+- Blog SEO fields are stored per post (meta title, description, keywords).
+- If Firebase Admin credentials are missing, the site falls back to static sample blogs.
