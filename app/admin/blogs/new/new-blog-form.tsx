@@ -82,7 +82,7 @@ export function BlogEditorForm({
       }),
     });
 
-    const payload = (await response.json()) as { error?: string };
+    const payload = (await response.json()) as { error?: string; slug?: string };
 
     if (!response.ok) {
       setStatus("error");

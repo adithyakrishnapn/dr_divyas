@@ -24,10 +24,10 @@ export async function POST(request: Request) {
       image: body.image ? String(body.image) : undefined,
       contentHtml: String(body.contentHtml ?? ""),
       keywords: Array.isArray(body.keywords)
-        ? body.keywords.map((item) => String(item))
+        ? body.keywords.map((item: unknown) => String(item))
         : String(body.keywords ?? "")
             .split(",")
-            .map((item) => item.trim())
+            .map((item: string) => item.trim())
             .filter(Boolean),
       metaTitle: body.metaTitle ? String(body.metaTitle) : undefined,
       metaDescription: body.metaDescription ? String(body.metaDescription) : undefined,
