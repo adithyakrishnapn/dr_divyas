@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate:favicons": "node scripts/generate-favicons.js"
   },
   "dependencies": {
     "firebase": "^12.12.1",
@@ -28,6 +29,8 @@
     "@types/sanitize-html": "^2.16.1",
     "eslint": "^9",
     "eslint-config-next": "16.2.4",
+    "png-to-ico": "^3.0.1",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
