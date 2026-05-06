@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Dr Divya's Skin & Hair Clinic",
   description:
     "Leading dermatology clinic in Coimbatore specializing in advanced skin treatments, hair restoration, and aesthetic procedures with cutting-edge technology.",
-  url: "https://dr-divyas-skin-clinic-demo.vercel.app",
+  url: "https://www.drdivyas.in",
   mapUrl: "https://maps.app.goo.gl/aEKS7UrxVSEta2Zd7",
   phone: "+91 98765 43210",
   email: "drdivyaskincliniccbe@gmail.com",
