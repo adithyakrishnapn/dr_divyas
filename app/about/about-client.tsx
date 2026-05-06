@@ -116,19 +116,19 @@ export default function AboutPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative mx-auto aspect-[4/5] w-full max-w-[340px] overflow-hidden rounded-2xl shadow-2xl sm:max-w-[420px] md:max-w-none md:aspect-square">
                 <Image
                   src="/images/doctor-about.jpeg"
                   alt="Dr Divya's Clinic"
-                  width={600}
-                  height={600}
-                  className="w-full h-auto object-cover"
+                  fill
+                  sizes="(max-width: 767px) 340px, (max-width: 1023px) 420px, 600px"
+                  className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </div>
 
               <motion.div
-                className="absolute -bottom-6 -right-6 bg-white rounded-lg p-6 shadow-xl max-w-xs"
+                className="absolute -bottom-6 -right-6 hidden max-w-xs rounded-lg bg-white p-6 shadow-xl sm:block"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5 }}
@@ -216,13 +216,15 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <Image
-                src="/images/doctor-about.jpeg"
-                alt="Advanced Clinic Technology"
-                width={600}
-                height={600}
-                className="w-full h-auto object-cover"
-              />
+              <div className="relative mx-auto aspect-[4/5] w-full max-w-[340px] overflow-hidden rounded-2xl shadow-2xl sm:max-w-[420px] md:max-w-none md:aspect-square">
+                <Image
+                  src="/images/doctor-about.jpeg"
+                  alt="Advanced Clinic Technology"
+                  fill
+                  sizes="(max-width: 767px) 340px, (max-width: 1023px) 420px, 600px"
+                  className="object-cover"
+                />
+              </div>
             </motion.div>
 
             <motion.div
