@@ -447,7 +447,7 @@ export default function Home() {
                 viewport={{ once: true }}
               >
                 <Image
-                  src={sampleImages.consultation}
+                  src="/images/doctor.jpeg"
                   alt="Dr Divya Consultation"
                   width={600}
                   height={600}

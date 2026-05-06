@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Award, Sparkles, Users, Heart, CheckCircle2, MapPin } from "lucide-react";
-import { sampleImages } from "@/lib/site";
 
 const expertise = [
   { title: "10 Years", description: "Clinical dermatology experience" },
@@ -119,7 +118,7 @@ export default function AboutPage() {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src={sampleImages.consultation}
+                  src="/images/doctor-about.jpeg"
                   alt="Dr Divya's Clinic"
                   width={600}
                   height={600}
@@ -218,7 +217,7 @@ export default function AboutPage() {
               viewport={{ once: true }}
             >
               <Image
-                src={sampleImages.hero}
+                src="/images/doctor-about.jpeg"
                 alt="Advanced Clinic Technology"
                 width={600}
                 height={600}
