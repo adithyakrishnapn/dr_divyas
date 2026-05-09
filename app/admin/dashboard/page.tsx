@@ -1,8 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { requireAdminSession } from "@/lib/auth";
 import { getPublishedPosts } from "@/lib/blog";
 import { getFirebaseAdminDb, isFirebaseAdminConfigured } from "@/lib/firebase/admin";
 import { AdminLogoutButton } from "@/components/admin-logout-button";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Admin Dashboard",
+  description:
+    "Secure admin dashboard for monitoring clinic content, blog performance, and contact leads.",
+  path: "/admin/dashboard",
+  keywords: ["admin dashboard", "clinic analytics", "blog performance"],
+});
 
 type Lead = {
   name: string;

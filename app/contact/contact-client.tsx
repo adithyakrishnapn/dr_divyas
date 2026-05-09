@@ -15,6 +15,9 @@ import {
 import { siteConfig } from "@/lib/site";
 import { sampleImages } from "@/lib/site";
 
+const mapsEmbedUrl =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.7834818390447!2d77.00191837482221!3d11.054853589111374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8599aa76a4b81%3A0xb6111fd2ef3ef299!2sDr.%20Divya%27s%20Skin%20Clinic!5e0!3m2!1sen!2sin!4v1778333405996!5m2!1sen!2sin";
+
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -220,7 +223,7 @@ export default function ContactPage() {
                   <input
                     type="tel"
                     required
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 9994759380"
                     value={phone}
                     onChange={(event) => setPhone(event.target.value)}
                     className="w-full px-4 py-3 rounded-lg border border-amber-200 focus:border-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-100 transition"
@@ -418,22 +421,14 @@ export default function ContactPage() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <div className="w-full h-full bg-slate-200 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="h-12 w-12 text-amber-600 mx-auto mb-4" />
-                <p className="text-slate-700 font-semibold mb-4">
-                  Coimbatore, Tamil Nadu
-                </p>
-                <a
-                  href={siteConfig.mapUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-warm text-white font-bold"
-                >
-                  Open Google Maps
-                </a>
-              </div>
-            </div>
+            <iframe
+              title="Dr Divya's Skin & Hair Clinic map location"
+              src={mapsEmbedUrl}
+              className="h-full w-full"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              style={{ border: 0 }}
+            />
           </motion.div>
         </div>
       </section>

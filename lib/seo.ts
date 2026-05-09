@@ -7,6 +7,7 @@ type BuildMetadataInput = {
   path: string;
   keywords?: string[];
   image?: string;
+  absoluteTitle?: boolean;
 };
 
 export function buildMetadata({
@@ -15,17 +16,19 @@ export function buildMetadata({
   path,
   keywords = [],
   image,
+  absoluteTitle = false,
 }: BuildMetadataInput): Metadata {
   const url = path.startsWith("/") ? path : `/${path}`;
-  const fullTitle = `${title} | ${siteConfig.name}`;
+  const resolvedTitle = absoluteTitle ? title : `${title} | ${siteConfig.name}`;
+  const metadataTitle = absoluteTitle ? { absolute: resolvedTitle } : title;
 
   return {
-    title,
+    title: metadataTitle,
     description,
     keywords,
     alternates: { canonical: url },
     openGraph: {
-      title: fullTitle,
+      title: resolvedTitle,
       description,
       url,
       siteName: siteConfig.name,
@@ -35,7 +38,7 @@ export function buildMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: fullTitle,
+      title: resolvedTitle,
       description,
       images: image ? [image] : undefined,
     },

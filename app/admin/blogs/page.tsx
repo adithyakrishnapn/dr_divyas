@@ -1,8 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { requireAdminSession } from "@/lib/auth";
 import { getAllPostsForAdmin } from "@/lib/blog";
 import { AdminLogoutButton } from "@/components/admin-logout-button";
 import { AdminBlogDeleteButton } from "@/components/admin-blog-delete-button";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Manage Blogs",
+  description: "Manage, edit, and delete clinic blog posts from the admin dashboard.",
+  path: "/admin/blogs",
+  keywords: ["manage blogs", "blog cms", "clinic content"],
+});
 
 export default async function AdminBlogsPage() {
   await requireAdminSession();

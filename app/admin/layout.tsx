@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Admin",
-  description: "Admin dashboard for clinic website content and analytics.",
+  title: "Admin Dashboard",
+  description: "Secure admin dashboard for managing clinic website content and analytics.",
   path: "/admin",
-  keywords: ["admin", "dashboard", "clinic cms"],
+  keywords: ["admin dashboard", "clinic cms", "content management"],
 });
 
 metadata.robots = { index: false, follow: false };

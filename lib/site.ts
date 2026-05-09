@@ -1,10 +1,10 @@
 export const siteConfig = {
   name: "Dr Divya's Skin & Hair Clinic",
   description:
-    "Leading dermatology clinic in Coimbatore specializing in advanced skin treatments, hair restoration, and aesthetic procedures with cutting-edge technology.",
+    "Dr Divya's Skin & Hair Clinic in Coimbatore offers advanced acne, pigmentation, laser, hair fall and skin rejuvenation treatments.",
   url: "https://www.drdivyas.in",
   mapUrl: "https://maps.app.goo.gl/aEKS7UrxVSEta2Zd7",
-  phone: "+91 98765 43210",
+  phone: "+91 9994759380",
   email: "drdivyaskincliniccbe@gmail.com",
   address: "Coimbatore, Tamil Nadu, India",
 };

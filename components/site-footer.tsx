@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Heart, Share2, MessageCircle } from "lucide-react";
 import { navLinks, siteConfig } from "@/lib/site";
+import { localAreaPages } from "@/lib/local-area-pages";
 
 export function SiteFooter() {
   const containerVariants = {
@@ -20,6 +21,9 @@ export function SiteFooter() {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
+
+  const mapsEmbedUrl =
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.7834818390447!2d77.00191837482221!3d11.054853589111374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8599aa76a4b81%3A0xb6111fd2ef3ef299!2sDr.%20Divya%27s%20Skin%20Clinic!5e0!3m2!1sen!2sin!4v1778333405996!5m2!1sen!2sin";
 
   return (
     <footer className="relative mt-0 bg-gradient-to-b from-slate-900 to-slate-950 text-slate-200 border-t border-amber-600/30">
@@ -100,6 +104,32 @@ export function SiteFooter() {
             className="space-y-4"
           >
             <h4 className="text-sm font-bold uppercase tracking-wider text-amber-400">
+              Coimbatore Clinic Locations
+            </h4>
+            <ul className="space-y-3 text-sm text-slate-400">
+              <li>
+                <Link href="/coimbatore" className="hover:text-amber-400 transition-smooth">
+                  Coimbatore clinic locations
+                </Link>
+              </li>
+              {localAreaPages.slice(0, 4).map((area) => (
+                <li key={area.slug}>
+                  <Link href={`/coimbatore/${area.slug}`} className="hover:text-amber-400 transition-smooth">
+                    {area.areaName}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          <motion.div
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="space-y-4"
+          >
+            <h4 className="text-sm font-bold uppercase tracking-wider text-amber-400">
               Treatments
             </h4>
             <ul className="space-y-3 text-sm text-slate-400">
@@ -136,6 +166,59 @@ export function SiteFooter() {
                 <Link href={`mailto:${siteConfig.email}`} className="text-sm text-slate-400 hover:text-amber-400 transition-smooth">
                   {siteConfig.email}
                 </Link>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        <div className="page-shell pb-10">
+          <motion.div
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="overflow-hidden rounded-3xl border border-amber-600/20 bg-white/5 backdrop-blur-sm"
+          >
+            <div className="grid gap-0 lg:grid-cols-[1.2fr_0.8fr]">
+              <div className="min-h-[280px] lg:min-h-[360px]">
+                <iframe
+                  title="Dr Divya's Skin & Hair Clinic map location"
+                  src={mapsEmbedUrl}
+                  className="h-full w-full"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  style={{ border: 0 }}
+                />
+              </div>
+              <div className="flex flex-col justify-center gap-5 p-8 lg:p-10">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-wider text-amber-400">
+                    Clinic location
+                  </p>
+                  <h4 className="mt-2 text-2xl font-bold text-white">
+                    Visit Dr Divya's Skin & Hair Clinic in Coimbatore
+                  </h4>
+                  <p className="mt-3 text-sm leading-7 text-slate-300">
+                    Use the map below to find the clinic location and open directions in Google Maps.
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <Link
+                    href="https://maps.app.goo.gl/o1vwrpsMj99KKHGAA"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center rounded-lg bg-gradient-warm px-5 py-3 font-semibold text-white shadow-lg"
+                  >
+                    Go to Location
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center rounded-lg border border-amber-300 px-5 py-3 font-semibold text-amber-100 hover:bg-amber-600/10"
+                  >
+                    Book Appointment
+                  </Link>
+                </div>
               </div>
             </div>
           </motion.div>

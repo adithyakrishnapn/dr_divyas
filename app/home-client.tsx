@@ -19,7 +19,7 @@ import {
   Star,
   Shield,
 } from "lucide-react";
-import { sampleImages } from "@/lib/site";
+import { sampleImages, siteConfig } from "@/lib/site";
 
 const treatments = [
   {
@@ -99,6 +99,15 @@ const testimonials = [
       "The glow facial gave my skin an instant boost! Natural results without looking overdone. Love the clinic atmosphere too!",
     rating: 5,
   },
+];
+
+const topLocalAreas = [
+  { href: "/coimbatore/saravanampatti", label: "Saravanampatti" },
+  { href: "/coimbatore/peelamedu", label: "Peelamedu" },
+  { href: "/coimbatore/gandhipuram", label: "Gandhipuram" },
+  { href: "/coimbatore/rs-puram", label: "RS Puram" },
+  { href: "/coimbatore/race-course", label: "Race Course" },
+  { href: "/coimbatore/avinashi-road", label: "Avinashi Road" },
 ];
 
 const containerVariants = {
@@ -436,6 +445,55 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Local Areas Section */}
+        <section className="py-20 bg-luxury-light/70">
+          <div className="page-shell">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-amber-900 mb-4">
+                Dermatology Care Across Coimbatore
+              </h2>
+              <p className="text-lg text-slate-700 max-w-3xl mx-auto leading-relaxed">
+                Explore dedicated local pages for patients searching from Saravanampatti, Peelamedu, Gandhipuram, RS Puram, Race Course, Avinashi Road, and nearby Coimbatore neighbourhoods.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {topLocalAreas.map((area, index) => (
+                <motion.div
+                  key={area.href}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                >
+                  <Link
+                    href={area.href}
+                    className="card-premium flex items-center justify-between gap-3 px-5 py-4 font-semibold text-amber-900 hover:bg-amber-50"
+                  >
+                    <span>Best clinic in {area.label}</span>
+                    <ArrowRight className="h-4 w-4 text-amber-600" />
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-8 text-center">
+              <Link
+                href="/coimbatore"
+                className="inline-flex items-center gap-2 rounded-lg border border-amber-300 bg-white px-6 py-3 font-semibold text-amber-900 shadow-sm hover:bg-amber-50"
+              >
+                View all Coimbatore area pages
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Why Choose Section */}
         <section className="py-20">
           <div className="page-shell">
@@ -622,7 +680,7 @@ export default function Home() {
                   </motion.a>
 
                   <motion.a
-                    href={`tel:+918765443210`}
+                    href={`tel:${siteConfig.phone}`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border-2 border-white text-white font-bold hover:bg-white/10"
@@ -655,8 +713,8 @@ export default function Home() {
               <motion.div variants={itemVariants} className="space-y-2">
                 <Phone className="h-6 w-6 mx-auto text-amber-400" />
                 <h3 className="font-bold">Phone</h3>
-                <Link href="tel:+918765443210" className="text-sm text-amber-400 hover:text-amber-300">
-                  +91 98765 43210
+                <Link href={`tel:${siteConfig.phone}`} className="text-sm text-amber-400 hover:text-amber-300">
+                  {siteConfig.phone}
                 </Link>
               </motion.div>
 
