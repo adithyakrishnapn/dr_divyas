@@ -17,6 +17,7 @@ const treatmentCategories = [
       "Follow-up care and maintenance",
     ],
     image: sampleImages.treatment2,
+    href: "/acne-treatment-coimbatore",
     color: "amber",
   },
   {
@@ -29,7 +30,8 @@ const treatmentCategories = [
       "Scalp rejuvenation therapy",
       "Personalized regrowth protocols",
     ],
-    image: sampleImages.consultation,
+    image: sampleImages.hairFall,
+    href: "/hair-fall-treatment-coimbatore",
     color: "amber",
   },
   {
@@ -43,6 +45,7 @@ const treatmentCategories = [
       "Preventative care protocols",
     ],
     image: sampleImages.treatment3,
+    href: "/vitiligo-treatment-coimbatore",
     color: "rose",
   },
   {
@@ -56,6 +59,7 @@ const treatmentCategories = [
       "Sun damage prevention",
     ],
     image: sampleImages.treatment1,
+    href: "/melasma-treatment-coimbatore",
     color: "blue",
   },
   {
@@ -69,6 +73,7 @@ const treatmentCategories = [
       "Quick recovery process",
     ],
     image: sampleImages.hero,
+    href: "/mole-wart-skin-tag-removal-coimbatore",
     color: "purple",
   },
   {
@@ -82,6 +87,7 @@ const treatmentCategories = [
       "Customized formulations",
     ],
     image: sampleImages.treatment1,
+    href: "/chemical-peel-coimbatore",
     color: "pink",
   },
   {
@@ -95,6 +101,7 @@ const treatmentCategories = [
       "Follow-up foot care",
     ],
     image: sampleImages.treatment2,
+    href: "/corn-foot-removal-coimbatore",
     color: "emerald",
   },
   {
@@ -108,6 +115,7 @@ const treatmentCategories = [
       "Progressive skin improvement",
     ],
     image: sampleImages.treatment3,
+    href: "/subcision-dermaroller-coimbatore",
     color: "indigo",
   },
 ];
@@ -139,28 +147,21 @@ export default function TreatmentsPage() {
         </div>
 
         <div className="page-shell relative z-10">
-          <motion.div
-            className="max-w-3xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <div className="max-w-3xl">
             <h1 className="text-5xl md:text-6xl font-bold text-amber-900 mb-6">
               Advanced Skin & Hair Treatments
             </h1>
             <p className="text-xl text-slate-700 leading-relaxed mb-8">
               Comprehensive dermatology solutions in Coimbatore. Every treatment is personalized after detailed skin analysis and tailored to your unique concerns and goals.
             </p>
-            <motion.a
+            <a
               href="/contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-gradient-warm text-white font-bold shadow-lg"
             >
               Schedule Consultation
               <ArrowRight className="h-5 w-5" />
-            </motion.a>
-          </motion.div>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -170,9 +171,8 @@ export default function TreatmentsPage() {
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            initial="visible"
+            animate="visible"
           >
             {treatmentCategories.map((category) => {
               const Icon = category.icon;
@@ -228,7 +228,7 @@ export default function TreatmentsPage() {
 
                       {/* CTA */}
                       <motion.a
-                        href="/contact"
+                        href={category.href}
                         whileHover={{ x: 5 }}
                         className="inline-flex items-center gap-2 text-amber-600 font-semibold group/link hover:text-amber-700 pt-4"
                       >
@@ -250,8 +250,8 @@ export default function TreatmentsPage() {
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-amber-900 mb-4">
               Our Treatment Process
@@ -264,9 +264,8 @@ export default function TreatmentsPage() {
           <motion.div
             className="grid grid-cols-1 md:grid-cols-4 gap-6"
             variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            initial="visible"
+            animate="visible"
           >
             {[
               {
@@ -315,12 +314,7 @@ export default function TreatmentsPage() {
       {/* CTA Section */}
       <section className="py-20">
         <div className="page-shell">
-          <motion.div
-            className="relative rounded-3xl overflow-hidden bg-gradient-warm p-16 text-center"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-          >
+          <div className="relative rounded-3xl overflow-hidden bg-gradient-warm p-16 text-center">
             <motion.div
               className="absolute inset-0 opacity-10"
               animate={{ rotate: 360 }}
@@ -330,11 +324,8 @@ export default function TreatmentsPage() {
               }}
             />
 
-            <motion.div
+            <div
               className="relative z-10 space-y-6"
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white">
                 Find Your Perfect Treatment
@@ -344,17 +335,15 @@ export default function TreatmentsPage() {
                 Every skin is unique. Get a personalized treatment plan from Dr Divya today.
               </p>
 
-              <motion.a
+              <a
                 href="/contact"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-white text-amber-900 font-bold shadow-lg"
               >
                 Book Your Consultation
                 <ArrowRight className="h-5 w-5" />
-              </motion.a>
-            </motion.div>
-          </motion.div>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </main>

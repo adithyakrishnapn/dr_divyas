@@ -21,7 +21,9 @@ export const sampleImages = {
   hero:
     "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1400&q=80",
   consultation:
-    "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1400&q=80",
+    "/images/doctor-about.jpeg",
+  hairFall:
+    "/images/hairfall.jpeg",
   treatment1:
     "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=80",
   treatment2:

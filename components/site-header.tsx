@@ -20,14 +20,13 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
-          {navLinks.map((link, idx) => {
+          {navLinks.map((link) => {
             const active = pathname === link.href;
             return (
               <motion.div
                 key={link.href}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.1 }}
+                initial={false}
+                animate={false}
               >
                 <Link
                   href={link.href}
@@ -71,9 +70,8 @@ export function SiteHeader() {
 
       {open ? (
         <motion.nav
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
+          initial={false}
+          animate={false}
           className="border-t border-amber-100/50 bg-white/98 px-4 py-4 md:hidden"
         >
           <div className="page-shell flex flex-col gap-2">

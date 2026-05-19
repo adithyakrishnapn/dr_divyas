@@ -482,6 +482,241 @@ const treatmentPages: SeoLandingPage[] = [
       { label: "Acne treatment in Coimbatore", href: "/acne-treatment-coimbatore" },
     ],
   }),
+  buildTreatmentPage({
+    slug: "vitiligo-treatment-coimbatore",
+    serviceName: "Vitiligo treatment",
+    seoTitle: "Vitiligo Treatment in Coimbatore",
+    metaDescription:
+      "Vitiligo treatment in Coimbatore with clear assessment, patch monitoring, and practical guidance for ongoing skin management.",
+    focusKeyword: "vitiligo treatment coimbatore",
+    h1: "Vitiligo Treatment in Coimbatore for White Patch Care and Support",
+    treatmentAngles: [
+      "Useful for patients who want a clear explanation of vitiligo and the options that may help",
+      "Helps people manage visible white patches with a structured, doctor-led plan",
+      "Built for searches around vitiligo doctor near me and pigmentation care",
+    ],
+    landmarks: [
+      "Race Course and RS Puram catchments",
+      "Peelamedu and Avinashi Road access",
+      "Gandhipuram city-centre routes",
+      "Saravanampatti and north Coimbatore travel links",
+    ],
+    semanticKeywords: [
+      "vitiligo clinic coimbatore",
+      "white patch treatment",
+      "skin depigmentation care",
+      "dermatologist for vitiligo",
+      "pigment disorder treatment",
+    ],
+    longTailKeywords: [
+      "best vitiligo treatment in coimbatore",
+      "doctor for white patches on skin near me",
+      "vitiligo consultation in coimbatore",
+      "skin doctor for pigment loss",
+    ],
+    blogTopics: [
+      "Common triggers that can make vitiligo harder to manage",
+      "How to protect depigmented skin from sun exposure",
+      "When to seek a dermatologist for new white patches",
+    ],
+    backlinkOpportunities: [
+      "Patient education resources and wellness blogs",
+      "Coimbatore dermatology directory pages",
+      "Local health awareness community sites",
+    ],
+    relatedLinks: [
+      { label: "Pigmentation treatment in Coimbatore", href: "/pigmentation-treatment-coimbatore" },
+      { label: "Laser treatment in Coimbatore", href: "/laser-treatment-coimbatore" },
+    ],
+  }),
+  buildTreatmentPage({
+    slug: "melasma-treatment-coimbatore",
+    serviceName: "Melasma treatment",
+    seoTitle: "Melasma Treatment in Coimbatore",
+    metaDescription:
+      "Melasma treatment in Coimbatore for brown patches, tanning, and uneven tone with a realistic plan focused on control and maintenance.",
+    focusKeyword: "melasma treatment coimbatore",
+    h1: "Melasma Treatment in Coimbatore for Brown Patches and Even Tone",
+    treatmentAngles: [
+      "Useful for patients who want to understand why melasma returns and how to manage it",
+      "Helps people looking for a dermatology plan for face pigmentation and tanning",
+      "Built for searches around brown patch treatment and sun-related pigmentation",
+    ],
+    landmarks: [
+      "Central Coimbatore and Gandhipuram access",
+      "Race Course and RS Puram residential belt",
+      "Peelamedu and Hope College corridor",
+      "Avinashi Road patient flow",
+    ],
+    semanticKeywords: [
+      "melasma clinic coimbatore",
+      "brown patch treatment",
+      "face pigmentation treatment",
+      "tan removal care",
+      "dermatologist for melasma",
+    ],
+    longTailKeywords: [
+      "best melasma treatment in coimbatore",
+      "doctor for face pigmentation near me",
+      "melasma consultation in coimbatore",
+      "treatment for stubborn brown patches",
+    ],
+    blogTopics: [
+      "Why melasma can come back after improvement",
+      "The role of sun protection in melasma care",
+      "How to choose skincare when you have pigmentation",
+    ],
+    backlinkOpportunities: [
+      "Beauty and skin care awareness pages",
+      "Coimbatore wellness directories",
+      "Local bridal and lifestyle communities",
+    ],
+    relatedLinks: [
+      { label: "Pigmentation treatment in Coimbatore", href: "/pigmentation-treatment-coimbatore" },
+      { label: "Chemical peel in Coimbatore", href: "/chemical-peel-coimbatore" },
+    ],
+  }),
+  buildTreatmentPage({
+    slug: "mole-wart-skin-tag-removal-coimbatore",
+    serviceName: "Mole, wart and skin tag removal",
+    seoTitle: "Mole, Wart & Skin Tag Removal in Coimbatore",
+    metaDescription:
+      "Mole, wart and skin tag removal in Coimbatore using doctor-guided assessment and precise removal methods with attention to healing and scarring.",
+    focusKeyword: "mole wart skin tag removal coimbatore",
+    h1: "Mole, Wart & Skin Tag Removal in Coimbatore",
+    treatmentAngles: [
+      "Useful for patients who want a clinician to assess whether a spot should be removed",
+      "Helps people with bothersome skin tags, warts, or raised lesions get clear guidance",
+      "Built for searches around safe removal and minimal scarring",
+    ],
+    landmarks: [
+      "RS Puram and Race Course access",
+      "Gandhipuram city-centre travel",
+      "Peelamedu and Avinashi Road routes",
+      "Saravanampatti and Ganapathy connections",
+    ],
+    semanticKeywords: [
+      "wart removal clinic",
+      "skin tag removal",
+      "mole removal doctor",
+      "safe lesion removal",
+      "dermatology procedure",
+    ],
+    longTailKeywords: [
+      "best mole removal in coimbatore",
+      "wart removal clinic near me",
+      "skin tag removal doctor in coimbatore",
+      "doctor for raised skin spot removal",
+    ],
+    blogTopics: [
+      "When a mole should be checked before removal",
+      "How warts spread and why they return",
+      "What to expect after skin tag removal",
+    ],
+    backlinkOpportunities: [
+      "General dermatology education pages",
+      "Coimbatore clinic listing websites",
+      "Local skin care awareness blogs",
+    ],
+    relatedLinks: [
+      { label: "Laser treatment in Coimbatore", href: "/laser-treatment-coimbatore" },
+      { label: "Acne treatment in Coimbatore", href: "/acne-treatment-coimbatore" },
+    ],
+  }),
+  buildTreatmentPage({
+    slug: "corn-foot-removal-coimbatore",
+    serviceName: "Corn and foot removal",
+    seoTitle: "Corn & Foot Removal in Coimbatore",
+    metaDescription:
+      "Corn and foot removal in Coimbatore for painful thickened skin, pressure spots, and foot care with doctor-led treatment planning.",
+    focusKeyword: "corn foot removal coimbatore",
+    h1: "Corn & Foot Removal in Coimbatore for Comfortable Walking and Foot Care",
+    treatmentAngles: [
+      "Useful for patients with painful pressure spots who need proper assessment",
+      "Helps explain when a corn, callus, or related foot issue needs treatment",
+      "Built for people searching for foot care near me or corn removal doctor",
+    ],
+    landmarks: [
+      "Gandhipuram and central Coimbatore access",
+      "Peelamedu and Hope College travel routes",
+      "RS Puram and Race Course catchment",
+      "North Coimbatore and Thudiyalur access",
+    ],
+    semanticKeywords: [
+      "corn removal clinic",
+      "foot care treatment",
+      "callus removal",
+      "painful foot spot treatment",
+      "dermatology foot care",
+    ],
+    longTailKeywords: [
+      "best corn removal in coimbatore",
+      "doctor for foot pain and callus near me",
+      "foot corn treatment in coimbatore",
+      "safe callus removal clinic",
+    ],
+    blogTopics: [
+      "Why corn and callus problems keep coming back",
+      "Foot care habits that reduce pressure spots",
+      "When to see a doctor for painful foot skin",
+    ],
+    backlinkOpportunities: [
+      "Foot care and wellness articles",
+      "Coimbatore health directories",
+      "Local lifestyle and fitness blogs",
+    ],
+    relatedLinks: [
+      { label: "Laser treatment in Coimbatore", href: "/laser-treatment-coimbatore" },
+      { label: "Chemical peel in Coimbatore", href: "/chemical-peel-coimbatore" },
+    ],
+  }),
+  buildTreatmentPage({
+    slug: "subcision-dermaroller-coimbatore",
+    serviceName: "Subcision and dermaroller",
+    seoTitle: "Subcision & Dermaroller in Coimbatore",
+    metaDescription:
+      "Subcision and dermaroller treatment in Coimbatore for depressed scars, texture improvement, and skin-repair planning under doctor supervision.",
+    focusKeyword: "subcision dermaroller coimbatore",
+    h1: "Subcision & Dermaroller in Coimbatore for Acne Scar Improvement",
+    treatmentAngles: [
+      "Useful for patients with depressed scars who want to understand what can improve texture",
+      "Helps people compare scar procedures and choose a doctor-led plan",
+      "Built for searches around acne scar treatment and collagen stimulation",
+    ],
+    landmarks: [
+      "Peelamedu and Avinashi Road patient access",
+      "RS Puram and Race Course routes",
+      "Gandhipuram and central Coimbatore travel",
+      "Saravanampatti and Ganapathy connections",
+    ],
+    semanticKeywords: [
+      "acne scar treatment",
+      "subcision for scars",
+      "dermaroller therapy",
+      "textured skin care",
+      "scar revision treatment",
+    ],
+    longTailKeywords: [
+      "best subcision treatment in coimbatore",
+      "dermaroller for acne scars near me",
+      "doctor for depressed scars in coimbatore",
+      "acne scar consultation in coimbatore",
+    ],
+    blogTopics: [
+      "How subcision helps with tethered acne scars",
+      "What dermaroller treatment is used for",
+      "When scar procedures are combined for better results",
+    ],
+    backlinkOpportunities: [
+      "Acne scar education blogs",
+      "Local skin treatment directories",
+      "Coimbatore medical profile pages",
+    ],
+    relatedLinks: [
+      { label: "Acne treatment in Coimbatore", href: "/acne-treatment-coimbatore" },
+      { label: "Laser treatment in Coimbatore", href: "/laser-treatment-coimbatore" },
+    ],
+  }),
 ];
 
 const areaPages: SeoLandingPage[] = [

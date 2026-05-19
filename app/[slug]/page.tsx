@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, CheckCircle2, MapPin, MessageCircle, Phone, Star } from "lucide-react";
+import { ArrowRight, CheckCircle2, MapPin, MessageCircle, Phone } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
 import {
   buildBreadcrumbSchema,
@@ -84,7 +84,7 @@ export default async function SeoLandingPage({ params }: SeoLandingPageProps) {
             </nav>
 
             <p className="mb-4 inline-flex rounded-full bg-amber-100 px-4 py-2 text-sm font-semibold text-amber-900">
-              {page.pageType === "area" ? `Local SEO page for ${page.h1}` : `Treatment SEO page for ${page.h1}`}
+              {page.pageType === "area" ? `Local clinic guide for ${page.h1}` : `Treatment guide for ${page.h1}`}
             </p>
             <h1 className="text-4xl font-bold text-amber-900 md:text-6xl">{page.h1}</h1>
             <p className="mt-6 text-lg leading-8 text-slate-700 md:text-xl">{page.metaDescription}</p>
@@ -149,41 +149,15 @@ export default async function SeoLandingPage({ params }: SeoLandingPageProps) {
       </section>
 
       <section className="py-12 md:py-16">
-        <div className="page-shell grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+        <div className="page-shell">
           <article className="card-premium p-8 md:p-10">
-            <h2 className="text-3xl font-bold text-amber-900">Why this page is relevant</h2>
+            <h2 className="text-3xl font-bold text-amber-900">What this page covers</h2>
             <div className="mt-6 space-y-5 text-slate-700 leading-8">
               {page.intro.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
           </article>
-
-          <aside className="card-premium p-8 md:p-10">
-            <div className="flex items-center gap-3 text-amber-900">
-              <Star className="h-5 w-5 fill-current" />
-              <h2 className="text-2xl font-bold">Semantic keywords</h2>
-            </div>
-            <div className="mt-5 flex flex-wrap gap-2">
-              {page.semanticKeywords.map((item) => (
-                <span key={item} className="rounded-full bg-amber-50 px-3 py-2 text-sm font-medium text-amber-900">
-                  {item}
-                </span>
-              ))}
-            </div>
-
-            <div className="mt-8">
-              <h3 className="text-lg font-semibold text-slate-900">Long-tail searches</h3>
-              <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
-                {page.longTailKeywords.map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-gradient-warm" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </aside>
         </div>
       </section>
 

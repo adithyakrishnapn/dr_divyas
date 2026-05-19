@@ -37,9 +37,8 @@ export function SiteFooter() {
         <div className="page-shell grid gap-12 py-16 md:grid-cols-4">
           <motion.div
             variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            initial="visible"
+            animate="visible"
             className="space-y-4"
           >
             <h3 className="text-2xl font-bold text-amber-400">{siteConfig.name}</h3>
@@ -74,9 +73,8 @@ export function SiteFooter() {
 
           <motion.div
             variants={itemVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            initial="visible"
+            animate="visible"
             className="space-y-4"
           >
             <h4 className="text-sm font-bold uppercase tracking-wider text-amber-400">
@@ -98,9 +96,8 @@ export function SiteFooter() {
 
           <motion.div
             variants={itemVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            initial="visible"
+            animate="visible"
             className="space-y-4"
           >
             <h4 className="text-sm font-bold uppercase tracking-wider text-amber-400">
@@ -124,9 +121,8 @@ export function SiteFooter() {
 
           <motion.div
             variants={itemVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            initial="visible"
+            animate="visible"
             className="space-y-4"
           >
             <h4 className="text-sm font-bold uppercase tracking-wider text-amber-400">
@@ -142,9 +138,8 @@ export function SiteFooter() {
 
           <motion.div
             variants={itemVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            initial="visible"
+            animate="visible"
             className="space-y-4"
           >
             <h4 className="text-sm font-bold uppercase tracking-wider text-amber-400">
@@ -174,9 +169,8 @@ export function SiteFooter() {
         <div className="page-shell pb-10">
           <motion.div
             variants={itemVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            initial="visible"
+            animate="visible"
             className="overflow-hidden rounded-3xl border border-amber-600/20 bg-white/5 backdrop-blur-sm"
           >
             <div className="grid gap-0 lg:grid-cols-[1.2fr_0.8fr]">
