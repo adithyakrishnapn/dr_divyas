@@ -1,4 +1,5 @@
 import { siteConfig } from "@/lib/site";
+import { extraTreatmentFaqs, treatmentRichContentBySlug } from "@/lib/treatment-content";
 
 export type SeoLandingSection = {
   title: string;
@@ -10,6 +11,20 @@ export type SeoLandingFaq = {
   answer: string;
 };
 
+export type TreatmentCaseStudy = {
+  problem: string;
+  treatment: string;
+  result: string;
+};
+
+export type BeforeAfterItem = {
+  beforeImage: string;
+  afterImage: string;
+  beforeAlt: string;
+  afterAlt: string;
+  caption: string;
+};
+
 export type SeoLandingPage = {
   slug: string;
   pageType: "treatment" | "area";
@@ -19,6 +34,7 @@ export type SeoLandingPage = {
   focusKeyword: string;
   h1: string;
   intro: string[];
+  expandedParagraphs: string[];
   trustPoints: string[];
   sections: SeoLandingSection[];
   nearbyAreas: Array<{ label: string; href: string }>;
@@ -30,6 +46,8 @@ export type SeoLandingPage = {
   imageAlts: [string, string, string];
   blogTopics: string[];
   backlinkOpportunities: string[];
+  caseStudies: TreatmentCaseStudy[];
+  beforeAfter: BeforeAfterItem[];
 };
 
 const commonTreatmentAreas = [
@@ -120,21 +138,25 @@ function buildTreatmentPage(config: {
   backlinkOpportunities: string[];
   relatedLinks: Array<{ label: string; href: string }>;
 }): SeoLandingPage {
+  const richContent = treatmentRichContentBySlug[config.slug];
+  const extraFaqs = extraTreatmentFaqs[config.slug] ?? [];
+
   return {
     slug: config.slug,
     pageType: "treatment",
     locationName: "Coimbatore",
     seoTitle: config.seoTitle,
-    metaDescription: config.metaDescription,
+    metaDescription: richContent?.metaDescription ?? config.metaDescription,
     focusKeyword: config.focusKeyword,
     h1: config.h1,
-    intro: buildIntro(config.serviceName, "Coimbatore"),
+    intro: richContent?.intro ?? buildIntro(config.serviceName, "Coimbatore"),
+    expandedParagraphs: richContent?.expandedParagraphs ?? [],
     trustPoints: [
       "Doctor-led evaluation before treatment is recommended",
       "Plans designed for first visits and follow-up care",
       "Built for local patients, mobile searches, and near-me intent",
     ],
-    sections: [
+    sections: richContent?.sections ?? [
       {
         title: `Why people search for ${config.serviceName.toLowerCase()} locally`,
         items: config.treatmentAngles,
@@ -161,8 +183,8 @@ function buildTreatmentPage(config: {
     landmarks: config.landmarks,
     semanticKeywords: config.semanticKeywords,
     longTailKeywords: config.longTailKeywords,
-    faqs: buildTreatmentFaqs(config.serviceName, "Coimbatore"),
-    internalLinks: [...commonLandingLinks, ...config.relatedLinks],
+    faqs: richContent?.faqs ?? [...buildTreatmentFaqs(config.serviceName, "Coimbatore"), ...extraFaqs],
+    internalLinks: [...commonLandingLinks, ...(richContent?.relatedLinks ?? config.relatedLinks)],
     imageAlts: [
       `Doctor consultation for ${config.serviceName.toLowerCase()} in Coimbatore`,
       `Patient-friendly dermatology clinic for ${config.serviceName.toLowerCase()} near Coimbatore`,
@@ -170,6 +192,8 @@ function buildTreatmentPage(config: {
     ],
     blogTopics: config.blogTopics,
     backlinkOpportunities: config.backlinkOpportunities,
+    caseStudies: richContent?.caseStudies ?? [],
+    beforeAfter: richContent?.beforeAfter ?? [],
   };
 }
 
@@ -200,6 +224,7 @@ function buildAreaPage(config: {
       `People searching from ${config.areaName} usually want a clinic that is close enough for repeat visits and strong enough for proper diagnosis.`,
       `This page is written to strengthen local relevance for ${config.areaName}, while still connecting naturally to Coimbatore-wide treatment searches and nearby neighborhoods.`,
     ],
+    expandedParagraphs: [],
     trustPoints: [
       "Easy to understand booking path for local patients",
       "Useful for near-me searches and mobile users",
@@ -243,6 +268,8 @@ function buildAreaPage(config: {
     ],
     blogTopics: config.blogTopics,
     backlinkOpportunities: config.backlinkOpportunities,
+    caseStudies: [],
+    beforeAfter: [],
   };
 }
 
@@ -393,7 +420,7 @@ const treatmentPages: SeoLandingPage[] = [
     serviceName: "Laser treatment",
     seoTitle: "Laser Treatment in Coimbatore",
     metaDescription:
-      "Laser treatment in Coimbatore for tone correction, acne scar support, pigmentation care, and skin rejuvenation with doctor supervision.",
+      "Laser treatment in Coimbatore for scars, pigmentation & rejuvenation. Doctor-supervised sessions. Book your skin assessment — call +91 9994759380.",
     focusKeyword: "laser treatment coimbatore",
     h1: "Laser Treatment in Coimbatore for Skin Rejuvenation and Tone Correction",
     treatmentAngles: [
@@ -440,7 +467,7 @@ const treatmentPages: SeoLandingPage[] = [
     serviceName: "Chemical peel treatment",
     seoTitle: "Chemical Peel in Coimbatore",
     metaDescription:
-      "Chemical peel treatment in Coimbatore for acne marks, dullness, pigmentation, and texture improvement with a dermatologist-guided plan.",
+      "Chemical peel in Coimbatore for acne marks, dull skin & pigmentation. Know recovery time & results. Book a peel consultation today!",
     focusKeyword: "chemical peel coimbatore",
     h1: "Chemical Peel in Coimbatore for Brighter, Smoother-Looking Skin",
     treatmentAngles: [
@@ -487,7 +514,7 @@ const treatmentPages: SeoLandingPage[] = [
     serviceName: "Vitiligo treatment",
     seoTitle: "Vitiligo Treatment in Coimbatore",
     metaDescription:
-      "Vitiligo treatment in Coimbatore with clear assessment, patch monitoring, and practical guidance for ongoing skin management.",
+      "Vitiligo treatment in Coimbatore for white patches & pigment care. Early treatment works best at any age. Book a consultation today!",
     focusKeyword: "vitiligo treatment coimbatore",
     h1: "Vitiligo Treatment in Coimbatore for White Patch Care and Support",
     treatmentAngles: [
@@ -1015,24 +1042,47 @@ export function getSeoLandingPage(slug: string) {
 export function buildLandingSchema(page: SeoLandingPage) {
   return {
     "@context": "https://schema.org",
-    "@type": ["MedicalClinic", "LocalBusiness"],
+    "@type": ["LocalBusiness", "MedicalBusiness", "MedicalClinic"],
+    "@id": `${siteConfig.url}/#clinic`,
     name: siteConfig.name,
     url: `${siteConfig.url}/${page.slug}`,
     description: page.metaDescription,
     telephone: siteConfig.phone,
     email: siteConfig.email,
+    image: `${siteConfig.url}/images/doctor-about.jpeg`,
+    priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      streetAddress: siteConfig.address,
-      addressLocality: "Coimbatore",
-      addressRegion: "Tamil Nadu",
-      addressCountry: "IN",
+      streetAddress: siteConfig.streetAddress,
+      addressLocality: siteConfig.addressLocality,
+      addressRegion: siteConfig.addressRegion,
+      postalCode: siteConfig.postalCode,
+      addressCountry: siteConfig.addressCountry,
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: siteConfig.geo.latitude,
+      longitude: siteConfig.geo.longitude,
+    },
+    openingHoursSpecification: siteConfig.openingHours.map((entry) => ({
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: entry.days,
+      opens: entry.opens,
+      closes: entry.closes,
+    })),
     areaServed: {
       "@type": "City",
       name: page.locationName,
     },
-    medicalSpecialty: ["Dermatology", "Hair Restoration"],
+    medicalSpecialty: ["Dermatology", "Cosmetic Dermatology", "Hair Restoration"],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: siteConfig.googleReviews.rating,
+      reviewCount: siteConfig.googleReviews.reviewCount,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    sameAs: [siteConfig.mapUrl, siteConfig.googleReviews.profileUrl],
   };
 }
 

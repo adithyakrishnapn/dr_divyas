@@ -15,8 +15,7 @@ import {
 import { siteConfig } from "@/lib/site";
 import { sampleImages } from "@/lib/site";
 
-const mapsEmbedUrl =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.7834818390447!2d77.00191837482221!3d11.054853589111374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8599aa76a4b81%3A0xb6111fd2ef3ef299!2sDr.%20Divya%27s%20Skin%20Clinic!5e0!3m2!1sen!2sin!4v1778333405996!5m2!1sen!2sin";
+const mapsEmbedUrl = siteConfig.mapsEmbedUrl;
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -134,7 +133,7 @@ export default function ContactPage() {
               {
                 icon: Clock,
                 title: "Hours",
-                content: "Mon - Sat: 10 AM - 7 PM",
+                content: siteConfig.hoursLabel,
                 linkText: "",
               },
             ].map(({ icon: Icon, title, content, link, linkText }) => (

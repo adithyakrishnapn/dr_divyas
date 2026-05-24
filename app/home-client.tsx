@@ -20,6 +20,7 @@ import {
   Shield,
 } from "lucide-react";
 import { sampleImages, siteConfig } from "@/lib/site";
+import { GoogleReviews } from "@/components/google-reviews";
 
 const treatments = [
   {
@@ -72,31 +73,31 @@ const whyChoose = [
 
 const testimonials = [
   {
-    name: "Priya Sharma",
+    name: "Nandhini Vengatesh",
     location: "Coimbatore",
     message:
-      "Dr Divya's clinic is absolutely amazing! My acne scars reduced significantly in just 6 sessions. The clinic is so clean and Dr Divya is very professional yet friendly.",
+      "The best skin doctor I have ever seen..she speaks very polite and give clear answer about our doubts..but she is very sincere and her intention is to cure it as soon as possible..my son & husband's skin problem has cured after few sessions..I highly recommend 😀",
     rating: 5,
   },
   {
-    name: "Aisha Khan",
+    name: "Praveen Kumar",
     location: "Coimbatore",
     message:
-      "Best dermatology experience ever. The treatment plan was customized just for me. I can see visible results and feel so confident now!",
+      "I visited for a skin infection, and she was incredibly thorough in diagnosing and treating the issue. Thanks to her guidance, the infection cleared up completely. She's knowledgeable, approachable, and takes the time to explain things clearly. I truly appreciate her help and would highly recommend her.",
     rating: 5,
   },
   {
-    name: "Deepak Patel",
+    name: "Vivitha Anill",
     location: "Coimbatore",
     message:
-      "Came for hair loss treatment. Dr Divya's approach is scientific and results-oriented. Worth every penny! Highly recommended.",
+      "I would suggest her all time . She was very nice person tbh . She listened my skin problems so patiently I will rate 5/5 for her . And she Even reduced fees for me as college student . She was so patient full and calm to patient her medication really worked for me within few days . Thank you ma'am ☺️",
     rating: 5,
   },
   {
-    name: "Meera Iyer",
+    name: "Habhi Kiddu",
     location: "Coimbatore",
     message:
-      "The glow facial gave my skin an instant boost! Natural results without looking overdone. Love the clinic atmosphere too!",
+      "I am extremely grateful to Dr.Divya mam for her exceptional care and treatment of my recent skin allergy. She was incredibly knowledgeable and patient. She took the time to understand my concerns, thoroughly explained and answered all my questions patiently.I noticed a significant improvement in my skin condition within few weeks.",
     rating: 5,
   },
 ];
@@ -323,6 +324,15 @@ export default function Home() {
                   >
                     Explore Treatments
                   </motion.a>
+                </motion.div>
+
+                <motion.div
+                  className="pt-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.55, duration: 0.8 }}
+                >
+                  <GoogleReviews compact />
                 </motion.div>
 
                 <motion.div
@@ -595,18 +605,21 @@ export default function Home() {
                   key={idx}
                   variants={itemVariants}
                   whileHover={{ y: -5 }}
+                  className="h-full flex"
                 >
-                  <AnimatedCard>
-                    <div className="p-8 space-y-4">
-                      <div className="flex gap-1">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" />
-                        ))}
-                      </div>
+                  <AnimatedCard className="h-full flex flex-col justify-between w-full">
+                    <div className="p-8 flex-1 flex flex-col justify-between">
+                      <div className="space-y-4 mb-6">
+                        <div className="flex gap-1">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" />
+                          ))}
+                        </div>
 
-                      <p className="text-lg text-slate-700 italic">
-                        &quot;{testimonial.message}&quot;
-                      </p>
+                        <p className="text-lg text-slate-700 italic">
+                          &quot;{testimonial.message}&quot;
+                        </p>
+                      </div>
 
                       <div>
                         <p className="font-bold text-amber-900">{testimonial.name}</p>
@@ -721,7 +734,7 @@ export default function Home() {
               <motion.div variants={itemVariants} className="space-y-2">
                 <Clock className="h-6 w-6 mx-auto text-amber-400" />
                 <h3 className="font-bold">Hours</h3>
-                <p className="text-sm text-slate-300">Mon - Sat: 10 AM - 7 PM</p>
+                <p className="text-sm text-slate-300">{siteConfig.hoursLabel}</p>
               </motion.div>
             </motion.div>
           </div>

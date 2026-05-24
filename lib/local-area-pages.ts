@@ -1,3 +1,5 @@
+import { standardTreatmentLinks } from "@/lib/site";
+
 export type LocalAreaPage = {
   slug: string;
   areaName: string;
@@ -21,6 +23,14 @@ export type LocalAreaPage = {
   nearbyAreas: Array<{ label: string; href: string }>;
   internalLinks: Array<{ label: string; href: string }>;
 };
+
+function createInternalLinks() {
+  return [
+    ...standardTreatmentLinks,
+    { label: "Book appointment", href: "/contact" },
+    { label: "Skin care blog", href: "/blog" },
+  ];
+}
 
 const sharedSkinTreatments = [
   "Detailed dermatology consultation and diagnosis",
@@ -143,11 +153,7 @@ export const localAreaPages: LocalAreaPage[] = [
       { label: "Peelamedu", href: "/coimbatore/peelamedu" },
       { label: "Thudiyalur", href: "/coimbatore/thudiyalur" },
     ],
-    internalLinks: [
-      { label: "Acne treatment in Coimbatore", href: "/treatments" },
-      { label: "Hair fall treatment in Coimbatore", href: "/treatments" },
-      { label: "Skin care blog", href: "/blog" },
-    ],
+    internalLinks: createInternalLinks(),
   },
   {
     slug: "ganapathy",
@@ -197,11 +203,7 @@ export const localAreaPages: LocalAreaPage[] = [
       { label: "Gandhipuram", href: "/coimbatore/gandhipuram" },
       { label: "Thudiyalur", href: "/coimbatore/thudiyalur" },
     ],
-    internalLinks: [
-      { label: "Acne treatment in Coimbatore", href: "/treatments" },
-      { label: "Hair fall treatment in Coimbatore", href: "/treatments" },
-      { label: "Dermatology blog", href: "/blog" },
-    ],
+    internalLinks: createInternalLinks(),
   },
   {
     slug: "thudiyalur",
@@ -250,11 +252,7 @@ export const localAreaPages: LocalAreaPage[] = [
       { label: "Ganapathy", href: "/coimbatore/ganapathy" },
       { label: "Kovaipudur", href: "/coimbatore/kovaipudur" },
     ],
-    internalLinks: [
-      { label: "Hair fall treatment in Coimbatore", href: "/treatments" },
-      { label: "Acne treatment in Coimbatore", href: "/treatments" },
-      { label: "Skin care articles", href: "/blog" },
-    ],
+    internalLinks: createInternalLinks(),
   },
   {
     slug: "peelamedu",
@@ -303,11 +301,7 @@ export const localAreaPages: LocalAreaPage[] = [
       { label: "Hope College", href: "/coimbatore/hope-college" },
       { label: "Singanallur", href: "/coimbatore/singanallur" },
     ],
-    internalLinks: [
-      { label: "Acne treatment in Coimbatore", href: "/treatments" },
-      { label: "Hair fall treatment in Coimbatore", href: "/treatments" },
-      { label: "Contact the clinic", href: "/contact" },
-    ],
+    internalLinks: createInternalLinks(),
   },
   {
     slug: "gandhipuram",
@@ -356,11 +350,7 @@ export const localAreaPages: LocalAreaPage[] = [
       { label: "RS Puram", href: "/coimbatore/rs-puram" },
       { label: "Race Course", href: "/coimbatore/race-course" },
     ],
-    internalLinks: [
-      { label: "Laser treatment in Coimbatore", href: "/treatments" },
-      { label: "Blog on pigmentation treatment", href: "/blog" },
-      { label: "Book appointment", href: "/contact" },
-    ],
+    internalLinks: createInternalLinks(),
   },
   {
     slug: "rs-puram",
@@ -409,11 +399,7 @@ export const localAreaPages: LocalAreaPage[] = [
       { label: "Gandhipuram", href: "/coimbatore/gandhipuram" },
       { label: "Saibaba Colony", href: "/coimbatore/saibaba-colony" },
     ],
-    internalLinks: [
-      { label: "About Dr Divya", href: "/about" },
-      { label: "Acne treatment in Coimbatore", href: "/treatments" },
-      { label: "Contact page", href: "/contact" },
-    ],
+    internalLinks: createInternalLinks(),
   },
   {
     slug: "annur",
@@ -462,11 +448,7 @@ export const localAreaPages: LocalAreaPage[] = [
       { label: "Ganapathy", href: "/coimbatore/ganapathy" },
       { label: "Saravanampatti", href: "/coimbatore/saravanampatti" },
     ],
-    internalLinks: [
-      { label: "Hair fall treatment in Coimbatore", href: "/treatments" },
-      { label: "Pigmentation blog article", href: "/blog" },
-      { label: "Contact the clinic", href: "/contact" },
-    ],
+    internalLinks: createInternalLinks(),
   },
   {
     slug: "singanallur",
@@ -515,11 +497,7 @@ export const localAreaPages: LocalAreaPage[] = [
       { label: "Hope College", href: "/coimbatore/hope-college" },
       { label: "Avinashi Road", href: "/coimbatore/avinashi-road" },
     ],
-    internalLinks: [
-      { label: "Acne treatment in Coimbatore", href: "/treatments" },
-      { label: "Hair fall treatment in Coimbatore", href: "/treatments" },
-      { label: "Book appointment", href: "/contact" },
-    ],
+    internalLinks: createInternalLinks(),
   },
   {
     slug: "saibaba-colony",
@@ -568,11 +546,7 @@ export const localAreaPages: LocalAreaPage[] = [
       { label: "Vadavalli", href: "/coimbatore/vadavalli" },
       { label: "Kovaipudur", href: "/coimbatore/kovaipudur" },
     ],
-    internalLinks: [
-      { label: "About the clinic", href: "/about" },
-      { label: "Treatments page", href: "/treatments" },
-      { label: "Contact page", href: "/contact" },
-    ],
+    internalLinks: createInternalLinks(),
   },
   {
     slug: "vadavalli",
@@ -621,11 +595,7 @@ export const localAreaPages: LocalAreaPage[] = [
       { label: "Kovaipudur", href: "/coimbatore/kovaipudur" },
       { label: "Race Course", href: "/coimbatore/race-course" },
     ],
-    internalLinks: [
-      { label: "Pigmentation blog", href: "/blog" },
-      { label: "Acne treatment page", href: "/treatments" },
-      { label: "Hair fall treatment page", href: "/treatments" },
-    ],
+    internalLinks: createInternalLinks(),
   },
   {
     slug: "kovaipudur",
@@ -674,11 +644,7 @@ export const localAreaPages: LocalAreaPage[] = [
       { label: "Race Course", href: "/coimbatore/race-course" },
       { label: "Saibaba Colony", href: "/coimbatore/saibaba-colony" },
     ],
-    internalLinks: [
-      { label: "Acne treatment in Coimbatore", href: "/treatments" },
-      { label: "Blog articles", href: "/blog" },
-      { label: "Contact the clinic", href: "/contact" },
-    ],
+    internalLinks: createInternalLinks(),
   },
   {
     slug: "race-course",
@@ -727,11 +693,7 @@ export const localAreaPages: LocalAreaPage[] = [
       { label: "Peelamedu", href: "/coimbatore/peelamedu" },
       { label: "Gandhipuram", href: "/coimbatore/gandhipuram" },
     ],
-    internalLinks: [
-      { label: "About Dr Divya", href: "/about" },
-      { label: "Treatments page", href: "/treatments" },
-      { label: "Contact page", href: "/contact" },
-    ],
+    internalLinks: createInternalLinks(),
   },
   {
     slug: "hope-college",
@@ -780,11 +742,7 @@ export const localAreaPages: LocalAreaPage[] = [
       { label: "Singanallur", href: "/coimbatore/singanallur" },
       { label: "Avinashi Road", href: "/coimbatore/avinashi-road" },
     ],
-    internalLinks: [
-      { label: "Acne treatment in Coimbatore", href: "/treatments" },
-      { label: "Hair fall treatment in Coimbatore", href: "/treatments" },
-      { label: "Contact the clinic", href: "/contact" },
-    ],
+    internalLinks: createInternalLinks(),
   },
   {
     slug: "avinashi-road",
@@ -833,11 +791,99 @@ export const localAreaPages: LocalAreaPage[] = [
       { label: "Peelamedu", href: "/coimbatore/peelamedu" },
       { label: "Singanallur", href: "/coimbatore/singanallur" },
     ],
-    internalLinks: [
-      { label: "Treatments page", href: "/treatments" },
-      { label: "Blog articles", href: "/blog" },
-      { label: "Book an appointment", href: "/contact" },
+    internalLinks: createInternalLinks(),
+  },
+  {
+    slug: "ukkadam",
+    areaName: "Ukkadam",
+    seoTitle: "Best Dermatologist near Ukkadam",
+    metaDescription:
+      "Skin & hair clinic near Ukkadam, Coimbatore — acne, pigmentation, hair fall & laser care. Book your consultation today — call +91 9994759380.",
+    focusKeyword: "best dermatologist near ukkadam",
+    ogTitle: "Best Dermatologist near Ukkadam",
+    ogDescription: "Trusted dermatology care near Ukkadam bus stand and central Coimbatore routes.",
+    keywords: createKeywords("Ukkadam", "ukkadam", [
+      "skin doctor ukkadam",
+      "skin clinic near ukkadam bus stand",
+      "dermatologist ukkadam coimbatore",
+    ]),
+    h1: "Best Dermatologist near Ukkadam for Skin and Hair Care",
+    introParagraphs: [
+      "Ukkadam is a major transit hub in Coimbatore, and patients from this area often want a dermatologist who is easy to reach for both first visits and follow-up appointments.",
+      "Dr Divya's Skin & Hair Clinic supports Ukkadam patients with doctor-led acne, pigmentation, hair fall, and laser treatment plans.",
     ],
+    localHighlights: [
+      "Ukkadam bus stand and market access",
+      "Central Coimbatore connectivity",
+      "Convenient for commuters and local residents",
+    ],
+    accessibility: [
+      "Reachable from Town Hall, Gandhipuram, and Race Course",
+      "Good for patients searching dermatologist near me from south Coimbatore",
+    ],
+    whyChoose: [
+      "Clear treatment plans for common skin and hair concerns",
+      "Easy booking via phone, WhatsApp, or online form",
+      "Follow-up care for long-term skin maintenance",
+    ],
+    skinTreatments: sharedSkinTreatments,
+    hairTreatments: sharedHairTreatments,
+    acneTreatments: sharedAcneTreatments,
+    pigmentationTreatments: sharedPigmentationTreatments,
+    laserTreatments: sharedLaserTreatments,
+    faqs: createFaqs("Ukkadam"),
+    nearbyAreas: [
+      { label: "Gandhipuram", href: "/coimbatore/gandhipuram" },
+      { label: "Race Course", href: "/coimbatore/race-course" },
+      { label: "Singanallur", href: "/coimbatore/singanallur" },
+    ],
+    internalLinks: createInternalLinks(),
+  },
+  {
+    slug: "podanur",
+    areaName: "Podanur",
+    seoTitle: "Best Skin Clinic in Podanur",
+    metaDescription:
+      "Dermatologist-led skin & hair care in Podanur, Coimbatore. Acne, pigmentation, hair fall & laser treatments. Book your visit today!",
+    focusKeyword: "best skin clinic in podanur",
+    ogTitle: "Best Skin Clinic in Podanur",
+    ogDescription: "Skin and hair treatment clinic serving Podanur and south Coimbatore patients.",
+    keywords: createKeywords("Podanur", "podanur", [
+      "dermatologist podanur",
+      "skin doctor podanur coimbatore",
+      "hair treatment podanur",
+    ]),
+    h1: "Best Skin Clinic in Podanur for Acne, Hair and Pigmentation",
+    introParagraphs: [
+      "Podanur patients often search for a dependable skin clinic that can handle acne, pigmentation, and hair fall without long waiting times or unclear advice.",
+      "This page connects Podanur and nearby south Coimbatore localities to specialist dermatology care with a simple appointment path.",
+    ],
+    localHighlights: [
+      "Podanur railway junction area",
+      "South Coimbatore residential belt",
+      "Useful for families and daily commuters",
+    ],
+    accessibility: [
+      "Connected to Ukkadam, Singanallur, and central city routes",
+      "Suitable for repeat treatment visits from south Coimbatore",
+    ],
+    whyChoose: [
+      "Doctor-led diagnosis and treatment planning",
+      "Acne, pigmentation, and hair fall expertise in one clinic",
+      "WhatsApp and phone booking before you travel",
+    ],
+    skinTreatments: sharedSkinTreatments,
+    hairTreatments: sharedHairTreatments,
+    acneTreatments: sharedAcneTreatments,
+    pigmentationTreatments: sharedPigmentationTreatments,
+    laserTreatments: sharedLaserTreatments,
+    faqs: createFaqs("Podanur"),
+    nearbyAreas: [
+      { label: "Ukkadam", href: "/coimbatore/ukkadam" },
+      { label: "Singanallur", href: "/coimbatore/singanallur" },
+      { label: "Race Course", href: "/coimbatore/race-course" },
+    ],
+    internalLinks: createInternalLinks(),
   },
 ];
 

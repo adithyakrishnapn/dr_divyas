@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, CheckCircle2, MapPin, MessageCircle, Phone } from "lucide-react";
+import { GoogleReviews } from "@/components/google-reviews";
 import { buildMetadata } from "@/lib/seo";
 import {
   buildBreadcrumbSchema,
@@ -154,12 +155,84 @@ export default async function SeoLandingPage({ params }: SeoLandingPageProps) {
             <h2 className="text-3xl font-bold text-amber-900">What this page covers</h2>
             <div className="mt-6 space-y-5 text-slate-700 leading-8">
               {page.intro.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+                <p key={paragraph.slice(0, 60)}>{paragraph}</p>
+              ))}
+              {page.expandedParagraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 60)}>{paragraph}</p>
               ))}
             </div>
           </article>
         </div>
       </section>
+
+      {page.beforeAfter.length > 0 ? (
+        <section className="py-12 md:py-16 bg-luxury-light/70">
+          <div className="page-shell">
+            <h2 className="text-3xl font-bold text-amber-900">Treatment results gallery</h2>
+            <p className="mt-3 max-w-3xl text-slate-700 leading-8">
+              Representative outcomes from doctor-guided treatment plans. Individual results vary based on skin type, severity, and aftercare consistency.
+            </p>
+            <div className="mt-8 grid gap-8 lg:grid-cols-2">
+              {page.beforeAfter.map((item) => (
+                <figure key={item.caption} className="card-premium overflow-hidden p-4">
+                  <div className="grid grid-cols-2 gap-3">
+                    <div>
+                      <p className="mb-2 text-xs font-bold uppercase tracking-wide text-slate-500">Before</p>
+                      <Image
+                        src={item.beforeImage}
+                        alt={item.beforeAlt}
+                        width={500}
+                        height={360}
+                        className="h-48 w-full rounded-xl object-cover"
+                      />
+                    </div>
+                    <div>
+                      <p className="mb-2 text-xs font-bold uppercase tracking-wide text-emerald-700">After</p>
+                      <Image
+                        src={item.afterImage}
+                        alt={item.afterAlt}
+                        width={500}
+                        height={360}
+                        className="h-48 w-full rounded-xl object-cover"
+                      />
+                    </div>
+                  </div>
+                  <figcaption className="mt-4 text-sm leading-7 text-slate-600">{item.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {page.caseStudies.length > 0 ? (
+        <section className="py-12 md:py-16">
+          <div className="page-shell">
+            <h2 className="text-3xl font-bold text-amber-900">Patient case studies</h2>
+            <p className="mt-3 max-w-3xl text-slate-700 leading-8">
+              Problem → Treatment → Result summaries from typical clinic cases. Details are anonymised for privacy.
+            </p>
+            <div className="mt-8 grid gap-6 lg:grid-cols-3">
+              {page.caseStudies.map((study) => (
+                <article key={study.problem.slice(0, 40)} className="card-premium flex flex-col gap-4 p-6">
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-wide text-rose-700">Problem</p>
+                    <p className="mt-2 text-sm leading-7 text-slate-700">{study.problem}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-wide text-amber-700">Treatment</p>
+                    <p className="mt-2 text-sm leading-7 text-slate-700">{study.treatment}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-wide text-emerald-700">Result</p>
+                    <p className="mt-2 text-sm leading-7 text-slate-700">{study.result}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="py-12 md:py-16 bg-luxury-light/70">
         <div className="page-shell grid gap-8 lg:grid-cols-2">
@@ -220,6 +293,8 @@ export default async function SeoLandingPage({ params }: SeoLandingPageProps) {
           </article>
         </div>
       </section>
+
+      {page.pageType === "treatment" ? <GoogleReviews /> : null}
 
       <section className="py-12 md:py-16 bg-luxury-light/70">
         <div className="page-shell max-w-4xl">

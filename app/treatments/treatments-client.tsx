@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Zap, Droplets, Sun, Wind, Shield, Sparkles, ArrowRight } from "lucide-react";
+import { Zap, Droplets, Sun, Wind, Shield, Sparkles, ArrowRight, Palette } from "lucide-react";
 import { sampleImages } from "@/lib/site";
 
 const treatmentCategories = [
@@ -33,6 +33,19 @@ const treatmentCategories = [
     image: sampleImages.hairFall,
     href: "/hair-fall-treatment-coimbatore",
     color: "amber",
+  },
+  {
+    title: "Pigmentation Treatment",
+    icon: Palette,
+    treatments: [
+      "Melasma and brown patch management",
+      "Post-acne mark and PIH treatment",
+      "Chemical peel and laser toning options",
+      "Sun protection and maintenance plans",
+    ],
+    image: sampleImages.pigmentationBefore,
+    href: "/pigmentation-treatment-coimbatore",
+    color: "rose",
   },
   {
     title: "Vitiligo Treatment",

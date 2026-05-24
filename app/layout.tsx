@@ -5,6 +5,7 @@ import { siteConfig } from "@/lib/site";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { ContactPopup } from "@/components/contact-popup";
+import { buildGlobalBusinessSchema } from "@/lib/schema";
 
 const headingFont = Playfair_Display({
   variable: "--font-heading",
@@ -85,6 +86,10 @@ export default function RootLayout({
           <div className="flex-1">{children}</div>
           <SiteFooter />
         </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(buildGlobalBusinessSchema()) }}
+        />
       </body>
     </html>
   );
