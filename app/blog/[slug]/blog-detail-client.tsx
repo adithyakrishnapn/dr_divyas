@@ -76,21 +76,30 @@ export function BlogDetailClient({ post }: BlogDetailClientProps) {
       </section>
 
       {/* Featured Image */}
-      <motion.div
-        className="mt-12 overflow-hidden rounded-2xl shadow-2xl"
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-      >
-        <Image
-          src={post.image}
-          alt={post.title}
-          width={1400}
-          height={600}
-          className="w-full h-auto object-cover"
-          priority
-        />
-      </motion.div>
+      <section className="page-shell pb-12">
+        <motion.div
+          className="relative mx-auto max-w-3xl overflow-hidden rounded-2xl shadow-xl"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <motion.div
+            className="relative aspect-[16/9] w-full bg-slate-100"
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+          >
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              className="object-cover object-center"
+              priority
+              sizes="(max-width: 768px) 100vw, 768px"
+            />
+          </motion.div>
+        </motion.div>
+      </section>
 
       {/* Content */}
       <section className="py-12">
