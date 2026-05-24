@@ -204,25 +204,56 @@ function mapLegacyPost(post: (typeof legacyBlogPosts)[number]): BlogPost {
   };
 }
 
-function mapFirestorePost(data: FirestoreBlogDoc): BlogPost {
-  const cleanHtml = sanitizeHtml(data.contentHtml, sanitizeOptions);
+function mapFirestorePost(data: FirestoreBlogDoc): BlogPost | null {
+  const slug = data.slug?.trim().toLowerCase();
+  const title = data.title?.trim();
+  const description = data.description?.trim();
+  const contentHtml = data.contentHtml?.trim();
+
+  if (!slug || !title || !description || !contentHtml) {
+    return null;
+  }
+
+  const cleanHtml = sanitizeHtml(contentHtml, sanitizeOptions);
 
   return {
-    slug: data.slug,
-    title: data.title,
-    description: data.description,
-    date: data.date,
+    slug,
+    title,
+    description,
+    date: data.date || new Date().toISOString(),
     readTime: data.readTime ?? getReadTimeFromHtml(cleanHtml),
     image:
       data.image ??
       "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1200&q=80",
     contentHtml: cleanHtml,
     keywords: normalizeKeywords(data.keywords),
-    metaTitle: data.metaTitle?.trim() || data.title,
-    metaDescription: data.metaDescription?.trim() || data.description,
+    metaTitle: data.metaTitle?.trim() || title,
+    metaDescription: data.metaDescription?.trim() || description,
     published: data.published ?? true,
     views: Number(data.views ?? 0),
   };
+}
+
+function toFirestoreBlogDoc(payload: FirestoreBlogDoc) {
+  const doc: Record<string, unknown> = {
+    slug: payload.slug,
+    title: payload.title,
+    description: payload.description,
+    date: payload.date,
+    readTime: payload.readTime,
+    contentHtml: payload.contentHtml,
+    keywords: payload.keywords ?? [],
+    metaTitle: payload.metaTitle,
+    metaDescription: payload.metaDescription,
+    published: payload.published ?? true,
+    views: payload.views ?? 0,
+  };
+
+  if (payload.image?.trim()) {
+    doc.image = payload.image.trim();
+  }
+
+  return doc;
 }
 
 export const blogPosts: BlogPost[] = legacyBlogPosts.map(mapLegacyPost);
@@ -243,9 +274,13 @@ async function writeLocalPosts(posts: BlogPost[]) {
 }
 
 function dedupePosts(posts: BlogPost[]) {
-  return posts.filter((post, index, allPosts) => {
-    return allPosts.findIndex((candidate) => candidate.slug === post.slug) === index;
-  });
+  const bySlug = new Map<string, BlogPost>();
+
+  for (const post of posts) {
+    bySlug.set(post.slug, post);
+  }
+
+  return [...bySlug.values()];
 }
 
 function sortByDateDesc(posts: BlogPost[]) {
@@ -259,10 +294,18 @@ async function getLocalPostsMerged() {
   return dedupePosts(sortByDateDesc([...localPosts, ...blogPosts]));
 }
 
-async function getAdminPostsFromFirestore() {
+async function getFirestorePosts() {
   const db = getFirebaseAdminDb();
   const snapshot = await db.collection(BLOG_COLLECTION).get();
-  return snapshot.docs.map((doc) => mapFirestorePost(doc.data() as FirestoreBlogDoc));
+
+  return snapshot.docs
+    .map((doc) => mapFirestorePost(doc.data() as FirestoreBlogDoc))
+    .filter((post): post is BlogPost => post !== null);
+}
+
+async function mergePostsWithFirestore(firestorePosts: BlogPost[]) {
+  const localPosts = await readLocalPosts();
+  return dedupePosts(sortByDateDesc([...blogPosts, ...localPosts, ...firestorePosts]));
 }
 
 async function findAnyPostBySlug(slug: string) {
@@ -295,57 +338,42 @@ export async function getPublishedPosts() {
   }
 
   try {
-    const db = getFirebaseAdminDb();
-    const snapshot = await db
-      .collection(BLOG_COLLECTION)
-      .where("published", "==", true)
-      .orderBy("date", "desc")
-      .get();
-
-    if (snapshot.empty) {
-        return (await getLocalPostsMerged()).filter((post) => post.published !== false);
-    }
-
-      const firestorePosts = snapshot.docs.map((doc) => mapFirestorePost(doc.data() as FirestoreBlogDoc));
-      const merged = dedupePosts(sortByDateDesc([...(await readLocalPosts()), ...firestorePosts, ...blogPosts]));
-
-      return merged.filter((post) => post.published !== false);
-  } catch {
-      return (await getLocalPostsMerged()).filter((post) => post.published !== false);
+    const merged = await mergePostsWithFirestore(await getFirestorePosts());
+    return merged.filter((post) => post.published !== false);
+  } catch (error) {
+    console.error("Failed to load published blog posts from Firestore.", error);
+    return (await getLocalPostsMerged()).filter((post) => post.published !== false);
   }
 }
 
-  export async function getAllPostsForAdmin() {
-    if (!isFirebaseAdminConfigured()) {
-      return getLocalPostsMerged();
-    }
-
-    try {
-      const firestorePosts = await getAdminPostsFromFirestore();
-      const localPosts = await readLocalPosts();
-      return dedupePosts(sortByDateDesc([...localPosts, ...firestorePosts, ...blogPosts]));
-    } catch {
-      return getLocalPostsMerged();
-    }
-  }
-
-export async function getPostBySlug(slug: string) {
+export async function getAllPostsForAdmin() {
   if (!isFirebaseAdminConfigured()) {
-      return (await getLocalPostsMerged()).find((post) => post.slug === slug);
+    return getLocalPostsMerged();
   }
 
   try {
-    const db = getFirebaseAdminDb();
-      const snapshot = await db.collection(BLOG_COLLECTION).where("slug", "==", slug).limit(1).get();
-
-      if (!snapshot.empty) {
-        return mapFirestorePost(snapshot.docs[0].data() as FirestoreBlogDoc);
-      }
-
-      return (await getLocalPostsMerged()).find((post) => post.slug === slug);
-  } catch {
-      return (await getLocalPostsMerged()).find((post) => post.slug === slug);
+    return mergePostsWithFirestore(await getFirestorePosts());
+  } catch (error) {
+    console.error("Failed to load admin blog posts from Firestore.", error);
+    return getLocalPostsMerged();
   }
+}
+
+export async function getPostBySlug(slug: string) {
+  const normalizedSlug = slug.trim().toLowerCase();
+
+  if (isFirebaseAdminConfigured()) {
+    try {
+      const firestorePost = (await getFirestorePosts()).find((post) => post.slug === normalizedSlug);
+      if (firestorePost) {
+        return firestorePost;
+      }
+    } catch (error) {
+      console.error("Failed to load blog post from Firestore.", error);
+    }
+  }
+
+  return (await getLocalPostsMerged()).find((post) => post.slug === normalizedSlug);
 }
 
 export async function getAllPostsForSitemap() {
@@ -385,12 +413,17 @@ export async function createBlogPost(input: CreateBlogInput) {
       }
 
       await db.collection(BLOG_COLLECTION).add({
-        ...payload,
+        ...toFirestoreBlogDoc(payload),
         createdAt: FieldValue.serverTimestamp(),
         updatedAt: FieldValue.serverTimestamp(),
       });
 
-      return mapFirestorePost(payload);
+      const savedPost = mapFirestorePost(payload);
+      if (!savedPost) {
+        throw new Error("Unable to save blog post to Firestore.");
+      }
+
+      return savedPost;
     } catch (error) {
       if (!shouldFallbackToLocalStore(error)) {
         throw error instanceof Error ? error : new Error("Unable to save blog post to Firestore.");
@@ -401,8 +434,13 @@ export async function createBlogPost(input: CreateBlogInput) {
         throw new Error("A blog with this slug already exists.");
       }
 
+      const mappedPost = mapFirestorePost(payload);
+      if (!mappedPost) {
+        throw new Error("Unable to save blog post.");
+      }
+
       const localPost: BlogPost = {
-        ...mapFirestorePost(payload),
+        ...mappedPost,
         slug: normalizedSlug,
       };
 
@@ -420,8 +458,13 @@ export async function createBlogPost(input: CreateBlogInput) {
     throw new Error("A blog with this slug already exists.");
   }
 
+  const mappedPost = mapFirestorePost(payload);
+  if (!mappedPost) {
+    throw new Error("Unable to save blog post.");
+  }
+
   const localPost: BlogPost = {
-    ...mapFirestorePost(payload),
+    ...mappedPost,
     slug: normalizedSlug,
   };
 

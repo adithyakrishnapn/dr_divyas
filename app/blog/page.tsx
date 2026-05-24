@@ -3,6 +3,8 @@ import { getPublishedPosts } from "@/lib/blog";
 import { BlogList } from "./blog-list";
 import { buildMetadata } from "@/lib/seo";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = buildMetadata({
   title: "Dermatology Blog, Skin Care Tips & Treatment Guides",
   description:

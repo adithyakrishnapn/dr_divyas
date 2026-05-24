@@ -4,6 +4,8 @@ import { getPostBySlug } from "@/lib/blog";
 import { buildMetadata } from "@/lib/seo";
 import { BlogDetailClient } from "./blog-detail-client";
 
+export const dynamic = "force-dynamic";
+
 type BlogDetailPageProps = {
   params: Promise<{ slug: string }>;
 };
