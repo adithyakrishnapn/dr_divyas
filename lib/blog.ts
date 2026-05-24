@@ -110,6 +110,33 @@ const legacyBlogPosts: Array<{
 const BLOG_COLLECTION = "blogs";
 const LOCAL_BLOG_STORE_PATH = path.join(process.cwd(), "data", "blogs.json");
 
+function canPersistToLocalBlogStore() {
+  return process.env.NODE_ENV === "development" && process.env.VERCEL !== "1";
+}
+
+function isExpectedBlogError(error: unknown) {
+  if (!(error instanceof Error)) {
+    return false;
+  }
+
+  const { message } = error;
+  return (
+    message === "A blog with this slug already exists." ||
+    message === "Blog post not found." ||
+    message === "Built-in sample posts cannot be deleted."
+  );
+}
+
+function shouldFallbackToLocalStore(error: unknown) {
+  return canPersistToLocalBlogStore() && !isExpectedBlogError(error);
+}
+
+function getRemoteBlogPersistError() {
+  return new Error(
+    "Blog publishing requires Firebase on the server. Add FIREBASE_PROJECT_ID, FIREBASE_CLIENT_EMAIL, and FIREBASE_PRIVATE_KEY to your hosting provider, then redeploy.",
+  );
+}
+
 const sanitizeOptions: sanitizeHtml.IOptions = {
   allowedTags: [
     "p",
@@ -364,7 +391,11 @@ export async function createBlogPost(input: CreateBlogInput) {
       });
 
       return mapFirestorePost(payload);
-    } catch {
+    } catch (error) {
+      if (!shouldFallbackToLocalStore(error)) {
+        throw error instanceof Error ? error : new Error("Unable to save blog post to Firestore.");
+      }
+
       const localPosts = await readLocalPosts();
       if (localPosts.some((post) => post.slug === normalizedSlug)) {
         throw new Error("A blog with this slug already exists.");
@@ -378,6 +409,10 @@ export async function createBlogPost(input: CreateBlogInput) {
       await writeLocalPosts([...localPosts, localPost]);
       return localPost;
     }
+  }
+
+  if (!canPersistToLocalBlogStore()) {
+    throw getRemoteBlogPersistError();
   }
 
   const localPosts = await readLocalPosts();
@@ -448,9 +483,15 @@ export async function updateBlogPost(currentSlug: string, input: UpdateBlogInput
 
         return nextPost;
       }
-    } catch {
-      // Fall back to the local store.
+    } catch (error) {
+      if (!shouldFallbackToLocalStore(error)) {
+        throw error instanceof Error ? error : new Error("Unable to update blog post in Firestore.");
+      }
     }
+  }
+
+  if (!canPersistToLocalBlogStore()) {
+    throw getRemoteBlogPersistError();
   }
 
   const localPosts = await readLocalPosts();
@@ -485,9 +526,19 @@ export async function deleteBlogPost(slug: string) {
         await snapshot.docs[0].ref.delete();
         deleted = true;
       }
-    } catch {
-      // Fall back to local deletion.
+    } catch (error) {
+      if (!shouldFallbackToLocalStore(error)) {
+        throw error instanceof Error ? error : new Error("Unable to delete blog post from Firestore.");
+      }
     }
+  }
+
+  if (!canPersistToLocalBlogStore()) {
+    if (!deleted) {
+      throw new Error("Blog post not found.");
+    }
+
+    return true;
   }
 
   const localDeleted = await deleteLocalPost(normalizedSlug);
@@ -523,16 +574,24 @@ export async function incrementBlogViews(slug: string) {
         return;
       }
     } catch {
-      // Fall through to local store.
+      return;
     }
   }
 
+  if (!canPersistToLocalBlogStore()) {
+    return;
+  }
+
   const localPosts = await readLocalPosts();
+  const targetIndex = localPosts.findIndex((post) => post.slug === slug);
+
+  if (targetIndex === -1) {
+    return;
+  }
+
   const nextPosts = localPosts.map((post) =>
     post.slug === slug ? { ...post, views: post.views + 1 } : post,
   );
 
-  if (nextPosts.length !== localPosts.length) {
-    await writeLocalPosts(nextPosts);
-  }
+  await writeLocalPosts(nextPosts);
 }
