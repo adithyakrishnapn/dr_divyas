@@ -68,32 +68,32 @@ const commonLandingLinks = [
 
 function buildIntro(serviceName: string, cityContext: string) {
   return [
-    `If you are searching for ${serviceName.toLowerCase()} in ${cityContext}, this page is designed to answer the practical questions patients usually have before booking a consultation.`,
-    `Patients from nearby parts of Coimbatore often want a dermatologist who can explain the issue clearly, outline the treatment plan, and make follow-up easy from areas such as Saravanampatti, Ganapathy, Peelamedu, Thudiyalur, RS Puram, and Gandhipuram.`,
+    `Our clinical approach to ${serviceName.toLowerCase()} in ${cityContext} focuses on delivering safe, dermatologist-led care tailored to your unique skin and hair needs.`,
+    `We provide highly accessible consultations and follow-up support for patients across Coimbatore, including Ganapathy, Saravanampatti, Peelamedu, Thudiyalur, RS Puram, and Gandhipuram.`,
   ];
 }
 
 function buildTreatmentFaqs(serviceName: string, cityContext: string): SeoLandingFaq[] {
   return [
     {
-      question: `Is ${serviceName.toLowerCase()} suitable if I am searching from ${cityContext}?`,
+      question: `Is ${serviceName.toLowerCase()} suitable if I live in the ${cityContext} area?`,
       answer:
-        `Yes. The page is built for people in ${cityContext} and nearby Coimbatore localities who want a clear, doctor-led plan for their skin concern.`,
+        `Yes. Our Coimbatore clinic offers dermatologist-led, custom-tailored ${serviceName.toLowerCase()} for patients from all local neighborhoods seeking professional care.`,
     },
     {
-      question: `Do you also help people looking for a dermatologist near me?`,
+      question: `Do you offer comprehensive consultations and ongoing skin care follow-ups?`,
       answer:
-        "Yes. Many patients arrive through near-me searches and want a clinic that balances diagnosis, treatment planning, and follow-up in one place.",
+        "Yes. We specialize in providing accurate clinical diagnoses, personalized treatment planning, and regular progress monitoring all under one roof.",
     },
     {
       question: `Can I combine ${serviceName.toLowerCase()} with pigmentation or acne care?`,
       answer:
-        "In many cases, yes. Patients often need a combination plan, especially when acne marks, pigmentation, scars, or scalp concerns overlap.",
+        "Yes. Many patients present with overlapping skin and hair concerns. We design unified plans that safely address breakouts, scars, pigmentation, and scalp issues concurrently.",
     },
     {
-      question: `How do I book a consultation before travelling in?`,
+      question: `How do I schedule an appointment before visiting the clinic?`,
       answer:
-        "Use the appointment, WhatsApp, or call options on the site so you can confirm the visit before you leave home.",
+        "You can easily book a convenient consultation time by calling us directly, sending a WhatsApp message, or using our online appointment form.",
     },
   ];
 }
@@ -101,24 +101,24 @@ function buildTreatmentFaqs(serviceName: string, cityContext: string): SeoLandin
 function buildAreaFaqs(areaName: string): SeoLandingFaq[] {
   return [
     {
-      question: `Is this page relevant if I live in ${areaName}?`,
+      question: `Is your dermatology clinic accessible for patients residing in ${areaName}?`,
       answer:
-        `Yes. It is written for patients from ${areaName} who want a nearby skin doctor, dermatologist, or hair specialist with a simple booking path.`,
+        `Yes. We regularly serve patients from ${areaName} and other nearby neighborhoods, providing them with expert dermatologist consultations and customized skin and hair care.`,
     },
     {
-      question: `Which nearby areas can also use this page?`,
+      question: `Which surrounding areas do you commonly welcome patients from?`,
       answer:
-        "Patients from surrounding Coimbatore neighborhoods often use the same clinic pages for acne, hair fall, pigmentation, laser, and routine skin care.",
+        "We welcome patients from all residential and commercial zones across Coimbatore, offering specialized care for acne, hair thinning, melasma, and general skin health.",
     },
     {
-      question: `Do you handle skin doctor near me searches?`,
+      question: `Can I consult with Dr. Divya for chronic or recurring skin concerns?`,
       answer:
-        "Yes. The page is optimized for local intent, mobile users, and voice-style searches that ask for a trusted clinic nearby.",
+        "Yes. Dr. Divya is highly experienced in diagnosing and treating chronic skin disorders, active acne flare-ups, stubborn pigmentation, and scalp inflammation.",
     },
     {
-      question: `Can I call before I visit from ${areaName}?`,
+      question: `What is the easiest way to reach your clinic from ${areaName}?`,
       answer:
-        "Yes. Calling or sending a WhatsApp message first is the quickest way to confirm timing and consultation availability.",
+        "Our clinic is conveniently situated with excellent road connections. We recommend calling or messaging us on WhatsApp first to secure your preferred appointment slot and get driving directions.",
     },
   ];
 }
@@ -152,30 +152,30 @@ function buildTreatmentPage(config: {
     intro: richContent?.intro ?? buildIntro(config.serviceName, "Coimbatore"),
     expandedParagraphs: richContent?.expandedParagraphs ?? [],
     trustPoints: [
-      "Doctor-led evaluation before treatment is recommended",
-      "Plans designed for first visits and follow-up care",
-      "Built for local patients, mobile searches, and near-me intent",
+      "Doctor-led clinical evaluation before any treatment recommendation",
+      "Personalized care pathways for active treatment and ongoing maintenance",
+      "Highly accessible location in Coimbatore with convenient booking options",
     ],
     sections: richContent?.sections ?? [
       {
-        title: `Why people search for ${config.serviceName.toLowerCase()} locally`,
+        title: `Comprehensive care for ${config.serviceName.toLowerCase()}`,
         items: config.treatmentAngles,
       },
       {
-        title: `What the consultation usually covers`,
+        title: `What your clinical consultation covers`,
         items: [
-          "A skin or scalp assessment based on the main concern",
-          "A clear explanation of likely causes and triggers",
-          "A practical treatment plan that is easy to follow between visits",
-          "Advice on home care, maintenance, and follow-up timing",
+          "A comprehensive skin or scalp analysis based on your symptoms",
+          "An honest explanation of root causes, triggers, and lifestyle factors",
+          "A medically sound treatment plan that fits naturally into your daily routine",
+          "Professional guidance on home care products and follow-up timelines",
         ],
       },
       {
-        title: "Local reach across Coimbatore",
+        title: "Serving patients across Coimbatore",
         items: [
-          "Patients commonly travel from Saravanampatti, Ganapathy, Peelamedu, Thudiyalur, RS Puram, and Gandhipuram.",
-          "The page supports Coimbatore-specific searches without sounding forced or repetitive.",
-          "It also reinforces topical authority for skin, hair, acne, pigmentation, and laser care.",
+          "Conveniently accessible for individuals and families traveling from Saravanampatti, Ganapathy, Peelamedu, Thudiyalur, RS Puram, and Gandhipuram.",
+          "Providing a patient-first experience with a focus on trust, safety, and clinical excellence.",
+          "Comprehensive specialization in advanced skin rejuvenation, acne solutions, pigmentation treatment, and hair restoration.",
         ],
       },
     ],
@@ -221,14 +221,14 @@ function buildAreaPage(config: {
     focusKeyword: config.focusKeyword,
     h1: config.h1,
     intro: [
-      `People searching from ${config.areaName} usually want a clinic that is close enough for repeat visits and strong enough for proper diagnosis.`,
-      `This page is written to strengthen local relevance for ${config.areaName}, while still connecting naturally to Coimbatore-wide treatment searches and nearby neighborhoods.`,
+      `For patients residing in ${config.areaName}, access to advanced and trusted dermatological care is essential for maintaining skin and scalp health.`,
+      `Dr. Divya's Skin & Hair Clinic serves as a primary destination for individuals seeking specialized acne care, hair fall solutions, and skin rejuvenation in a warm, patient-first environment.`,
     ],
     expandedParagraphs: [],
     trustPoints: [
-      "Easy to understand booking path for local patients",
-      "Useful for near-me searches and mobile users",
-      "Supports follow-up visits and ongoing skin care",
+      "Seamless consultation booking via WhatsApp or phone",
+      "Convenient travel times and direct route connections from nearby areas",
+      "Patient-focused follow-up care for long-term clinical success",
     ],
     sections: [
       {

@@ -56,10 +56,10 @@ const treatments = [
 ];
 
 const highlights = [
-  { count: "4K+", label: "Happy Patients", icon: Users },
-  { count: "10 Years", label: "Years Experience", icon: Award },
-  { count: "4.9/5", label: "Patient Rating", icon: Star },
-  { count: "24/7", label: "Support Available", icon: Clock },
+  { count: "4,000+", label: "Happy Patients", icon: Users },
+  { count: "10+ Years", label: "Clinical Expertise", icon: Award },
+  { count: "4.9★", label: "Patient Rating", icon: Star },
+  { count: "Mon - Sat", label: "10 AM - 7 PM", icon: Clock },
 ];
 
 const whyChoose = [
@@ -468,7 +468,7 @@ export default function Home() {
                 Dermatology Care Across Coimbatore
               </h2>
               <p className="text-lg text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                Explore dedicated local pages for patients searching from Saravanampatti, Peelamedu, Gandhipuram, RS Puram, Race Course, Avinashi Road, and nearby Coimbatore neighbourhoods.
+                We are proud to serve patients from all major residential and commercial hubs across Coimbatore. Discover our nearby coverage and easily accessible clinic route guidance.
               </p>
             </motion.div>
 
@@ -485,7 +485,7 @@ export default function Home() {
                     href={area.href}
                     className="card-premium flex items-center justify-between gap-3 px-5 py-4 font-semibold text-amber-900 hover:bg-amber-50"
                   >
-                    <span>Best clinic in {area.label}</span>
+                    <span>Serving patients from {area.label}</span>
                     <ArrowRight className="h-4 w-4 text-amber-600" />
                   </Link>
                 </motion.div>

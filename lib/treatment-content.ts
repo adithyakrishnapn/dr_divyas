@@ -28,11 +28,11 @@ export type TreatmentRichContent = {
 
 export const acneTreatmentContent: TreatmentRichContent = {
   metaDescription:
-    "Expert acne treatment in Coimbatore for active breakouts, scars & marks. Doctor-led plans, visible results in weeks. Book your free consultation today — call +91 9994759380.",
+    "Professional dermatologist-led acne and scar treatment plans in Coimbatore. Safe, evidence-based therapies custom-tailored for clear, healthy skin. Schedule a clinical consultation today.",
   intro: [
-    "Acne is one of the most common reasons people search for a dermatologist in Coimbatore. Heat, humidity, pollution, stress, and inconsistent skincare can all trigger breakouts that leave behind marks and scars if not treated early.",
-    "At Dr Divya's Skin & Hair Clinic, acne treatment starts with understanding your skin type, identifying triggers, and building a plan that controls active pimples while protecting the skin barrier. Patients from Saravanampatti, Peelamedu, RS Puram, Ganapathy, and across Coimbatore visit for doctor-led acne care that goes beyond over-the-counter products.",
-    "Whether you are a teenager with hormonal acne, an adult with recurring breakouts along the jawline, or someone dealing with post-acne marks and texture, this page explains what causes acne, which treatments work, how long results take, and what aftercare keeps skin clear.",
+    "Acne is a highly common and persistent skin concern that affects individuals of all ages. In Coimbatore's humid climate, environmental factors like heat, dust, and pollution can significantly worsen sebum production, leading to painful breakouts that may leave behind deep scars or hyperpigmentation if untreated.",
+    "At Dr. Divya's Skin & Hair Clinic, we approach acne care with clinical precision. Our treatment begins with a thorough diagnostic evaluation of your skin type, hormone triggers, and lifestyle factors to control active pimples while actively repairing the skin barrier. Patients from Saravanampatti, Peelamedu, RS Puram, Ganapathy, and across Coimbatore visit for dermatologist-led care that delivers safe, predictable results.",
+    "From teenage acne to stubborn adult breakouts and post-acne scarring, we design customized, evidence-based plans combining medical topicals, chemical peels, and advanced scar procedures to restore skin health and confidence.",
   ],
   expandedParagraphs: [
     "Coimbatore's climate creates a perfect storm for acne. High humidity increases oil production, dust and pollution clog pores, and many people skip sunscreen because creams feel heavy — which worsens post-acne pigmentation. Office workers in the IT corridor often report stress-related flare-ups, while students near Peelamedu and Hope College frequently struggle with combination skin that is oily in the T-zone but dry on the cheeks.",
@@ -121,9 +121,9 @@ export const acneTreatmentContent: TreatmentRichContent = {
         "Cost depends on severity and whether you need only topicals or in-clinic procedures too. Consultation fees and treatment plans are discussed upfront at your first visit. Book a consultation for a personalised estimate.",
     },
     {
-      question: "Do you treat acne for patients from Saravanampatti and Peelamedu?",
+      question: "How easily accessible is the clinic for patients traveling from other parts of Coimbatore?",
       answer:
-        "Yes. Patients travel from Saravanampatti, Peelamedu, Ganapathy, RS Puram, Thudiyalur, and across Coimbatore. You can book via phone, WhatsApp, or the contact form before visiting.",
+        "Our clinic is centrally located and highly accessible for patients from all major Coimbatore neighborhoods, including Saravanampatti, Peelamedu, Ganapathy, RS Puram, and Thudiyalur. We recommend scheduling an appointment in advance via phone or WhatsApp to secure a convenient slot.",
     },
   ],
   caseStudies: [
@@ -143,22 +143,7 @@ export const acneTreatmentContent: TreatmentRichContent = {
       result: "Breakouts controlled in 2 months. Scar depth visibly reduced by session 4. Patient continues maintenance care and annual review.",
     },
   ],
-  beforeAfter: [
-    {
-      beforeImage: sampleImages.acneBefore,
-      afterImage: sampleImages.acneAfter,
-      beforeAlt: "Before acne treatment in Coimbatore — active inflammatory breakouts on cheeks",
-      afterAlt: "After acne treatment in Coimbatore — clearer skin with reduced breakouts and marks",
-      caption: "Active acne control with doctor-guided topicals and peel support over 8 weeks",
-    },
-    {
-      beforeImage: sampleImages.treatment2,
-      afterImage: sampleImages.treatment1,
-      beforeAlt: "Before acne scar treatment — uneven texture and post-acne marks",
-      afterAlt: "After acne scar treatment — smoother skin texture after microneedling sessions",
-      caption: "Acne mark and texture improvement with in-clinic procedures and home care",
-    },
-  ],
+  beforeAfter: [],
   relatedLinks: [
     { label: "Pigmentation treatment in Coimbatore", href: "/pigmentation-treatment-coimbatore" },
     { label: "Chemical peel in Coimbatore", href: "/chemical-peel-coimbatore" },
@@ -169,11 +154,11 @@ export const acneTreatmentContent: TreatmentRichContent = {
 
 export const hairFallTreatmentContent: TreatmentRichContent = {
   metaDescription:
-    "Hair fall treatment in Coimbatore for men & women. Indian climate-specific care, PRP & scalp therapy. Book a scalp assessment today — call +91 9994759380.",
+    "Dermatologist-led hair fall and scalp restoration treatments in Coimbatore. Advanced PRP, scalp therapies, and personalized plans for thinning hair and shedding. Schedule an expert scalp evaluation.",
   intro: [
-    "Hair fall is one of the top concerns for both men and women searching for a dermatologist in Coimbatore. Shedding 50–100 hairs daily is normal, but when clumps appear on your pillow, in the shower, or when you run your fingers through your hair, it is time for a proper scalp evaluation.",
-    "Coimbatore's hot, humid climate, hard water in many areas, stress from long commutes, and nutritional gaps all contribute to hair thinning. Dr Divya's Skin & Hair Clinic offers doctor-led hair fall treatment that identifies the root cause — whether it is androgenetic alopecia, telogen effluvium, dandruff, or scalp inflammation — before starting any therapy.",
-    "This page covers hair fall causes specific to South Indian climate, treatment options available at the clinic, realistic success rates, and how to maintain results with follow-up care.",
+    "Experiencing hair fall or visible thinning can be deeply concerning. While shedding 50 to 100 strands a day is natural, excessive hair loss, widening parts, or localized thinning indicate that it is time for a professional medical evaluation to restore scalp and follicle health.",
+    "Coimbatore's environmental conditions—including hard water mineral buildup, high humidity, and sweat accumulation—can weaken the hair shaft and promote fungal scalp irritation, accelerating hair fall. At Dr. Divya's Skin & Hair Clinic, we offer advanced trichological diagnostic support to uncover the underlying causes of shedding before starting any therapy.",
+    "We combine expert clinical diagnostics (such as scalp trichoscopy) with advanced therapies like PRP and specialized scalp mesotherapy to deliver healthy, sustainable hair restoration and density improvements.",
   ],
   expandedParagraphs: [
     "Hair fall in Indian climate often has multiple triggers working together. Hard water mineral buildup can make hair brittle. Humidity promotes fungal growth on the scalp (dandruff), which accelerates shedding if untreated. Seasonal hair fall — especially during monsoon and post-illness — is common in Coimbatore. Women frequently report increased shedding 3–6 months after childbirth, surgery, or severe stress (telogen effluvium).",
@@ -272,15 +257,7 @@ export const hairFallTreatmentContent: TreatmentRichContent = {
       result: "Itching stopped in 1 week. Dandruff controlled in 3 weeks. Hair fall reduced to normal levels within 6 weeks.",
     },
   ],
-  beforeAfter: [
-    {
-      beforeImage: sampleImages.hairBefore,
-      afterImage: sampleImages.hairAfter,
-      beforeAlt: "Before hair fall treatment in Coimbatore — visible scalp thinning and reduced density",
-      afterAlt: "After hair fall treatment in Coimbatore — improved hair density after PRP and medical therapy",
-      caption: "Hair density improvement with PRP sessions and consistent medical therapy over 5 months",
-    },
-  ],
+  beforeAfter: [],
   relatedLinks: [
     { label: "Acne treatment in Coimbatore", href: "/acne-treatment-coimbatore" },
     { label: "Laser treatment in Coimbatore", href: "/laser-treatment-coimbatore" },
@@ -291,11 +268,11 @@ export const hairFallTreatmentContent: TreatmentRichContent = {
 
 export const pigmentationTreatmentContent: TreatmentRichContent = {
   metaDescription:
-    "Pigmentation & melasma treatment in Coimbatore. Sun spots, melasma & acne marks — doctor-led plans that work. Book your skin assessment today!",
+    "Dermatologist-led pigmentation and melasma treatments in Coimbatore. Safe, medically advanced chemical peels and laser toning for uneven skin tone and dark spots. Book your skin assessment today.",
   intro: [
-    "Uneven skin tone, dark patches, melasma, and sun spots are among the most frustrating skin concerns for Coimbatore patients. The city's strong UV exposure, even during overcast days, makes pigmentation return quickly if treatment and sun protection are not maintained together.",
-    "Dr Divya's Skin & Hair Clinic provides pigmentation treatment that distinguishes between melasma (hormonal, brown patches on cheeks and forehead), post-inflammatory hyperpigmentation (dark marks after acne), and solar lentigines (sun spots) — because each type needs a different approach.",
-    "This guide explains the differences, compares treatment options, shares prevention tips for Indian skin in Coimbatore weather, and sets realistic expectations for how long improvement takes.",
+    "Uneven skin tone, dark patches, melasma, and sun spots are highly common concerns for patients in Coimbatore. Due to persistent UV exposure—even on cloudy or overcast days—pigmentation can reactivate rapidly, making consistent professional care and medical-grade sun protection vital.",
+    "At Dr. Divya's Skin & Hair Clinic, we specialize in distinguishing between various forms of hyperpigmentation. We carefully assess whether your patches represent melasma (hormonally triggered), post-inflammatory hyperpigmentation (dark marks left by acne), or solar lentigines (sun spots), as each type requires a completely different clinical approach to prevent worsening.",
+    "We focus on identifying the precise depth and type of pigmentation to design highly targeted, safe, and sustainable skin-brightening plans combining dermatologist-supervised chemical peels, laser toning, and customized topical routines.",
   ],
   expandedParagraphs: [
     "Melasma is often triggered by pregnancy, oral contraceptives, thyroid issues, or sun exposure. It appears as symmetrical brown patches on the cheeks, forehead, nose, and upper lip. Sun spots (solar lentigines) are smaller, discrete brown spots from cumulative UV damage. Post-acne marks (PIH) follow breakouts and can last months if skin is not protected. Treating all three the same way — with aggressive peels or lasers — often makes melasma worse.",
@@ -389,15 +366,7 @@ export const pigmentationTreatmentContent: TreatmentRichContent = {
       result: "Sun spots reduced by 70% after 3 sessions. Maintenance SPF prevents new spots forming.",
     },
   ],
-  beforeAfter: [
-    {
-      beforeImage: sampleImages.pigmentationBefore,
-      afterImage: sampleImages.pigmentationAfter,
-      beforeAlt: "Before pigmentation treatment in Coimbatore — uneven skin tone and dark patches on face",
-      afterAlt: "After pigmentation treatment in Coimbatore — brighter, more even skin tone after peel and topical therapy",
-      caption: "Melasma and uneven tone improvement with combined topical and peel treatment over 4 months",
-    },
-  ],
+  beforeAfter: [],
   relatedLinks: [
     { label: "Melasma treatment in Coimbatore", href: "/melasma-treatment-coimbatore" },
     { label: "Acne treatment in Coimbatore", href: "/acne-treatment-coimbatore" },

@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Dr Divya's Skin & Hair Clinic",
   description:
-    "Dr Divya's Skin & Hair Clinic in Coimbatore offers advanced acne, pigmentation, laser, hair fall and skin rejuvenation treatments.",
+    "Dr Divya's Skin & Hair Clinic in Coimbatore provides dermatologist-led care, offering advanced treatments for acne, pigmentation, hair fall, and skin rejuvenation.",
   url: "https://www.drdivyas.in",
   mapUrl: "https://maps.app.goo.gl/aEKS7UrxVSEta2Zd7",
   mapsEmbedUrl:

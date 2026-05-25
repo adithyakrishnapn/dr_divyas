@@ -137,7 +137,7 @@ export default function AboutPage() {
                   <MapPin className="h-5 w-5 text-amber-600 flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-bold text-amber-900">Located in Coimbatore</p>
-                    <p className="text-sm text-slate-600">Best clinic in Tamil Nadu</p>
+                    <p className="text-sm text-slate-600">Trusted Care in Coimbatore</p>
                   </div>
                 </div>
               </motion.div>
