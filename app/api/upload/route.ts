@@ -5,7 +5,7 @@ import { writeFile, mkdir } from "fs/promises";
 import path from "path";
 
 export async function POST(request: Request) {
-  // Validate session if Firebase is configured
+  // Validate session if Firebase is configured (for production admin check)
   const isFirebase = isFirebaseAdminConfigured();
   if (isFirebase) {
     const session = await getAdminSession();
@@ -40,52 +40,14 @@ export async function POST(request: Request) {
     const uniqueId = `${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
     const fileName = `${uniqueId}.${fileExtension}`;
 
-    if (isFirebase) {
-      try {
-        const { getStorage } = await import("firebase-admin/storage");
-        const { getFirebaseAdminApp } = await import("@/lib/firebase/admin");
-
-        const storage = getStorage(getFirebaseAdminApp());
-        const bucketName =
-          process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET ||
-          `${process.env.FIREBASE_PROJECT_ID}.appspot.com`;
-        
-        const bucket = storage.bucket(bucketName);
-        const destination = `blogs/${fileName}`;
-        const fileRef = bucket.file(destination);
-
-        await fileRef.save(buffer, {
-          metadata: {
-            contentType: file.type,
-          },
-        });
-
-        // Try to make the file public
-        try {
-          await fileRef.makePublic();
-        } catch (pubErr) {
-          console.warn("Failed to make file public via makePublic(), trying signed/alternative URL.", pubErr);
-        }
-
-        // Return public URL
-        const publicUrl = `https://storage.googleapis.com/${bucket.name}/${destination}`;
-        return NextResponse.json({ url: publicUrl });
-      } catch (fbError) {
-        console.error("Firebase upload failed, falling back to local storage in development:", fbError);
-        // Fallback to local storage if running in development mode
-        if (process.env.NODE_ENV !== "development") {
-          throw fbError;
-        }
-      }
-    }
-
-    // Local upload fallback (development or self-hosted)
+    // Upload directly to the project's public uploads directory
     const uploadsDir = path.join(process.cwd(), "public", "uploads");
     await mkdir(uploadsDir, { recursive: true });
     
     const filePath = path.join(uploadsDir, fileName);
     await writeFile(filePath, buffer);
 
+    // Return the relative URL of the public asset
     const publicUrl = `/uploads/${fileName}`;
     return NextResponse.json({ url: publicUrl });
   } catch (error) {
