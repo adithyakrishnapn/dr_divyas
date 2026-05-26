@@ -26,7 +26,7 @@ export function isFirebaseAdminConfigured() {
 
 let adminApp: App | null = null;
 
-function getFirebaseAdminApp() {
+export function getFirebaseAdminApp() {
   const config = getAdminConfig();
   if (!config) {
     throw new Error("Firebase Admin environment variables are not configured.");

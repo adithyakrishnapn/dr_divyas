@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { UploadCloud, Image as ImageIcon, Loader2, X, Link as LinkIcon } from "lucide-react";
+
 
 type FormState = {
   title: string;
@@ -63,6 +65,74 @@ export function BlogEditorForm({
   const [state, setState] = useState<FormState>(getInitialState(initialValues));
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
+  const [dragActive, setDragActive] = useState(false);
+  const [uploading, setUploading] = useState(false);
+  const [uploadError, setUploadError] = useState("");
+
+  const handleDrag = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.type === "dragenter" || e.type === "dragover") {
+      setDragActive(true);
+    } else if (e.type === "dragleave") {
+      setDragActive(false);
+    }
+  };
+
+  const handleDrop = async (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragActive(false);
+
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      await handleUpload(e.dataTransfer.files[0]);
+    }
+  };
+
+  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    if (e.target.files && e.target.files[0]) {
+      await handleUpload(e.target.files[0]);
+    }
+  };
+
+  const handleUpload = async (file: File) => {
+    if (!file.type.startsWith("image/")) {
+      setUploadError("Please upload an image file.");
+      return;
+    }
+
+    setUploading(true);
+    setUploadError("");
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+      const response = await fetch("/api/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        const data = (await response.json()) as { error?: string };
+        throw new Error(data.error || "Failed to upload image.");
+      }
+
+      const data = (await response.json()) as { url: string };
+      setState((prev) => ({ ...prev, image: data.url }));
+    } catch (err) {
+      console.error(err);
+      setUploadError(err instanceof Error ? err.message : "Failed to upload image.");
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  const handleRemoveImage = () => {
+    setState((prev) => ({ ...prev, image: "" }));
+    setUploadError("");
+  };
 
   const endpoint = mode === "edit" && currentSlug ? `/api/blogs/${currentSlug}` : "/api/blogs";
   const method = mode === "edit" ? "PATCH" : "POST";
@@ -158,13 +228,122 @@ export function BlogEditorForm({
             />
           </div>
 
-          <div>
-            <label className="mb-1 block text-sm font-semibold text-amber-900">Featured Image URL</label>
-            <input
-              value={state.image}
-              onChange={(event) => setState((prev) => ({ ...prev, image: event.target.value }))}
-              className="w-full rounded-lg border border-amber-200 px-3 py-2 focus:border-amber-600 focus:outline-none"
-            />
+          <div className="md:col-span-2">
+            <label className="mb-2 block text-sm font-semibold text-amber-900">Featured Image</label>
+            
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+              {/* Upload Zone / Preview (takes 2 cols on md) */}
+              <div className="md:col-span-2">
+                {state.image ? (
+                  // Image Preview Card
+                  <div className="relative overflow-hidden rounded-xl border border-amber-100 bg-amber-50/20 p-4">
+                    <div className="group relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-lg bg-slate-100 shadow-inner">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={state.image}
+                        alt="Featured image preview"
+                        className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-black/45 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-center justify-center gap-3">
+                        <button
+                          type="button"
+                          onClick={handleRemoveImage}
+                          className="rounded-full bg-white p-2.5 text-rose-600 shadow-lg hover:bg-rose-50 transition transform hover:scale-110 cursor-pointer"
+                          title="Remove image"
+                        >
+                          <X className="h-5 w-5" />
+                        </button>
+                      </div>
+                    </div>
+                    
+                    <div className="mt-3 flex items-center justify-between gap-4 text-xs text-slate-500">
+                      <span className="truncate flex-1 font-mono bg-white px-2 py-1 rounded border border-amber-100">
+                        {state.image}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={handleRemoveImage}
+                        className="font-semibold text-rose-600 hover:text-rose-700 transition cursor-pointer"
+                      >
+                        Remove Image
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  // Drag & Drop Zone
+                  <div
+                    onDragEnter={handleDrag}
+                    onDragOver={handleDrag}
+                    onDragLeave={handleDrag}
+                    onDrop={handleDrop}
+                    className={`relative flex flex-col items-center justify-center rounded-xl border-2 border-dashed p-8 text-center transition ${
+                      dragActive
+                        ? "border-amber-600 bg-amber-50/50"
+                        : "border-amber-200 bg-white hover:border-amber-400 hover:bg-amber-50/10"
+                    }`}
+                  >
+                    <input
+                      type="file"
+                      id="image-upload"
+                      accept="image/*"
+                      className="hidden"
+                      onChange={handleFileChange}
+                      disabled={uploading}
+                    />
+                    
+                    {uploading ? (
+                      <div className="flex flex-col items-center py-4">
+                        <Loader2 className="h-10 w-10 animate-spin text-amber-600" />
+                        <p className="mt-3 text-sm font-medium text-amber-900">Uploading image...</p>
+                        <p className="mt-1 text-xs text-slate-500">Please wait while we store your file securely.</p>
+                      </div>
+                    ) : (
+                      <label
+                        htmlFor="image-upload"
+                        className="flex cursor-pointer flex-col items-center justify-center"
+                      >
+                        <div className="rounded-full bg-amber-50 p-4 text-amber-600 transition group-hover:scale-110">
+                          <UploadCloud className="h-8 w-8" />
+                        </div>
+                        <span className="mt-4 text-sm font-semibold text-amber-900">
+                          Drag and drop or <span className="text-amber-700 underline font-bold">browse</span>
+                        </span>
+                        <span className="mt-1 text-xs text-slate-500">
+                          Supports PNG, JPG, JPEG, WEBP (Max 5MB)
+                        </span>
+                      </label>
+                    )}
+                  </div>
+                )}
+                
+                {uploadError && (
+                  <p className="mt-2 text-xs font-semibold text-rose-600">{uploadError}</p>
+                )}
+              </div>
+              
+              {/* Image URL fallback Input (takes 1 col on md) */}
+              <div className="flex flex-col justify-between rounded-xl border border-amber-100 bg-amber-50/10 p-4">
+                <div>
+                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-800">
+                    <LinkIcon className="h-3.5 w-3.5" />
+                    <span>External URL</span>
+                  </div>
+                  <p className="mt-1.5 text-xs text-slate-500">
+                    Prefer using an external link or Unsplash image? Paste the absolute URL below.
+                  </p>
+                </div>
+                
+                <div className="mt-4 md:mt-0">
+                  <input
+                    type="url"
+                    placeholder="https://images.unsplash.com/..."
+                    value={state.image}
+                    onChange={(event) => setState((prev) => ({ ...prev, image: event.target.value }))}
+                    className="w-full rounded-lg border border-amber-200 bg-white px-3 py-2 text-sm focus:border-amber-600 focus:outline-none"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="md:col-span-2">
