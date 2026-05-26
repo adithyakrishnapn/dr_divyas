@@ -1,3 +1,4 @@
+import { put } from "@vercel/blob";
 import { NextResponse } from "next/server";
 import { getAdminSession } from "@/lib/auth";
 import { isFirebaseAdminConfigured } from "@/lib/firebase/admin";
@@ -38,17 +39,43 @@ export async function POST(request: Request) {
     // Create a safe, unique filename
     const fileExtension = file.name.split(".").pop() || "jpg";
     const uniqueId = `${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
-    const fileName = `${uniqueId}.${fileExtension}`;
+    const fileName = `blogs/${uniqueId}.${fileExtension}`;
 
-    // Upload directly to the project's public uploads directory
+    // If Vercel Blob token is configured, use Vercel Blob
+    if (process.env.BLOB_READ_WRITE_TOKEN) {
+      try {
+        console.log("Uploading image to Vercel Blob...");
+        const blob = await put(fileName, buffer, {
+          access: "public",
+          contentType: file.type,
+        });
+        console.log("Vercel Blob upload successful:", blob.url);
+        return NextResponse.json({ url: blob.url });
+      } catch (vercelError) {
+        console.error("Vercel Blob upload failed:", vercelError);
+        // In local development, fall back to local storage even if token is configured but fails
+        if (process.env.NODE_ENV !== "development") {
+          throw vercelError;
+        }
+      }
+    }
+
+    // Local upload fallback (development only - Vercel is read-only)
+    if (process.env.NODE_ENV !== "development") {
+      return NextResponse.json(
+        { error: "Vercel Blob Storage is not configured. Please enable Vercel Blob in your project's Vercel Dashboard (it has a completely free Hobby tier!)." },
+        { status: 500 }
+      );
+    }
+
     const uploadsDir = path.join(process.cwd(), "public", "uploads");
     await mkdir(uploadsDir, { recursive: true });
     
-    const filePath = path.join(uploadsDir, fileName);
+    const localFileName = `${uniqueId}.${fileExtension}`;
+    const filePath = path.join(uploadsDir, localFileName);
     await writeFile(filePath, buffer);
 
-    // Return the relative URL of the public asset
-    const publicUrl = `/uploads/${fileName}`;
+    const publicUrl = `/uploads/${localFileName}`;
     return NextResponse.json({ url: publicUrl });
   } catch (error) {
     console.error("Upload handler error:", error);
