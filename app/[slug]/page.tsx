@@ -8,7 +8,6 @@ import { buildMetadata } from "@/lib/seo";
 import {
   buildBreadcrumbSchema,
   buildFaqSchema,
-  buildLandingSchema,
   buildServiceSchema,
   getSeoLandingPage,
   seoLandingPageSlugs,
@@ -341,7 +340,6 @@ export default async function SeoLandingPage({ params }: SeoLandingPageProps) {
         </div>
       </section>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildLandingSchema(page)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildServiceSchema(page)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqSchema(page)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbSchema(page)) }} />

@@ -49,31 +49,6 @@ function buildFaqSchema(page: NonNullable<ReturnType<typeof getLocalAreaPage>>) 
   };
 }
 
-function buildLocalBusinessSchema(page: NonNullable<ReturnType<typeof getLocalAreaPage>>) {
-  return {
-    "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "MedicalClinic"],
-    name: siteConfig.name,
-    description: page.metaDescription,
-    url: `${siteConfig.url}/coimbatore/${page.slug}`,
-    telephone: siteConfig.phone,
-    email: siteConfig.email,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: siteConfig.address,
-      addressLocality: "Coimbatore",
-      addressRegion: "Tamil Nadu",
-      addressCountry: "IN",
-    },
-    areaServed: {
-      "@type": "City",
-      name: `Coimbatore - ${page.areaName}`,
-    },
-    medicalSpecialty: ["Dermatology", "Hair Restoration"],
-    sameAs: [siteConfig.url],
-  };
-}
-
 function buildBreadcrumbSchema(page: NonNullable<ReturnType<typeof getLocalAreaPage>>) {
   return {
     "@context": "https://schema.org",
@@ -406,7 +381,6 @@ export default async function AreaPage({ params }: AreaPageProps) {
         </div>
       </section>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildLocalBusinessSchema(page)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqSchema(page)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbSchema(page)) }} />
     </main>

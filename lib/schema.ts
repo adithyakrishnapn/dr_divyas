@@ -1,9 +1,13 @@
 import { siteConfig } from "@/lib/site";
 
 export function buildGlobalBusinessSchema() {
+  const cleanTime = (time: string) => {
+    return time.startsWith("T") ? time.slice(1) : time;
+  };
+
   return {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "MedicalBusiness", "MedicalClinic"],
+    "@type": "MedicalClinic",
     "@id": `${siteConfig.url}/#clinic`,
     name: siteConfig.name,
     description: siteConfig.description,
@@ -18,7 +22,7 @@ export function buildGlobalBusinessSchema() {
       addressLocality: siteConfig.addressLocality,
       addressRegion: siteConfig.addressRegion,
       postalCode: siteConfig.postalCode,
-      addressCountry: siteConfig.addressCountry,
+      addressCountry: "IN",
     },
     geo: {
       "@type": "GeoCoordinates",
@@ -28,8 +32,8 @@ export function buildGlobalBusinessSchema() {
     openingHoursSpecification: siteConfig.openingHours.map((entry) => ({
       "@type": "OpeningHoursSpecification",
       dayOfWeek: entry.days,
-      opens: entry.opens,
-      closes: entry.closes,
+      opens: cleanTime(entry.opens),
+      closes: cleanTime(entry.closes),
     })),
     areaServed: {
       "@type": "City",
