@@ -246,20 +246,29 @@ export async function sendFollowUpEmail({
     return { sent: false, reason: "Follow-up SMTP is not configured in .env." };
   }
 
-  const html = buildEmailHtml({
-    subject: subject,
-    title: "Follow-up Message",
-    preheader: "A message from Dr Divya's team",
-    body: message,
-    details: [],
-  });
+  try {
+    const html = buildEmailHtml({
+      subject: subject,
+      title: "Follow-up Message",
+      preheader: "A message from Dr Divya's team",
+      body: message,
+      details: [],
+    });
 
-  await transport.transporter.sendMail({
-    from: `"${transport.config.fromName}" <${transport.config.fromEmail}>`,
-    to: toEmail,
-    subject: subject,
-    html,
-  });
+    await transport.transporter.sendMail({
+      from: `"${transport.config.fromName}" <${transport.config.fromEmail}>`,
+      to: toEmail,
+      subject: subject,
+      html,
+    });
 
-  return { sent: true };
-}
+    return { sent: true };
+  } catch (error) {
+    console.error("Follow-up email send failed:", error);
+
+    return {
+      sent: false,
+      reason: error instanceof Error ? error.message : "Failed to send follow-up email.",
+    };
+  }
+}
