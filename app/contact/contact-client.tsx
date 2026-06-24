@@ -42,30 +42,50 @@ export default function ContactPage() {
     event.preventDefault();
     setStatus("submitting");
 
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name,
-        phone,
-        email,
-        concern,
-        message,
-        source: "contact-page",
-      }),
-    });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          phone,
+          email,
+          concern,
+          message,
+          source: "contact-page",
+        }),
+      });
 
-    if (!response.ok) {
+      if (!response.ok) {
+        let errorMessage = "Unable to submit contact form.";
+
+        try {
+          const data = (await response.json()) as { error?: string };
+          if (data?.error) {
+            errorMessage = data.error;
+          }
+        } catch {
+          // Ignore JSON parse failures and keep fallback message.
+        }
+
+        console.error("Contact form submission failed:", {
+          status: response.status,
+          message: errorMessage,
+        });
+        setStatus("error");
+        return;
+      }
+
+      setStatus("success");
+      setName("");
+      setPhone("");
+      setEmail("");
+      setConcern("General Skin Care");
+      setMessage("");
+    } catch (error) {
+      console.error("Contact form request error:", error);
       setStatus("error");
-      return;
     }
-
-    setStatus("success");
-    setName("");
-    setPhone("");
-    setEmail("");
-    setConcern("General Skin Care");
-    setMessage("");
   }
 
   return (

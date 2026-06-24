@@ -59,24 +59,44 @@ export function ContactPopup() {
     event.preventDefault();
     setStatus("submitting");
 
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        ...state,
-        source: `popup:${pathname}`,
-      }),
-    });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...state,
+          source: `popup:${pathname}`,
+        }),
+      });
 
-    if (!response.ok) {
+      if (!response.ok) {
+        let errorMessage = "Unable to submit popup contact form.";
+
+        try {
+          const data = (await response.json()) as { error?: string };
+          if (data?.error) {
+            errorMessage = data.error;
+          }
+        } catch {
+          // Ignore JSON parse failures and keep fallback message.
+        }
+
+        console.error("Popup contact form submission failed:", {
+          status: response.status,
+          message: errorMessage,
+        });
+        setStatus("error");
+        return;
+      }
+
+      setStatus("success");
+      setState(initialState);
+      window.localStorage.setItem(STORAGE_KEY, "true");
+      window.setTimeout(() => setOpen(false), 1500);
+    } catch (error) {
+      console.error("Popup contact form request error:", error);
       setStatus("error");
-      return;
     }
-
-    setStatus("success");
-    setState(initialState);
-    window.localStorage.setItem(STORAGE_KEY, "true");
-    window.setTimeout(() => setOpen(false), 1500);
   }
 
   if (!open) {
