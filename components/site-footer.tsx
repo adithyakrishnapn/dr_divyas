@@ -1,13 +1,25 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Heart, Share2, MessageCircle } from "lucide-react";
 import { navLinks, siteConfig } from "@/lib/site";
 import { localAreaPages } from "@/lib/local-area-pages";
 
 export function SiteFooter() {
+  const pathname = usePathname();
+
+  if (pathname?.startsWith("/admin") || pathname?.startsWith("/portal")) {
+    return (
+      <footer className="bg-slate-950 py-6 border-t border-amber-600/20 text-center text-xs text-slate-500">
+        <p>&copy; {new Date().getFullYear()} Dr Divya&apos;s Skin & Hair Clinic. All rights reserved.</p>
+      </footer>
+    );
+  }
+
   const containerVariants = {
+
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,

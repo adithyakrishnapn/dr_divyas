@@ -41,3 +41,44 @@ export async function requireAdminSession() {
 
   return session;
 }
+
+export const PORTAL_SESSION_COOKIE_NAME = "portal_session";
+
+export type PortalSession = {
+  uid: string;
+  email?: string;
+};
+
+export async function getPortalSession(): Promise<PortalSession | null> {
+  if (!isFirebaseAdminConfigured()) {
+    return null;
+  }
+
+  const store = await cookies();
+  const sessionCookie = store.get(PORTAL_SESSION_COOKIE_NAME)?.value;
+
+  if (!sessionCookie) {
+    return null;
+  }
+
+  try {
+    const decoded = await getFirebaseAdminAuth().verifySessionCookie(sessionCookie, true);
+    return {
+      uid: decoded.uid,
+      email: decoded.email,
+    };
+  } catch {
+    return null;
+  }
+}
+
+export async function requirePortalSession() {
+  const session = await getPortalSession();
+
+  if (!session) {
+    redirect("/portal/login");
+  }
+
+  return session;
+}
+

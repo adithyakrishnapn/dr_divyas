@@ -11,6 +11,11 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
+  if (pathname?.startsWith("/admin") || pathname?.startsWith("/portal")) {
+    return null;
+  }
+
+
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-amber-100/50">
       <div className="page-shell flex items-center justify-between py-4">

@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 
-type MailContext = {
+export type MailContext = {
   subject: string;
   title: string;
   preheader: string;
@@ -56,7 +56,7 @@ function escapeHtml(value: string) {
     .replace(/'/g, "&#39;");
 }
 
-function buildEmailHtml(context: MailContext) {
+export function buildEmailHtml(context: MailContext) {
   const detailsMarkup = context.details
     .map(
       (item) => `
@@ -179,3 +179,87 @@ export async function sendClinicLeadAcknowledgement(input: LeadEmailInput) {
 
   return { sent: true };
 }
+
+type FollowUpSmtpConfig = {
+  host: string;
+  port: number;
+  user: string;
+  password: string;
+  fromEmail: string;
+  fromName: string;
+  secure: boolean;
+};
+
+function getFollowUpSmtpConfig(): FollowUpSmtpConfig | null {
+  const host = process.env.FOLLOWUP_SMTP_HOST || process.env.SMTP_HOST;
+  const port = Number(process.env.FOLLOWUP_SMTP_PORT || process.env.SMTP_PORT || "0");
+  const user = process.env.FOLLOWUP_SMTP_USER;
+  const password = process.env.FOLLOWUP_SMTP_PASSWORD;
+  const fromEmail = process.env.FOLLOWUP_SMTP_FROM_EMAIL;
+  const fromName = process.env.SMTP_FROM_NAME ?? "Dr Divya's Skin & Hair Clinic";
+  const secure = process.env.FOLLOWUP_SMTP_SECURE
+    ? process.env.FOLLOWUP_SMTP_SECURE === "true"
+    : process.env.SMTP_SECURE === "true";
+
+  if (!host || !port || !user || !password || !fromEmail) {
+    return null;
+  }
+
+  return { host, port, user, password, fromEmail, fromName, secure };
+}
+
+function getFollowUpTransporter() {
+  const config = getFollowUpSmtpConfig();
+
+  if (!config) {
+    return null;
+  }
+
+  return {
+    config,
+    transporter: nodemailer.createTransport({
+      host: config.host,
+      port: config.port,
+      secure: config.secure,
+      auth: {
+        user: config.user,
+        pass: config.password,
+      },
+    }),
+  };
+}
+
+export async function sendFollowUpEmail({
+  toEmail,
+  name,
+  subject,
+  message,
+}: {
+  toEmail: string;
+  name: string;
+  subject: string;
+  message: string;
+}) {
+  const transport = getFollowUpTransporter();
+
+  if (!transport) {
+    return { sent: false, reason: "Follow-up SMTP is not configured in .env." };
+  }
+
+  const html = buildEmailHtml({
+    subject: subject,
+    title: "Follow-up Message",
+    preheader: "A message from Dr Divya's team",
+    body: message,
+    details: [],
+  });
+
+  await transport.transporter.sendMail({
+    from: `"${transport.config.fromName}" <${transport.config.fromEmail}>`,
+    to: toEmail,
+    subject: subject,
+    html,
+  });
+
+  return { sent: true };
+}

@@ -28,7 +28,7 @@ export function ContactPopup() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   useEffect(() => {
-    if (pathname.startsWith("/admin")) {
+    if (pathname.startsWith("/admin") || pathname.startsWith("/portal")) {
       return;
     }
 
@@ -44,7 +44,7 @@ export function ContactPopup() {
     return () => window.clearTimeout(timer);
   }, [pathname]);
 
-  if (pathname.startsWith("/admin")) {
+  if (pathname.startsWith("/admin") || pathname.startsWith("/portal")) {
     return null;
   }
 
