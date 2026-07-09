@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import { siteConfig } from "@/lib/site";
 import { SiteHeader } from "@/components/site-header";
@@ -79,6 +78,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${headingFont.variable} ${bodyFont.variable} h-full antialiased`}>
+      <head>
+        <script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="cVbX34OBmRc070M2V2/VMA"
+          async
+        />
+      </head>
       <body className="min-h-full text-slate-800">
         <div className="flex min-h-full flex-col">
           <SiteHeader />
@@ -87,11 +93,6 @@ export default function RootLayout({
           <SiteFooter />
         </div>
         <ClinicSchema />
-        <Script
-          src="https://analytics.ahrefs.com/analytics.js"
-          data-key="cVbX34OBmRc070M2V2/VMA"
-          strategy="afterInteractive"
-        />
       </body>
     </html>
   );
