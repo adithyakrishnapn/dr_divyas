@@ -70,9 +70,9 @@ const sharedLaserTreatments = [
 function createFaqs(areaName: string) {
   return [
     {
-      question: `Is Dr Divya's Skin & Hair Clinic suitable for people coming from ${areaName}?`,
+      question: `Is Dr. Divya's Skin Clinic suitable for people coming from ${areaName}?`,
       answer:
-        `Yes. Dr. Divya's Skin & Hair Clinic is a trusted choice for patients in ${areaName} and surrounding Coimbatore areas, offering specialized clinical care for skin and scalp concerns.`,
+        `Yes. Dr. Divya's Skin Clinic is a trusted choice for patients in ${areaName} and surrounding Coimbatore areas, offering specialized clinical care for skin and scalp concerns.`,
     },
     {
       question: `What skin and hair concerns are commonly treated for ${areaName} patients?`,
@@ -90,7 +90,7 @@ function createFaqs(areaName: string) {
 function createKeywords(areaName: string, slug: string, extraKeywords: string[] = []) {
   const areaLower = areaName.toLowerCase();
   return [
-    `best dermatologist in ${areaLower}`,
+    `Dermatologist in ${areaLower}`,
     `skin doctor in ${areaLower}`,
     `skin clinic near ${areaLower}`,
     `hair treatment clinic in ${areaLower}`,
@@ -98,7 +98,7 @@ function createKeywords(areaName: string, slug: string, extraKeywords: string[] 
     `pigmentation treatment in ${areaLower}`,
     `laser treatment clinic in ${areaLower}`,
     `dermatologist near me`,
-    `best clinic in ${areaLower}`,
+    `Skin Clinic in ${areaLower}`,
     ...extraKeywords,
     slug,
   ];
@@ -108,11 +108,11 @@ export const localAreaPages: LocalAreaPage[] = [
   {
     slug: "saravanampatti",
     areaName: "Saravanampatti",
-    seoTitle: "Best Dermatologist in Saravanampatti",
+    seoTitle: "Dermatologist in Saravanampatti",
     metaDescription:
-      "Dr Divya's Skin & Hair Clinic offers acne, pigmentation, hair fall, laser, and skin rejuvenation treatments near Saravanampatti, Coimbatore.",
-    focusKeyword: "best dermatologist in saravanampatti",
-    ogTitle: "Best Dermatologist in Saravanampatti",
+      "Dr. Divya's Skin Clinic offers acne, pigmentation, hair fall, laser, and skin rejuvenation treatments near Saravanampatti, Coimbatore.",
+    focusKeyword: "Dermatologist in saravanampatti",
+    ogTitle: "Dermatologist in Saravanampatti",
     ogDescription:
       "Trusted skin and hair clinic near Saravanampatti for acne, pigmentation, laser, and hair fall treatment.",
     keywords: createKeywords("Saravanampatti", "saravanampatti", [
@@ -120,12 +120,12 @@ export const localAreaPages: LocalAreaPage[] = [
       "dermatologist saravanampatti",
       "hair treatment saravanampatti",
       "acne clinic saravanampatti",
-      "best skin doctor in saravanampatti",
+      "Skin doctor in saravanampatti",
       "skin clinic near it corridor",
     ]),
-    h1: "Best Dermatologist in Saravanampatti for Skin and Hair Care",
+    h1: "Dermatologist in Saravanampatti for Skin and Hair Care",
     introParagraphs: [
-      "Saravanampatti residents and professionals often seek reliable, expert access to a dermatologist who can address active acne, post-acne scarring, pigmentation, and hair fall with clear medical guidance. Dr. Divya's Skin & Hair Clinic provides comprehensive, dermatologist-led solutions with personalized care pathways.",
+      "Saravanampatti residents and professionals often seek reliable, expert access to a dermatologist who can address active acne, post-acne scarring, pigmentation, and hair fall with clear medical guidance. Dr. Divya's Skin Clinic provides comprehensive, dermatologist-led solutions with personalized care pathways.",
       "Conveniently accessible from the IT corridor, residential apartments, and commercial zones around Saravanampatti, the clinic offers a highly professional setting for consultation, treatments, and ongoing skin maintenance.",
     ],
     localHighlights: [
@@ -158,24 +158,24 @@ export const localAreaPages: LocalAreaPage[] = [
   {
     slug: "ganapathy",
     areaName: "Ganapathy",
-    seoTitle: "Best Skin Clinic in Ganapathy",
+    seoTitle: "Skin Clinic in Ganapathy",
     metaDescription:
-      "Visit Dr Divya's Skin & Hair Clinic near Ganapathy for acne, pigmentation, hair fall, laser, and personalised dermatology care.",
-    focusKeyword: "best skin clinic in ganapathy",
-    ogTitle: "Best Skin Clinic in Ganapathy",
+      "Visit Dr. Divya's Skin Clinic near Ganapathy for acne, pigmentation, hair fall, laser, and personalised dermatology care.",
+    focusKeyword: "Skin Clinic in ganapathy",
+    ogTitle: "Skin Clinic in Ganapathy",
     ogDescription:
       "Dermatologist-led acne, pigmentation, hair and laser treatments near Ganapathy, Coimbatore.",
     keywords: createKeywords("Ganapathy", "ganapathy", [
       "skin doctor ganapathy",
       "hair clinic ganapathy",
       "acne doctor ganapathy",
-      "best skin doctor in ganapathy",
+      "Skin doctor in ganapathy",
       "clinic near ganapathy bus stand",
       "skin clinic in north coimbatore",
     ]),
-    h1: "Best Skin Clinic in Ganapathy for Acne, Hair and Pigmentation",
+    h1: "Skin Clinic in Ganapathy for Acne, Hair and Pigmentation",
     introParagraphs: [
-      "Ganapathy is a bustling hub in Coimbatore, and patients traveling from this area require dermatologist-led care that is both highly effective and straightforward to reach. Dr. Divya's Skin & Hair Clinic offers advanced, personalized skin and hair care, providing reliable treatment pathways for all skin concerns.",
+      "Ganapathy is a bustling hub in Coimbatore, and patients traveling from this area require dermatologist-led care that is both highly effective and straightforward to reach. Dr. Divya's Skin Clinic offers advanced, personalized skin and hair care, providing reliable treatment pathways for all skin concerns.",
       "Whether addressing active acne, melasma, uneven skin tone, or hair thinning, our clinic delivers medically sound treatments that fit into the busy lives of Ganapathy residents.",
     ],
     localHighlights: [
@@ -208,11 +208,11 @@ export const localAreaPages: LocalAreaPage[] = [
   {
     slug: "thudiyalur",
     areaName: "Thudiyalur",
-    seoTitle: "Best Dermatologist in Thudiyalur",
+    seoTitle: "Dermatologist in Thudiyalur",
     metaDescription:
-      "Advanced acne, pigmentation, laser, and hair fall treatments from Dr Divya's Skin & Hair Clinic near Thudiyalur, Coimbatore.",
-    focusKeyword: "best dermatologist in thudiyalur",
-    ogTitle: "Best Dermatologist in Thudiyalur",
+      "Advanced acne, pigmentation, laser, and hair fall treatments from Dr. Divya's Skin Clinic near Thudiyalur, Coimbatore.",
+    focusKeyword: "Dermatologist in thudiyalur",
+    ogTitle: "Dermatologist in Thudiyalur",
     ogDescription:
       "Trusted skin and hair clinic near Thudiyalur for clinical dermatology and aesthetic care.",
     keywords: createKeywords("Thudiyalur", "thudiyalur", [
@@ -222,9 +222,9 @@ export const localAreaPages: LocalAreaPage[] = [
       "acne clinic thudiyalur",
       "clinic on thudiyalur main road",
     ]),
-    h1: "Best Skin and Hair Clinic in Thudiyalur",
+    h1: "Skin and Hair Clinic in Thudiyalur",
     introParagraphs: [
-      "Thudiyalur patients seek a dermatologist who combines clinical excellence with highly accessible care in north Coimbatore. Dr. Divya's Skin & Hair Clinic provides comprehensive, specialist-led care for a wide range of skin, hair, and scalp concerns.",
+      "Thudiyalur patients seek a dermatologist who combines clinical excellence with highly accessible care in north Coimbatore. Dr. Divya's Skin Clinic provides comprehensive, specialist-led care for a wide range of skin, hair, and scalp concerns.",
       "The clinic is a trusted choice for families and working professionals residing in Thudiyalur who value expert diagnosis, safe clinical procedures, and transparent advice.",
     ],
     localHighlights: [
@@ -257,11 +257,11 @@ export const localAreaPages: LocalAreaPage[] = [
   {
     slug: "peelamedu",
     areaName: "Peelamedu",
-    seoTitle: "Best Dermatologist in Peelamedu",
+    seoTitle: "Dermatologist in Peelamedu",
     metaDescription:
-      "Dr Divya's Skin & Hair Clinic near Peelamedu offers acne, pigmentation, hair fall, laser, and skin rejuvenation treatments.",
-    focusKeyword: "best dermatologist in peelamedu",
-    ogTitle: "Best Dermatologist in Peelamedu",
+      "Dr. Divya's Skin Clinic near Peelamedu offers acne, pigmentation, hair fall, laser, and skin rejuvenation treatments.",
+    focusKeyword: "Dermatologist in peelamedu",
+    ogTitle: "Dermatologist in Peelamedu",
     ogDescription:
       "Skin and hair specialist near Peelamedu for acne, pigmentation, laser, and hair fall care.",
     keywords: createKeywords("Peelamedu", "peelamedu", [
@@ -271,9 +271,9 @@ export const localAreaPages: LocalAreaPage[] = [
       "acne treatment peelamedu",
       "clinic near airport road",
     ]),
-    h1: "Best Skin Clinic in Peelamedu for Modern Dermatology Care",
+    h1: "Skin Clinic in Peelamedu for Modern Dermatology Care",
     introParagraphs: [
-      "Peelamedu is home to a thriving student and professional community that values both clinical expertise and ease of access. Dr. Divya's Skin & Hair Clinic delivers expert, dermatologist-led skin and hair treatments with personalized attention to detail.",
+      "Peelamedu is home to a thriving student and professional community that values both clinical expertise and ease of access. Dr. Divya's Skin Clinic delivers expert, dermatologist-led skin and hair treatments with personalized attention to detail.",
       "We provide effective, evidence-based care for acne, hyperpigmentation, scars, and hair thinning, ensuring patients from Peelamedu can complete their treatments with minimal travel time.",
     ],
     localHighlights: [
@@ -306,11 +306,11 @@ export const localAreaPages: LocalAreaPage[] = [
   {
     slug: "gandhipuram",
     areaName: "Gandhipuram",
-    seoTitle: "Best Skin Clinic in Gandhipuram",
+    seoTitle: "Skin Clinic in Gandhipuram",
     metaDescription:
       "Get expert acne, pigmentation, hair fall, laser, and skin rejuvenation treatment near Gandhipuram, Coimbatore.",
-    focusKeyword: "best skin clinic in gandhipuram",
-    ogTitle: "Best Skin Clinic in Gandhipuram",
+    focusKeyword: "Skin Clinic in gandhipuram",
+    ogTitle: "Skin Clinic in Gandhipuram",
     ogDescription:
       "Dermatologist-led treatment options near Gandhipuram for skin, hair, and laser concerns.",
     keywords: createKeywords("Gandhipuram", "gandhipuram", [
@@ -320,9 +320,9 @@ export const localAreaPages: LocalAreaPage[] = [
       "acne clinic gandhipuram",
       "clinic near gandhipuram bus stand",
     ]),
-    h1: "Best Dermatologist in Gandhipuram for Skin and Hair Problems",
+    h1: "Dermatologist in Gandhipuram for Skin and Hair Problems",
     introParagraphs: [
-      "Gandhipuram is a central hub in Coimbatore, and patients traveling from this area require dermatologist-led care that is both highly effective and convenient to reach. Dr. Divya's Skin & Hair Clinic offers advanced clinical solutions in a welcoming, professional setting.",
+      "Gandhipuram is a central hub in Coimbatore, and patients traveling from this area require dermatologist-led care that is both highly effective and convenient to reach. Dr. Divya's Skin Clinic offers advanced clinical solutions in a welcoming, professional setting.",
       "Our clinic provides city-center patients with advanced therapies for acne, melasma, scalp health, and laser-based skin rejuvenation, all with a highly transparent approach.",
     ],
     localHighlights: [
@@ -355,11 +355,11 @@ export const localAreaPages: LocalAreaPage[] = [
   {
     slug: "rs-puram",
     areaName: "RS Puram",
-    seoTitle: "Best Dermatologist in RS Puram",
+    seoTitle: "Dermatologist in RS Puram",
     metaDescription:
-      "Visit Dr Divya's Skin & Hair Clinic near RS Puram for acne, pigmentation, hair fall, laser, and expert skin care.",
-    focusKeyword: "best dermatologist in rs puram",
-    ogTitle: "Best Dermatologist in RS Puram",
+      "Visit Dr. Divya's Skin Clinic near RS Puram for acne, pigmentation, hair fall, laser, and expert skin care.",
+    focusKeyword: "Dermatologist in rs puram",
+    ogTitle: "Dermatologist in RS Puram",
     ogDescription:
       "Premium skin and hair care near RS Puram, Coimbatore.",
     keywords: createKeywords("RS Puram", "rs-puram", [
@@ -369,9 +369,9 @@ export const localAreaPages: LocalAreaPage[] = [
       "acne treatment rs puram",
       "laser clinic near rs puram",
     ]),
-    h1: "Best Skin Clinic in RS Puram for Premium Dermatology Care",
+    h1: "Skin Clinic in RS Puram for Premium Dermatology Care",
     introParagraphs: [
-      "Patients from RS Puram seek a premium, clinical environment that prioritizes patient comfort, absolute transparency, and advanced therapeutic options. Dr. Divya's Skin & Hair Clinic delivers sophisticated, evidence-based treatments designed to deliver visible, lasting results.",
+      "Patients from RS Puram seek a premium, clinical environment that prioritizes patient comfort, absolute transparency, and advanced therapeutic options. Dr. Divya's Skin Clinic delivers sophisticated, evidence-based treatments designed to deliver visible, lasting results.",
       "We serve RS Puram residents with a personal, highly professional model of care for acne, melasma, advanced laser toning, and clinical hair restoration therapies.",
     ],
     localHighlights: [
@@ -404,11 +404,11 @@ export const localAreaPages: LocalAreaPage[] = [
   {
     slug: "annur",
     areaName: "Annur",
-    seoTitle: "Best Skin Clinic in Annur",
+    seoTitle: "Skin Clinic in Annur",
     metaDescription:
-      "Dr Divya's Skin & Hair Clinic provides acne, pigmentation, hair fall, laser, and skin treatment options for patients from Annur.",
-    focusKeyword: "best skin clinic in annur",
-    ogTitle: "Best Skin Clinic in Annur",
+      "Dr. Divya's Skin Clinic provides acne, pigmentation, hair fall, laser, and skin treatment options for patients from Annur.",
+    focusKeyword: "Skin Clinic in annur",
+    ogTitle: "Skin Clinic in Annur",
     ogDescription:
       "Reliable skin and hair treatment clinic serving Annur and nearby Coimbatore routes.",
     keywords: createKeywords("Annur", "annur", [
@@ -416,11 +416,11 @@ export const localAreaPages: LocalAreaPage[] = [
       "hair clinic annur",
       "acne clinic annur",
       "clinic for annur patients",
-      "best doctor for pigmentation near annur",
+      "Doctor for pigmentation near annur",
     ]),
-    h1: "Best Dermatologist in Annur for Skin and Hair Problems",
+    h1: "Dermatologist in Annur for Skin and Hair Problems",
     introParagraphs: [
-      "For patients traveling from Annur, finding a highly experienced and trustworthy specialist is a priority. Dr. Divya's Skin & Hair Clinic offers advanced, comprehensive care for skin and hair concerns that is well worth the journey.",
+      "For patients traveling from Annur, finding a highly experienced and trustworthy specialist is a priority. Dr. Divya's Skin Clinic offers advanced, comprehensive care for skin and hair concerns that is well worth the journey.",
       "Our clinic provides Annur families with personalized acne, hair fall, and pigmentation solutions under direct dermatologist supervision, ensuring regular follow-ups are highly structured and effective.",
     ],
     localHighlights: [
@@ -453,11 +453,11 @@ export const localAreaPages: LocalAreaPage[] = [
   {
     slug: "singanallur",
     areaName: "Singanallur",
-    seoTitle: "Best Dermatologist in Singanallur",
+    seoTitle: "Dermatologist in Singanallur",
     metaDescription:
       "Advanced acne, pigmentation, hair fall, laser, and skin rejuvenation treatments for patients from Singanallur, Coimbatore.",
-    focusKeyword: "best dermatologist in singanallur",
-    ogTitle: "Best Dermatologist in Singanallur",
+    focusKeyword: "Dermatologist in singanallur",
+    ogTitle: "Dermatologist in Singanallur",
     ogDescription:
       "Skin and hair clinic near Singanallur for doctor-led treatment and personalised care.",
     keywords: createKeywords("Singanallur", "singanallur", [
@@ -467,9 +467,9 @@ export const localAreaPages: LocalAreaPage[] = [
       "acne treatment singanallur",
       "clinic near singanallur junction",
     ]),
-    h1: "Best Skin and Hair Clinic in Singanallur",
+    h1: "Skin and Hair Clinic in Singanallur",
     introParagraphs: [
-      "Singanallur residents seek a dermatology clinic that seamlessly fits into their active routines, providing effective clinical care with manageable travel routes. Dr. Divya's Skin & Hair Clinic offers personalized treatment pathways for acne, pigmentation, and hair loss.",
+      "Singanallur residents seek a dermatology clinic that seamlessly fits into their active routines, providing effective clinical care with manageable travel routes. Dr. Divya's Skin Clinic offers personalized treatment pathways for acne, pigmentation, and hair loss.",
       "Our clinical focus is on delivering dermatologist-led solutions with high medical standards, ensuring patients from south Coimbatore receive reliable diagnostic evaluations and progressive treatments.",
     ],
     localHighlights: [
@@ -502,23 +502,23 @@ export const localAreaPages: LocalAreaPage[] = [
   {
     slug: "saibaba-colony",
     areaName: "Saibaba Colony",
-    seoTitle: "Best Skin Clinic in Saibaba Colony",
+    seoTitle: "Skin Clinic in Saibaba Colony",
     metaDescription:
-      "Visit Dr Divya's Skin & Hair Clinic for acne, pigmentation, laser, and hair fall treatment near Saibaba Colony, Coimbatore.",
-    focusKeyword: "best skin clinic in saibaba colony",
-    ogTitle: "Best Skin Clinic in Saibaba Colony",
+      "Visit Dr. Divya's Skin Clinic for acne, pigmentation, laser, and hair fall treatment near Saibaba Colony, Coimbatore.",
+    focusKeyword: "Skin Clinic in saibaba colony",
+    ogTitle: "Skin Clinic in Saibaba Colony",
     ogDescription:
       "Dermatology clinic near Saibaba Colony for trusted medical and aesthetic skin care.",
     keywords: createKeywords("Saibaba Colony", "saibaba-colony", [
       "skin doctor saibaba colony",
       "hair clinic saibaba colony",
       "acne clinic saibaba colony",
-      "best dermatologist near saibaba colony",
+      "Dermatologist near saibaba colony",
       "clinic near north coimbatore",
     ]),
-    h1: "Best Dermatologist in Saibaba Colony for Skin and Hair",
+    h1: "Dermatologist in Saibaba Colony for Skin and Hair",
     introParagraphs: [
-      "Saibaba Colony is one of Coimbatore's premier residential areas, where families value clinical reliability, absolute transparency, and compassionate patient care. Dr. Divya's Skin & Hair Clinic provides advanced treatments in a calm, welcoming environment.",
+      "Saibaba Colony is one of Coimbatore's premier residential areas, where families value clinical reliability, absolute transparency, and compassionate patient care. Dr. Divya's Skin Clinic provides advanced treatments in a calm, welcoming environment.",
       "Our primary mission is to offer Saibaba Colony residents customized clinical pathways for active acne, pigmentation, and hair restoration, ensuring each visit is reassuring and effective.",
     ],
     localHighlights: [
@@ -551,11 +551,11 @@ export const localAreaPages: LocalAreaPage[] = [
   {
     slug: "vadavalli",
     areaName: "Vadavalli",
-    seoTitle: "Best Dermatologist in Vadavalli",
+    seoTitle: "Dermatologist in Vadavalli",
     metaDescription:
-      "Dr Divya's Skin & Hair Clinic provides acne, pigmentation, hair fall, laser, and skin rejuvenation care near Vadavalli.",
-    focusKeyword: "best dermatologist in vadavalli",
-    ogTitle: "Best Dermatologist in Vadavalli",
+      "Dr. Divya's Skin Clinic provides acne, pigmentation, hair fall, laser, and skin rejuvenation care near Vadavalli.",
+    focusKeyword: "Dermatologist in vadavalli",
+    ogTitle: "Dermatologist in Vadavalli",
     ogDescription:
       "Skin and hair treatment clinic serving Vadavalli and nearby west Coimbatore areas.",
     keywords: createKeywords("Vadavalli", "vadavalli", [
@@ -565,9 +565,9 @@ export const localAreaPages: LocalAreaPage[] = [
       "acne clinic vadavalli",
       "clinic near vadavalli main road",
     ]),
-    h1: "Best Skin Clinic in Vadavalli for Medical Dermatology",
+    h1: "Skin Clinic in Vadavalli for Medical Dermatology",
     introParagraphs: [
-      "Vadavalli residents often seek a trusted local partner in their skin health journey who provides advanced clinical expertise. Dr. Divya's Skin & Hair Clinic delivers evidence-based dermatology care tailored to individual patient profiles.",
+      "Vadavalli residents often seek a trusted local partner in their skin health journey who provides advanced clinical expertise. Dr. Divya's Skin Clinic delivers evidence-based dermatology care tailored to individual patient profiles.",
       "We support west Coimbatore patients with advanced clinical evaluations and personalized treatments for active acne, hyperpigmentation, hair fall, and cosmetic skin concerns.",
     ],
     localHighlights: [
@@ -600,11 +600,11 @@ export const localAreaPages: LocalAreaPage[] = [
   {
     slug: "kovaipudur",
     areaName: "Kovaipudur",
-    seoTitle: "Best Skin Clinic in Kovaipudur",
+    seoTitle: "Skin Clinic in Kovaipudur",
     metaDescription:
-      "Get expert acne, pigmentation, hair fall, laser, and skin treatment options from Dr Divya's Skin & Hair Clinic near Kovaipudur.",
-    focusKeyword: "best skin clinic in kovaipudur",
-    ogTitle: "Best Skin Clinic in Kovaipudur",
+      "Get expert acne, pigmentation, hair fall, laser, and skin treatment options from Dr. Divya's Skin Clinic near Kovaipudur.",
+    focusKeyword: "Skin Clinic in kovaipudur",
+    ogTitle: "Skin Clinic in Kovaipudur",
     ogDescription:
       "Trusted skin and hair clinic for Kovaipudur and nearby west Coimbatore patients.",
     keywords: createKeywords("Kovaipudur", "kovaipudur", [
@@ -614,9 +614,9 @@ export const localAreaPages: LocalAreaPage[] = [
       "acne treatment kovaipudur",
       "clinic in hill route area",
     ]),
-    h1: "Best Dermatologist in Kovaipudur for Skin and Hair Care",
+    h1: "Dermatologist in Kovaipudur for Skin and Hair Care",
     introParagraphs: [
-      "Kovaipudur residents value dermatologist-led clinical solutions that are highly accessible. Dr. Divya's Skin & Hair Clinic provides professional acne, pigmentation, and hair restoration therapies with clear guidance and outstanding support.",
+      "Kovaipudur residents value dermatologist-led clinical solutions that are highly accessible. Dr. Divya's Skin Clinic provides professional acne, pigmentation, and hair restoration therapies with clear guidance and outstanding support.",
       "Our clinic provides patients from the western residential belt with customized treatment plans for depressed acne scars, melasma, and scalp health, focusing on long-term safety and results.",
     ],
     localHighlights: [
@@ -649,11 +649,11 @@ export const localAreaPages: LocalAreaPage[] = [
   {
     slug: "race-course",
     areaName: "Race Course",
-    seoTitle: "Best Dermatologist in Race Course",
+    seoTitle: "Dermatologist in Race Course",
     metaDescription:
-      "Dr Divya's Skin & Hair Clinic offers acne, pigmentation, laser, hair fall, and skin rejuvenation treatments near Race Course.",
-    focusKeyword: "best dermatologist in race course",
-    ogTitle: "Best Dermatologist in Race Course",
+      "Dr. Divya's Skin Clinic offers acne, pigmentation, laser, hair fall, and skin rejuvenation treatments near Race Course.",
+    focusKeyword: "Dermatologist in race course",
+    ogTitle: "Dermatologist in Race Course",
     ogDescription:
       "Premium skin and hair care near Race Course, Coimbatore.",
     keywords: createKeywords("Race Course", "race-course", [
@@ -663,9 +663,9 @@ export const localAreaPages: LocalAreaPage[] = [
       "acne clinic race course",
       "laser skin clinic near race course",
     ]),
-    h1: "Best Skin Clinic in Race Course for Premium Dermatology",
+    h1: "Skin Clinic in Race Course for Premium Dermatology",
     introParagraphs: [
-      "Race Course residents demand the highest standards of professional care, clinical efficacy, and patient privacy. Dr. Divya's Skin & Hair Clinic provides a refined, state-of-the-art medical environment designed for premium skin and scalp care.",
+      "Race Course residents demand the highest standards of professional care, clinical efficacy, and patient privacy. Dr. Divya's Skin Clinic provides a refined, state-of-the-art medical environment designed for premium skin and scalp care.",
       "We deliver customized clinical procedures, advanced laser toning, and trichology solutions for Race Course patients seeking high clinical expertise and absolute transparency.",
     ],
     localHighlights: [
@@ -698,11 +698,11 @@ export const localAreaPages: LocalAreaPage[] = [
   {
     slug: "hope-college",
     areaName: "Hope College",
-    seoTitle: "Best Skin Clinic Near Hope College",
+    seoTitle: "Skin Clinic near Hope College",
     metaDescription:
-      "Dr Divya's Skin & Hair Clinic provides acne, pigmentation, hair fall, laser, and skin care for patients near Hope College, Coimbatore.",
-    focusKeyword: "best skin clinic near hope college",
-    ogTitle: "Best Skin Clinic Near Hope College",
+      "Dr. Divya's Skin Clinic provides acne, pigmentation, hair fall, laser, and skin care for patients near Hope College, Coimbatore.",
+    focusKeyword: "Skin Clinic near hope college",
+    ogTitle: "Skin Clinic near Hope College",
     ogDescription:
       "Dermatologist-led care near Hope College for acne, pigmentation, and hair treatments.",
     keywords: createKeywords("Hope College", "hope-college", [
@@ -712,9 +712,9 @@ export const localAreaPages: LocalAreaPage[] = [
       "acne treatment hope college",
       "clinic near educational corridor",
     ]),
-    h1: "Best Dermatologist Near Hope College for Skin and Hair",
+    h1: "Dermatologist near Hope College for Skin and Hair",
     introParagraphs: [
-      "Hope College is a key landmark along the Avinashi Road educational and professional corridor. Dr. Divya's Skin & Hair Clinic serves this dynamic community with advanced, dermatologist-led skin and hair treatments that prioritize clinical results and ease of scheduling.",
+      "Hope College is a key landmark along the Avinashi Road educational and professional corridor. Dr. Divya's Skin Clinic serves this dynamic community with advanced, dermatologist-led skin and hair treatments that prioritize clinical results and ease of scheduling.",
       "Students, educators, and working professionals from the Hope College area can easily complete advanced acne, scar, and hair thinning therapies with highly accessible scheduling.",
     ],
     localHighlights: [
@@ -749,8 +749,8 @@ export const localAreaPages: LocalAreaPage[] = [
     areaName: "Avinashi Road",
     seoTitle: "Best Skin Clinic on Avinashi Road",
     metaDescription:
-      "Advanced acne, pigmentation, laser, hair fall, and skin rejuvenation care from Dr Divya's Skin & Hair Clinic on Avinashi Road, Coimbatore.",
-    focusKeyword: "best clinic on avinashi road",
+      "Advanced acne, pigmentation, laser, hair fall, and skin rejuvenation care from Dr. Divya's Skin Clinic on Avinashi Road, Coimbatore.",
+    focusKeyword: "Skin Clinic on avinashi road",
     ogTitle: "Best Skin Clinic on Avinashi Road",
     ogDescription:
       "Convenient skin and hair care near Avinashi Road for busy professionals and families.",
@@ -763,7 +763,7 @@ export const localAreaPages: LocalAreaPage[] = [
     ]),
     h1: "Best Skin Clinic on Avinashi Road for Skin and Hair Care",
     introParagraphs: [
-      "Avinashi Road is Coimbatore's primary arterial corridor. Dr. Divya's Skin & Hair Clinic offers busy professionals and families residing or working along this route a premium destination for comprehensive dermatology and trichology treatments.",
+      "Avinashi Road is Coimbatore's primary arterial corridor. Dr. Divya's Skin Clinic offers busy professionals and families residing or working along this route a premium destination for comprehensive dermatology and trichology treatments.",
       "Our clinic provides advanced clinical solutions for acne, melasma, and hair thinning, making dermatologist-led evaluations highly convenient for regular commuters.",
     ],
     localHighlights: [
@@ -796,21 +796,21 @@ export const localAreaPages: LocalAreaPage[] = [
   {
     slug: "ukkadam",
     areaName: "Ukkadam",
-    seoTitle: "Best Dermatologist near Ukkadam",
+    seoTitle: "Dermatologist near Ukkadam",
     metaDescription:
       "Skin & hair clinic near Ukkadam, Coimbatore — acne, pigmentation, hair fall & laser care. Book your consultation today — call +91 9994759380.",
-    focusKeyword: "best dermatologist near ukkadam",
-    ogTitle: "Best Dermatologist near Ukkadam",
+    focusKeyword: "Dermatologist near ukkadam",
+    ogTitle: "Dermatologist near Ukkadam",
     ogDescription: "Trusted dermatology care near Ukkadam bus stand and central Coimbatore routes.",
     keywords: createKeywords("Ukkadam", "ukkadam", [
       "skin doctor ukkadam",
       "skin clinic near ukkadam bus stand",
       "dermatologist ukkadam coimbatore",
     ]),
-    h1: "Best Dermatologist near Ukkadam for Skin and Hair Care",
+    h1: "Dermatologist near Ukkadam for Skin and Hair Care",
     introParagraphs: [
       "Ukkadam is a major transit hub in Coimbatore, and patients from this area seeking dermatologist-led acne, pigmentation, and hair fall solutions value a clinic that is highly accessible for repeat appointments.",
-      "Dr. Divya's Skin & Hair Clinic provides Ukkadam patients with comprehensive clinical consultations, evidence-based treatments, and structured aftercare plans.",
+      "Dr. Divya's Skin Clinic provides Ukkadam patients with comprehensive clinical consultations, evidence-based treatments, and structured aftercare plans.",
     ],
     localHighlights: [
       "Ukkadam bus stand and central market access routes",
@@ -842,21 +842,21 @@ export const localAreaPages: LocalAreaPage[] = [
   {
     slug: "podanur",
     areaName: "Podanur",
-    seoTitle: "Best Skin Clinic in Podanur",
+    seoTitle: "Skin Clinic in Podanur",
     metaDescription:
       "Dermatologist-led skin & hair care in Podanur, Coimbatore. Acne, pigmentation, hair fall & laser treatments. Book your visit today!",
-    focusKeyword: "best skin clinic in podanur",
-    ogTitle: "Best Skin Clinic in Podanur",
+    focusKeyword: "Skin Clinic in podanur",
+    ogTitle: "Skin Clinic in Podanur",
     ogDescription: "Skin and hair treatment clinic serving Podanur and south Coimbatore patients.",
     keywords: createKeywords("Podanur", "podanur", [
       "dermatologist podanur",
       "skin doctor podanur coimbatore",
       "hair treatment podanur",
     ]),
-    h1: "Best Skin Clinic in Podanur for Acne, Hair and Pigmentation",
+    h1: "Skin Clinic in Podanur for Acne, Hair and Pigmentation",
     introParagraphs: [
       "Podanur patients seeking professional skin and hair care value clinical accuracy, experienced specialist diagnosis, and predictable appointment schedules.",
-      "Dr. Divya's Skin & Hair Clinic serves the Podanur community by delivering evidence-based clinical dermatology, ensuring specialized skin and scalp care is easily accessible.",
+      "Dr. Divya's Skin Clinic serves the Podanur community by delivering evidence-based clinical dermatology, ensuring specialized skin and scalp care is easily accessible.",
     ],
     localHighlights: [
       "Podanur railway junction and neighborhood road connections",

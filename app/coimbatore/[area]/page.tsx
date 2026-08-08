@@ -191,7 +191,7 @@ export default async function AreaPage({ params }: AreaPageProps) {
             <div className="grid gap-0 lg:grid-cols-[1.2fr_0.8fr]">
               <div className="min-h-[300px] lg:min-h-[420px]">
                 <iframe
-                  title="Dr Divya's Skin & Hair Clinic location map"
+                  title="Dr. Divya's Skin Clinic location map"
                   src={siteConfig.mapsEmbedUrl}
                   className="h-full w-full"
                   loading="lazy"
@@ -205,7 +205,7 @@ export default async function AreaPage({ params }: AreaPageProps) {
                     Clinic location
                   </p>
                   <h2 className="mt-2 text-2xl font-bold text-amber-900">
-                    Visit Dr Divya's Skin & Hair Clinic in Coimbatore
+                    Visit Dr. Divya's Skin Clinic in Coimbatore
                   </h2>
                   <p className="mt-3 text-sm leading-7 text-slate-600">
                     Use the map to find the clinic and open directions in Google Maps before your visit.
@@ -214,7 +214,7 @@ export default async function AreaPage({ params }: AreaPageProps) {
 
                 <div className="flex flex-col gap-3 sm:flex-row">
                   <a
-                    href="https://maps.app.goo.gl/o1vwrpsMj99KKHGAA"
+                    href={siteConfig.mapUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center justify-center rounded-lg bg-gradient-warm px-5 py-3 font-semibold text-white shadow-lg"
@@ -357,7 +357,7 @@ export default async function AreaPage({ params }: AreaPageProps) {
           <div className="rounded-3xl bg-gradient-warm p-10 text-center text-white md:p-16">
             <h2 className="text-3xl font-bold md:text-5xl">Book a consultation from {page.areaName}</h2>
             <p className="mx-auto mt-4 max-w-3xl text-white/90 leading-8">
-              If you are searching for a dermatologist near me, skin clinic near {page.areaName}, or hair treatment clinic in Coimbatore, Dr Divya's Skin & Hair Clinic is ready to help with personalised care and a clear treatment plan.
+              If you are searching for a dermatologist near me, skin clinic near {page.areaName}, or hair treatment clinic in Coimbatore, Dr. Divya's Skin Clinic is ready to help with personalised care and a clear treatment plan.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
               <a

@@ -7,13 +7,13 @@ import { localAreaPages } from "@/lib/local-area-pages";
 export const metadata: Metadata = buildMetadata({
   title: "Clinic Locations in Coimbatore",
   description:
-    "Explore Dr Divya's Skin & Hair Clinic location pages for patients across Saravanampatti, Ganapathy, Thudiyalur, Peelamedu, Gandhipuram, RS Puram, Annur, Singanallur, Saibaba Colony, Vadavalli, Kovaipudur, Race Course, Hope College, and Avinashi Road.",
+    "Explore Dr. Divya's Skin Clinic location pages for patients across Saravanampatti, Ganapathy, Thudiyalur, Peelamedu, Gandhipuram, RS Puram, Annur, Singanallur, Saibaba Colony, Vadavalli, Kovaipudur, Race Course, Hope College, and Avinashi Road.",
   path: "/coimbatore",
   keywords: [
     "clinic locations in coimbatore",
     "skin clinic in coimbatore",
     "coimbatore clinic locations",
-    "best dermatologist in coimbatore",
+    "Dermatologist in coimbatore",
   ],
 });
 

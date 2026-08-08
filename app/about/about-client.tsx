@@ -70,7 +70,7 @@ export default function AboutPage() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.2 }}
                 >
-                  About Dr Divya
+                  About Dr. Divya Shanmugam
                 </motion.h1>
                 <motion.p
                   className="text-xl text-slate-700 leading-relaxed"
@@ -78,7 +78,7 @@ export default function AboutPage() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.3 }}
                 >
-                  Board-certified dermatologist dedicated to transforming skin and hair with advanced technology, compassionate care, and proven results in Coimbatore. Dr Divya brings 10 years of experience serving 4K+ patients.
+                  Dr. Divya Shanmugam, MD (DVL), Registered Medical Practitioner No. 112496 (Tamil Nadu Medical Council), is a board-certified dermatologist dedicated to providing patient-centric skin and hair care. With 10 years of clinical experience serving over 4,000 patients in Coimbatore, she combines evidence-based medical treatments with advanced skincare protocols to achieve healthy, natural-looking results.
                 </motion.p>
               </div>
 
@@ -238,7 +238,7 @@ export default function AboutPage() {
                   Clinical Excellence
                 </h2>
                 <p className="text-lg text-slate-700 leading-relaxed">
-                  With over a decade of dermatological practice, Dr Divya combines cutting-edge technology with time-tested clinical methodologies to deliver exceptional results.
+                  With over a decade of dermatological practice, Dr. Divya Shanmugam combines cutting-edge technology with time-tested clinical methodologies to deliver safe and predictable results.
                 </p>
               </div>
 
@@ -387,7 +387,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            Schedule a consultation with Dr Divya and discover how personalized dermatology care can transform your confidence.
+            Schedule a consultation with Dr. Divya Shanmugam and discover how personalized dermatology care can help you achieve healthy skin.
           </motion.p>
 
           <motion.a

@@ -31,7 +31,7 @@ export const acneTreatmentContent: TreatmentRichContent = {
     "Professional dermatologist-led acne and scar treatment plans in Coimbatore. Safe, evidence-based therapies custom-tailored for clear, healthy skin. Schedule a clinical consultation today.",
   intro: [
     "Acne is a highly common and persistent skin concern that affects individuals of all ages. In Coimbatore's humid climate, environmental factors like heat, dust, and pollution can significantly worsen sebum production, leading to painful breakouts that may leave behind deep scars or hyperpigmentation if untreated.",
-    "At Dr. Divya's Skin & Hair Clinic, we approach acne care with clinical precision. Our treatment begins with a thorough diagnostic evaluation of your skin type, hormone triggers, and lifestyle factors to control active pimples while actively repairing the skin barrier. Patients from Saravanampatti, Peelamedu, RS Puram, Ganapathy, and across Coimbatore visit for dermatologist-led care that delivers safe, predictable results.",
+    "At Dr. Divya's Skin Clinic, we approach acne care with clinical precision. Our treatment begins with a thorough diagnostic evaluation of your skin type, hormone triggers, and lifestyle factors to control active pimples while actively repairing the skin barrier. Patients from Saravanampatti, Peelamedu, RS Puram, Ganapathy, and across Coimbatore visit for dermatologist-led care that delivers safe, predictable results.",
     "From teenage acne to stubborn adult breakouts and post-acne scarring, we design customized, evidence-based plans combining medical topicals, chemical peels, and advanced scar procedures to restore skin health and confidence.",
   ],
   expandedParagraphs: [
@@ -157,7 +157,7 @@ export const hairFallTreatmentContent: TreatmentRichContent = {
     "Dermatologist-led hair fall and scalp restoration treatments in Coimbatore. Advanced PRP, scalp therapies, and personalized plans for thinning hair and shedding. Schedule an expert scalp evaluation.",
   intro: [
     "Experiencing hair fall or visible thinning can be deeply concerning. While shedding 50 to 100 strands a day is natural, excessive hair loss, widening parts, or localized thinning indicate that it is time for a professional medical evaluation to restore scalp and follicle health.",
-    "Coimbatore's environmental conditions—including hard water mineral buildup, high humidity, and sweat accumulation—can weaken the hair shaft and promote fungal scalp irritation, accelerating hair fall. At Dr. Divya's Skin & Hair Clinic, we offer advanced trichological diagnostic support to uncover the underlying causes of shedding before starting any therapy.",
+    "Coimbatore's environmental conditions—including hard water mineral buildup, high humidity, and sweat accumulation—can weaken the hair shaft and promote fungal scalp irritation, accelerating hair fall. At Dr. Divya's Skin Clinic, we offer advanced trichological diagnostic support to uncover the underlying causes of shedding before starting any therapy.",
     "We combine expert clinical diagnostics (such as scalp trichoscopy) with advanced therapies like PRP and specialized scalp mesotherapy to deliver healthy, sustainable hair restoration and density improvements.",
   ],
   expandedParagraphs: [
@@ -271,7 +271,7 @@ export const pigmentationTreatmentContent: TreatmentRichContent = {
     "Dermatologist-led pigmentation and melasma treatments in Coimbatore. Safe, medically advanced chemical peels and laser toning for uneven skin tone and dark spots. Book your skin assessment today.",
   intro: [
     "Uneven skin tone, dark patches, melasma, and sun spots are highly common concerns for patients in Coimbatore. Due to persistent UV exposure—even on cloudy or overcast days—pigmentation can reactivate rapidly, making consistent professional care and medical-grade sun protection vital.",
-    "At Dr. Divya's Skin & Hair Clinic, we specialize in distinguishing between various forms of hyperpigmentation. We carefully assess whether your patches represent melasma (hormonally triggered), post-inflammatory hyperpigmentation (dark marks left by acne), or solar lentigines (sun spots), as each type requires a completely different clinical approach to prevent worsening.",
+    "At Dr. Divya's Skin Clinic, we specialize in distinguishing between various forms of hyperpigmentation. We carefully assess whether your patches represent melasma (hormonally triggered), post-inflammatory hyperpigmentation (dark marks left by acne), or solar lentigines (sun spots), as each type requires a completely different clinical approach to prevent worsening.",
     "We focus on identifying the precise depth and type of pigmentation to design highly targeted, safe, and sustainable skin-brightening plans combining dermatologist-supervised chemical peels, laser toning, and customized topical routines.",
   ],
   expandedParagraphs: [
@@ -375,12 +375,355 @@ export const pigmentationTreatmentContent: TreatmentRichContent = {
   ],
 };
 
+export const laserTreatmentContent: TreatmentRichContent = {
+  metaDescription:
+    "Dermatologist-supervised laser skin treatments in Coimbatore. Safe skin rejuvenation, scar care, and pigment toning with advanced technology. Book a skin analysis today.",
+  intro: [
+    "Laser skin treatments use focused light energy to address targeted concerns like acne scars, dark spots, uneven skin tone, and early signs of aging.",
+    "At Dr. Divya's Skin Clinic, all laser sessions are selected and supervised by a qualified dermatologist. We evaluate your skin type, history of sun exposure, and concerns to select the safest wavelengths and parameters."
+  ],
+  expandedParagraphs: [
+    "Skins of color require cautious settings. Incorrect laser settings can cause thermal irritation, resulting in post-inflammatory hyperpigmentation (PIH). That is why we prioritize low-fluence laser toning and gradual, safe improvements rather than quick, aggressive protocols.",
+    "Common concerns treated include post-acne pigmentation, sun spots, melasma (as a supportive option), and mild skin texture irregularities. Expect a thorough diagnostic consultation before starting any laser protocol."
+  ],
+  sections: [
+    {
+      title: "Laser treatments we offer",
+      items: [
+        "Laser toning for skin pigmentation and sun damage",
+        "Targeted laser sessions for dark spots and solar lentigines",
+        "Fractional laser support for acne scar remodeling",
+        "Gentle, low-downtime skin rejuvenation protocols"
+      ]
+    },
+    {
+      title: "Safety, side effects, and limitations",
+      items: [
+        "Mild redness and warmth are common but typically fade within a few hours.",
+        "Strict sun protection (SPF 50 daily) is mandatory after every session.",
+        "Results are gradual; most concerns require 4 to 6 sessions for visible improvement.",
+        "Lasers may not be suitable for active skin infections or severe inflammatory conditions."
+      ]
+    }
+  ],
+  faqs: [
+    {
+      question: "How many laser sessions will I need?",
+      answer: "Most patients require 4 to 6 sessions spaced 3 to 4 weeks apart. The exact timeline depends on your skin's response, the severity of the concern, and the specific laser settings recommended."
+    },
+    {
+      question: "Is there downtime after laser toning?",
+      answer: "Laser toning is a gentle procedure with minimal downtime. You might experience mild redness for 2 to 4 hours. You can resume normal activities immediately, provided you avoid direct sun exposure and apply sunscreen."
+    }
+  ],
+  caseStudies: [],
+  beforeAfter: [],
+  relatedLinks: [
+    { label: "Acne treatment in Coimbatore", href: "/acne-treatment-coimbatore" },
+    { label: "Pigmentation treatment in Coimbatore", href: "/pigmentation-treatment-coimbatore" }
+  ]
+};
+
+export const chemicalPeelContent: TreatmentRichContent = {
+  metaDescription:
+    "Dermatologist-supervised chemical peels in Coimbatore for active acne, acne marks, and skin texture. Safe, medical-grade peels. Schedule a consultation.",
+  intro: [
+    "Chemical peeling involves applying medical-grade exfoliating solutions to the skin to gently shed dead cells, clear pores, and stimulate skin renewal.",
+    "At Dr. Divya's Skin Clinic, chemical peels are chosen based on your specific concern—whether active acne, superficial marks, or dullness. A dermatologist assessment is crucial to pick the right peel depth and formula."
+  ],
+  expandedParagraphs: [
+    "Peels are categorized into superficial, medium, and deep. For most concerns, superficial peels (like salicylic or glycolic acid) are preferred due to their safety profile and minimal downtime. They work by clearing excess sebum, reducing acne-causing bacteria, and fading dark spots.",
+    "Regular sun protection is essential before and after peeling, as newly exposed skin is sensitive to UV rays. Self-treatment with strong acids at home is highly unsafe and can lead to chemical burns or permanent hyperpigmentation."
+  ],
+  sections: [
+    {
+      title: "Peels offered at the clinic",
+      items: [
+        "Salicylic acid peels for active acne and clogged pores",
+        "Glycolic acid peels for superficial dark spots and skin radiance",
+        "Combination peels for post-inflammatory hyperpigmentation",
+        "Gentle mandelic acid peels for sensitive skin types"
+      ]
+    },
+    {
+      title: "What to expect during and after peeling",
+      items: [
+        "A mild tingling or warm sensation during application, which is normal",
+        "Mild flaking or peeling for 2 to 5 days following the procedure",
+        "Daily application of moisturizer and broad-spectrum sunscreen is required",
+        "Avoiding makeup, scrubbing, or active serums for 48 hours post-peel"
+      ]
+    }
+  ],
+  faqs: [
+    {
+      question: "What is the recovery time after a chemical peel?",
+      answer: "Superficial peels have minimal downtime, with mild skin flaking for 2 to 3 days. Medium peels may cause redness and visible peeling for 5 to 7 days. Your dermatologist will advise on the expected recovery based on the peel selected."
+    },
+    {
+      question: "How many peel sessions are recommended?",
+      answer: "Usually, a series of 4 to 6 sessions spaced 2 to 4 weeks apart is recommended for optimal results. Maintenance sessions can be done every few months to sustain skin health."
+    }
+  ],
+  caseStudies: [],
+  beforeAfter: [],
+  relatedLinks: [
+    { label: "Acne treatment in Coimbatore", href: "/acne-treatment-coimbatore" },
+    { label: "Pigmentation treatment in Coimbatore", href: "/pigmentation-treatment-coimbatore" }
+  ]
+};
+
+export const vitiligoTreatmentContent: TreatmentRichContent = {
+  metaDescription:
+    "Dermatologist-led vitiligo and white patch care in Coimbatore. Evidence-based medical treatments and repigmentation planning. Book a clinical consultation.",
+  intro: [
+    "Vitiligo is a skin condition characterized by the loss of pigment, resulting in white patches on various parts of the body.",
+    "At Dr. Divya's Skin Clinic, we offer medically sound, evidence-based treatments to stabilize pigment loss and support repigmentation. Early dermatologist consultation is highly recommended to improve treatment outcomes."
+  ],
+  expandedParagraphs: [
+    "Vitiligo is an autoimmune condition where the body's immune system attacks pigment-producing cells (melanocytes). Treatment aims to stop active progression and stimulate pigment cells from hair follicles or surrounding skin.",
+    "Clinical evaluation involves identifying the type of vitiligo (segmental or non-segmental) and assessing if the condition is active or stable. Treatment depends on patch location, size, and activity of the condition."
+  ],
+  sections: [
+    {
+      title: "Medical management options",
+      items: [
+        "Topical immunosuppressants and anti-inflammatory creams",
+        "Targeted phototherapy or systemic treatments for active spread",
+        "Personalized guidelines for stable vitiligo management",
+        "Detailed counseling regarding trigger factors and sun protection"
+      ]
+    },
+    {
+      title: "Safety, expectations, and limitations",
+      items: [
+        "Repigmentation is a slow process and varies significantly between patients.",
+        "Treatments are safe but require consistent follow-ups to monitor progress and adjust dosage.",
+        "Depigmented skin is highly sensitive to sunburn; daily sunscreen application is mandatory.",
+        "Stable patches that do not respond to medical therapy may require surgical considerations in later stages."
+      ]
+    }
+  ],
+  faqs: [
+    {
+      question: "What is the best age to start vitiligo treatment?",
+      answer: "Vitiligo can be treated at any age. Early medical intervention, particularly within the first 1 to 2 years of active spread, yields better repigmentation results. Dermatologist assessment is the best first step regardless of age."
+    },
+    {
+      question: "How long does it take to see results?",
+      answer: "Pigment response is slow. Initial signs of repigmentation (usually as small brown spots within the white patch) may take 2 to 4 months of consistent medical therapy. Patience and adherence to the plan are crucial."
+    }
+  ],
+  caseStudies: [],
+  beforeAfter: [],
+  relatedLinks: [
+    { label: "Pigmentation treatment in Coimbatore", href: "/pigmentation-treatment-coimbatore" },
+    { label: "Laser treatment in Coimbatore", href: "/laser-treatment-coimbatore" }
+  ]
+};
+
+export const melasmaTreatmentContent: TreatmentRichContent = {
+  metaDescription:
+    "Dermatologist-led melasma treatment in Coimbatore. Safe pigment management, medical peels, and topical protocols to control dark patches. Book your skin review.",
+  intro: [
+    "Melasma is a common skin condition causing symmetrical brown or gray-brown patches, primarily on the face (cheeks, forehead, and upper lip).",
+    "At Dr. Divya's Skin Clinic, we manage melasma with a focus on stabilization and maintenance. Since melasma can be chronic and highly sensitive to heat and UV light, we avoid aggressive protocols that could worsen the patches."
+  ],
+  expandedParagraphs: [
+    "Melasma is driven by a combination of genetic predisposition, UV radiation, heat exposure, and hormonal triggers (such as pregnancy or oral contraceptives). It is different from sun spots or acne marks, and requires gentler, longer-term therapeutic pathways.",
+    "A standard clinical plan combines pigment-stabilizing topicals, lightweight sunscreens, and optional gentle chemical peels. Self-treatment with random skin-lightening creams can cause permanent skin thinning or rebound hyperpigmentation."
+  ],
+  sections: [
+    {
+      title: "Our approach to melasma care",
+      items: [
+        "Detailed clinical evaluation to identify the depth of pigment (epidermal, dermal, or mixed)",
+        "Topical depigmenting agents to regulate melanin production safely",
+        "Dermatologist-supervised superficial peels to target superficial pigment",
+        "Customized sun protection plans tailored to daily activities and climate"
+      ]
+    },
+    {
+      title: "Sun safety and maintenance guidelines",
+      items: [
+        "Apply SPF 50 broad-spectrum sunscreen every day, even when indoors or on cloudy days.",
+        "Reapply sunscreen every 2 to 3 hours if outdoors or sitting near windows.",
+        "Avoid excessive heat exposure (like steam rooms, saunas, or cooking over hot stoves for prolonged periods) as heat triggers melanocytes.",
+        "Expect treatment to focus on control and gradual fading; melasma requires ongoing maintenance."
+      ]
+    }
+  ],
+  faqs: [
+    {
+      question: "Can melasma be cured permanently?",
+      answer: "Melasma is a chronic condition. While patches can be faded significantly, they can return or darken with sun exposure or hormonal changes. Long-term maintenance and strict sun protection are key to keeping the skin clear."
+    },
+    {
+      question: "Are chemical peels safe for melasma?",
+      answer: "Yes, gentle superficial chemical peels are safe when chosen and applied by a dermatologist. Strong or deep peels should be avoided as they can cause inflammation, which may lead to post-inflammatory darkening."
+    }
+  ],
+  caseStudies: [],
+  beforeAfter: [],
+  relatedLinks: [
+    { label: "Pigmentation treatment in Coimbatore", href: "/pigmentation-treatment-coimbatore" },
+    { label: "Chemical peel in Coimbatore", href: "/chemical-peel-coimbatore" }
+  ]
+};
+
+export const moleWartRemovalContent: TreatmentRichContent = {
+  metaDescription:
+    "Safe mole, wart, and skin tag removal in Coimbatore using radiofrequency and electrocautery under dermatologist care. Book your clinical appointment.",
+  intro: [
+    "Moles, warts, and skin tags are common skin growths that can be removed safely using advanced clinical procedures like radiofrequency (RF) or electrocautery.",
+    "At Dr. Divya's Skin Clinic, we evaluate all growths before removal to ensure they are benign. Procedures are done in-clinic under local anesthesia to minimize discomfort and support clean healing."
+  ],
+  expandedParagraphs: [
+    "Moles (nevi) are clusters of pigment cells. Warts are caused by a viral infection (HPV) and can spread to other areas of the body if picked or left untreated. Skin tags are harmless, raised growths commonly appearing in areas of friction (like the neck or underarms).",
+    "Removal using radiofrequency offers high precision with minimal bleeding and scarring. Self-removal using home remedies, threads, or over-the-counter acids is highly unsafe and can lead to severe infections or permanent scars."
+  ],
+  sections: [
+    {
+      title: "Procedures offered at the clinic",
+      items: [
+        "Radiofrequency (RF) ablation for precise mole and skin tag removal",
+        "Electrocautery for viral wart removal and lesion control",
+        "Biopsy referral if any growth appears atypical or requires analysis",
+        "Post-procedure wound care counseling and scar prevention plans"
+      ]
+    },
+    {
+      title: "What to expect during and after removal",
+      items: [
+        "A small local anesthetic injection is given to numb the area, making the procedure comfortable.",
+        "A small scab will form over the treated spot, which typically falls off in 5 to 10 days.",
+        "Post-care ointment must be applied daily to support healing and prevent infection.",
+        "Sunscreen must be applied over the healed pink skin to prevent dark spot formation."
+      ]
+    }
+  ],
+  faqs: [
+    {
+      question: "Will the procedure leave a scar?",
+      answer: "Radiofrequency and electrocautery are precise techniques designed to minimize tissue damage. While a temporary pink mark or mild scar is possible, following post-procedure wound care instructions and applying sunscreen helps support optimal cosmetic healing."
+    },
+    {
+      question: "Do warts return after removal?",
+      answer: "Since warts are viral in nature, new warts can occasionally appear in surrounding areas if the underlying viral infection is active. Removing visible warts helps control spread. Multiple sessions are sometimes needed for stubborn viral lesions."
+    }
+  ],
+  caseStudies: [],
+  beforeAfter: [],
+  relatedLinks: [
+    { label: "Laser treatment in Coimbatore", href: "/laser-treatment-coimbatore" },
+    { label: "Acne treatment in Coimbatore", href: "/acne-treatment-coimbatore" }
+  ]
+};
+
+export const cornFootRemovalContent: TreatmentRichContent = {
+  metaDescription:
+    "Dermatologist-led corn and callus foot treatments in Coimbatore. Safe removal of painful pressure spots for comfortable walking. Schedule your foot review.",
+  intro: [
+    "Corns and calluses are areas of thickened skin that develop on the feet due to repeated friction, pressure, or ill-fitting footwear.",
+    "At Dr. Divya's Skin Clinic, we offer safe, aseptic removal of painful foot corns using precise clinical procedures. We also guide you on pressure relief and footwear adjustments to prevent recurrence."
+  ],
+  expandedParagraphs: [
+    "Corns have a hard center or core that presses down on nerve endings, causing sharp pain when walking. Calluses are wider patches of thickened skin, typically less painful, developing on the soles. Simply cutting them at home with blades is highly dangerous and frequently leads to deep bacterial infections.",
+    "Dermatologist-led removal safely targets the core of the corn under sterile conditions. However, if the pressure trigger (like tight shoes or walking posture) is not corrected, corns are highly likely to return."
+  ],
+  sections: [
+    {
+      title: "Removal and management options",
+      items: [
+        "Aseptic paring or enucleation of the corn core in the clinic",
+        "Application of keratolytic agents to soften thickened calluses",
+        "Evaluation of foot pressure points and footwear advice",
+        "Safety instructions for diabetic foot care (diabetic patients require professional care)"
+      ]
+    },
+    {
+      title: "Prevention and aftercare guidelines",
+      items: [
+        "Apply prescribed post-procedure ointment and keep the site clean.",
+        "Avoid wearing tight, narrow-toed, or hard-soled shoes.",
+        "Use silicon corn pads or customized orthotics to distribute pressure evenly.",
+        "Do not use sharp kitchen or household tools to self-treat corns."
+      ]
+    }
+  ],
+  faqs: [
+    {
+      question: "Is corn removal painful?",
+      answer: "The procedure is done after applying a local anesthetic or numbing agent if needed, making the enucleation comfortable. Most patients experience immediate relief from the sharp pressure pain once the hard core of the corn is removed."
+    },
+    {
+      question: "Why do corns keep coming back?",
+      answer: "Corns are secondary to mechanical pressure. Paring or removing them clears the thickened skin, but if the friction trigger—such as narrow shoes, walking habit, or bone structure—remains unchanged, the skin will thicken again to protect itself."
+    }
+  ],
+  caseStudies: [],
+  beforeAfter: [],
+  relatedLinks: [
+    { label: "Laser treatment in Coimbatore", href: "/laser-treatment-coimbatore" },
+    { label: "Chemical peel in Coimbatore", href: "/chemical-peel-coimbatore" }
+  ]
+};
+
+export const subcisionDermarollerContent: TreatmentRichContent = {
+  metaDescription:
+    "Dermatologist-performed subcision and dermaroller treatments in Coimbatore for depressed acne scars. Safe skin remodeling. Schedule a scar consultation.",
+  intro: [
+    "Subcision and dermaroller are clinical procedures designed to treat depressed acne scars, stretch marks, and skin texture irregularities by stimulating natural collagen remodeling.",
+    "At Dr. Divya's Skin Clinic, these procedures are performed under strict sterile conditions by a qualified dermatologist. We evaluate scar types (rolling, boxcar, ice pick) to recommend the most effective combinations."
+  ],
+  expandedParagraphs: [
+    "Subcision is highly effective for rolling or tethered scars. It involves inserting a sterile needle beneath the skin to release the fibrous bands that pull the scar downward, allowing the skin to lift. Dermaroller uses micro-needles to create micro-channels in the skin, triggering collagen production and enhancing the absorption of skin-repairing serums.",
+    "Both treatments require professional execution to prevent infection, skin damage, or scarring. Results are progressive, with collagen synthesis building gradually over several months."
+  ],
+  sections: [
+    {
+      title: "Acne scar procedures we perform",
+      items: [
+        "Subcision to release deep, tethered rolling acne scars",
+        "Dermaroller and microneedling for collagen induction and texture improvement",
+        "Combined protocols incorporating peeling or laser for mixed scar profiles",
+        "Detailed post-procedure care to promote healing and reduce downtime"
+      ]
+    },
+    {
+      title: "Expected timeline and side effects",
+      items: [
+        "Downtime: 2 to 5 days of swelling, bruising, or mild redness is normal after subcision.",
+        "Dermaroller may cause mild redness and flaking lasting 24 to 48 hours.",
+        "Consistency: A series of 3 to 6 sessions spaced 4 to 6 weeks apart is typical.",
+        "Gradual Improvement: Visible scar remodeling begins around session 3 and continues for months."
+      ]
+    }
+  ],
+  faqs: [
+    {
+      question: "Is subcision painful?",
+      answer: "Subcision is performed after numbing the target area with a local anesthetic, which makes the procedure comfortable. You might feel a mild pulling sensation during the release of the scar bands. Mild soreness is normal for a few days after."
+    },
+    {
+      question: "Can dermaroller treat all types of scars?",
+      answer: "Dermaroller and microneedling are excellent for superficial boxcar scars and skin texture. However, deep ice-pick scars or tethered rolling scars typically require other procedures like subcision, TCA CROSS, or laser resurfacing for meaningful improvement."
+    }
+  ],
+  caseStudies: [],
+  beforeAfter: [],
+  relatedLinks: [
+    { label: "Acne treatment in Coimbatore", href: "/acne-treatment-coimbatore" },
+    { label: "Laser treatment in Coimbatore", href: "/laser-treatment-coimbatore" }
+  ]
+};
+
 export const extraTreatmentFaqs: Record<string, SeoLandingFaq[]> = {
   "chemical-peel-coimbatore": [
     {
       question: "What is the recovery time for chemical peels?",
       answer:
-        "Superficial peels (glycolic, salicylic): 1–3 days of mild flaking, no significant downtime — you can usually work next day. Medium peels (TCA): 5–7 days of visible peeling and redness. Deep peels need longer recovery and are rarely first-line. Dr Divya selects peel depth based on your skin type and concern.",
+        "Superficial peels (glycolic, salicylic): 1–3 days of mild flaking, no significant downtime — you can usually work next day. Medium peels (TCA): 5–7 days of visible peeling and redness. Deep peels need longer recovery and are rarely first-line. Dr. Divya selects peel depth based on your skin type and concern.",
     },
   ],
   "laser-treatment-coimbatore": [
@@ -403,4 +746,11 @@ export const treatmentRichContentBySlug: Record<string, TreatmentRichContent> = 
   "acne-treatment-coimbatore": acneTreatmentContent,
   "hair-fall-treatment-coimbatore": hairFallTreatmentContent,
   "pigmentation-treatment-coimbatore": pigmentationTreatmentContent,
+  "laser-treatment-coimbatore": laserTreatmentContent,
+  "chemical-peel-coimbatore": chemicalPeelContent,
+  "vitiligo-treatment-coimbatore": vitiligoTreatmentContent,
+  "melasma-treatment-coimbatore": melasmaTreatmentContent,
+  "mole-wart-skin-tag-removal-coimbatore": moleWartRemovalContent,
+  "corn-foot-removal-coimbatore": cornFootRemovalContent,
+  "subcision-dermaroller-coimbatore": subcisionDermarollerContent,
 };

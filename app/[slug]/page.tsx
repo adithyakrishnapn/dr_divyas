@@ -160,6 +160,29 @@ export default async function SeoLandingPage({ params }: SeoLandingPageProps) {
                 <p key={paragraph.slice(0, 60)}>{paragraph}</p>
               ))}
             </div>
+
+            {page.pageType === "treatment" && (
+              <div className="mt-10 border-t border-amber-100 pt-8 flex flex-col sm:flex-row items-center gap-6">
+                <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-full border-2 border-amber-500 shadow-md">
+                  <Image
+                    src="/images/dr.jpg"
+                    alt={siteConfig.doctor.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-wider text-amber-700">Medical Author & Reviewer</p>
+                  <h3 className="text-lg font-bold text-slate-900">{siteConfig.doctor.name}</h3>
+                  <p className="text-sm text-slate-600 font-medium">
+                    {siteConfig.doctor.degree} | Registration No: {siteConfig.doctor.regNo} (Tamil Nadu Medical Council)
+                  </p>
+                  <p className="mt-2 text-xs text-slate-500 leading-relaxed">
+                    This medical content has been authored, reviewed, and approved by a registered dermatologist to ensure clinical accuracy and adherence to healthcare guidelines. Last reviewed: August 2026.
+                  </p>
+                </div>
+              </div>
+            )}
           </article>
         </div>
       </section>

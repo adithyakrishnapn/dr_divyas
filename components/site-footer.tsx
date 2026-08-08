@@ -45,7 +45,7 @@ export function SiteFooter() {
       </div>
 
       <div className="relative">
-        <div className="page-shell grid gap-12 py-16 md:grid-cols-4">
+        <div className="page-shell grid gap-12 py-16 grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
           <motion.div
             variants={containerVariants}
             initial="visible"
@@ -187,7 +187,7 @@ export function SiteFooter() {
             <div className="grid gap-0 lg:grid-cols-[1.2fr_0.8fr]">
               <div className="min-h-[280px] lg:min-h-[360px]">
                 <iframe
-                  title="Dr Divya's Skin & Hair Clinic map location"
+                  title="Dr. Divya's Skin Clinic map location"
                   src={mapsEmbedUrl}
                   className="h-full w-full"
                   loading="lazy"
@@ -201,7 +201,7 @@ export function SiteFooter() {
                     Clinic location
                   </p>
                   <h4 className="mt-2 text-2xl font-bold text-white">
-                    Visit Dr Divya's Skin & Hair Clinic in Coimbatore
+                    Visit Dr. Divya's Skin Clinic in Coimbatore
                   </h4>
                   <p className="mt-3 text-sm leading-7 text-slate-300">
                     Use the map below to find the clinic location and open directions in Google Maps.
@@ -210,7 +210,7 @@ export function SiteFooter() {
 
                 <div className="flex flex-col gap-3 sm:flex-row">
                   <Link
-                    href="https://maps.app.goo.gl/o1vwrpsMj99KKHGAA"
+                    href={siteConfig.mapUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center justify-center rounded-lg bg-gradient-warm px-5 py-3 font-semibold text-white shadow-lg"

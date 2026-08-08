@@ -59,7 +59,7 @@ const highlights = [
   { count: "4,000+", label: "Happy Patients", icon: Users },
   { count: "10+ Years", label: "Clinical Expertise", icon: Award },
   { count: "4.9★", label: "Patient Rating", icon: Star },
-  { count: "Mon - Sat", label: "10 AM - 7 PM", icon: Clock },
+  { count: "Sun - Sat", label: "Dermatologist Consultations", icon: Clock },
 ];
 
 const whyChoose = [
@@ -281,14 +281,12 @@ export default function Home() {
                 </motion.div>
 
                 <motion.h1
-                  className="text-5xl md:text-6xl font-bold leading-tight"
+                  className="text-5xl md:text-6xl font-bold leading-tight text-amber-900"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3, duration: 0.8 }}
                 >
-                  <span className="text-gradient-gold">Radiant Skin,</span>
-                  <br />
-                  <span className="text-amber-900">Confident You</span>
+                  Dermatologist in Coimbatore for Skin, Hair and Aesthetic Concerns
                 </motion.h1>
 
                 <motion.p
@@ -297,7 +295,7 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, duration: 0.8 }}
                 >
-                  Award-winning dermatology clinic in Coimbatore offering advanced skin and hair treatments with a personal touch. Dr Divya brings 10 years of expertise and has helped 4K+ patients.
+                  Dr. Divya&apos;s Skin Clinic provides dermatologist-led medical and cosmetic treatments in Coimbatore. Dr. Divya Shanmugam (MD (DVL), Reg No. 112496) offers 10 years of expertise in acne, pigmentation, hair fall, and skin rejuvenation.
                 </motion.p>
 
                 <motion.div
@@ -365,7 +363,7 @@ export default function Home() {
                 >
                   <Image
                     src={sampleImages.hero}
-                    alt="Dr Divya's Skin Clinic in Coimbatore"
+                    alt="Dr. Divya's Skin Clinic in Coimbatore"
                     width={600}
                     height={800}
                     className="w-full h-auto object-cover"

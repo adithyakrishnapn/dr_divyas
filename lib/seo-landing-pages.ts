@@ -222,7 +222,7 @@ function buildAreaPage(config: {
     h1: config.h1,
     intro: [
       `For patients residing in ${config.areaName}, access to advanced and trusted dermatological care is essential for maintaining skin and scalp health.`,
-      `Dr. Divya's Skin & Hair Clinic serves as a primary destination for individuals seeking specialized acne care, hair fall solutions, and skin rejuvenation in a warm, patient-first environment.`,
+      `Dr. Divya's Skin Clinic serves as a primary destination for individuals seeking specialized acne care, hair fall solutions, and skin rejuvenation in a warm, patient-first environment.`,
     ],
     expandedParagraphs: [],
     trustPoints: [
@@ -767,14 +767,14 @@ const areaPages: SeoLandingPage[] = [
       "Easy access from Sathy Road and nearby office zones",
     ],
     semanticKeywords: [
-      "best dermatologist in saravanampatti",
+      "Dermatologist in saravanampatti",
       "skin clinic saravanampatti",
       "skin specialist near me",
       "dermatologist near me saravanampatti",
       "hair doctor saravanampatti",
     ],
     longTailKeywords: [
-      "best skin doctor in saravanampatti for acne",
+      "Skin doctor in saravanampatti for acne",
       "skin clinic near it corridor coimbatore",
       "dermatologist in saravanampatti for pigmentation",
       "skin specialist near me in saravanampatti",
@@ -814,14 +814,14 @@ const areaPages: SeoLandingPage[] = [
       "North Coimbatore residential and retail zones",
     ],
     semanticKeywords: [
-      "best skin clinic in ganapathy",
+      "Skin Clinic in ganapathy",
       "dermatologist ganapathy",
       "hair clinic ganapathy",
       "skin specialist near ganapathy",
       "acne doctor ganapathy",
     ],
     longTailKeywords: [
-      "best dermatologist in ganapathy for acne marks",
+      "Dermatologist in ganapathy for acne marks",
       "skin clinic near ganapathy bus stand",
       "hair fall doctor in ganapathy coimbatore",
       "skin specialist near me in ganapathy",
@@ -863,12 +863,12 @@ const areaPages: SeoLandingPage[] = [
     semanticKeywords: [
       "skin clinic in thudiyalur",
       "skin doctor thudiyalur",
-      "best dermatologist near thudiyalur",
+      "Dermatologist near thudiyalur",
       "hair treatment thudiyalur",
       "acne clinic thudiyalur",
     ],
     longTailKeywords: [
-      "best dermatologist in thudiyalur for acne treatment",
+      "Dermatologist in thudiyalur for acne treatment",
       "skin doctor near me in thudiyalur",
       "hair fall specialist in thudiyalur coimbatore",
       "skin clinic on thudiyalur main road",
@@ -908,7 +908,7 @@ const areaPages: SeoLandingPage[] = [
       "Easy route toward Race Course and Singanallur",
     ],
     semanticKeywords: [
-      "best skin clinic in peelamedu",
+      "Skin Clinic in peelamedu",
       "skin specialist peelamedu",
       "hair clinic peelamedu",
       "acne treatment peelamedu",
@@ -916,7 +916,7 @@ const areaPages: SeoLandingPage[] = [
     ],
     longTailKeywords: [
       "skin clinic near airport road coimbatore",
-      "best dermatologist in peelamedu for acne",
+      "Dermatologist in peelamedu for acne",
       "hair fall doctor near peelamedu",
       "skin specialist near me in peelamedu",
     ],
@@ -938,14 +938,14 @@ const areaPages: SeoLandingPage[] = [
   buildAreaPage({
     slug: "best-dermatologist-rs-puram",
     areaName: "RS Puram",
-    seoTitle: "Best Dermatologist in RS Puram",
+    seoTitle: "Dermatologist in RS Puram",
     metaDescription:
-      "Best dermatologist in RS Puram for acne, pigmentation, hair fall, laser, and patient-friendly skin care in central Coimbatore.",
+      "Dermatologist in RS Puram for acne, pigmentation, hair fall, laser, and patient-friendly skin care in central Coimbatore.",
     focusKeyword: "best dermatologist rs puram",
-    h1: "Best Dermatologist in RS Puram for Skin and Hair Care",
+    h1: "Dermatologist in RS Puram for Skin and Hair Care",
     localAngles: [
       "Great for central Coimbatore patients who want a dependable skin specialist nearby",
-      "Useful for people searching for the best dermatologist near me around RS Puram",
+      "Useful for people searching for the Dermatologist near me around RS Puram",
       "Supports repeat visits for acne, pigmentation, laser, and scalp issues",
     ],
     landmarks: [
@@ -962,7 +962,7 @@ const areaPages: SeoLandingPage[] = [
       "hair treatment rs puram",
     ],
     longTailKeywords: [
-      "best dermatologist in rs puram for pigmentation",
+      "Dermatologist in rs puram for pigmentation",
       "skin clinic near db road coimbatore",
       "hair fall specialist in rs puram",
       "skin doctor near me in central coimbatore",
@@ -1004,7 +1004,7 @@ const areaPages: SeoLandingPage[] = [
     semanticKeywords: [
       "skin clinic gandhipuram",
       "dermatologist gandhipuram",
-      "best skin doctor in gandhipuram",
+      "Skin doctor in gandhipuram",
       "hair clinic gandhipuram",
       "acne clinic gandhipuram",
     ],
@@ -1031,7 +1031,7 @@ const areaPages: SeoLandingPage[] = [
   }),
 ];
 
-export const seoLandingPages = [...treatmentPages, ...areaPages];
+export const seoLandingPages = [...treatmentPages];
 
 export const seoLandingPageSlugs = seoLandingPages.map((page) => page.slug);
 

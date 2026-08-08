@@ -105,10 +105,10 @@ export function ContactPopup() {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-      <div className="w-full max-w-xl rounded-2xl border border-amber-100 bg-white p-6 shadow-2xl">
+      <div className="w-full max-w-xl rounded-2xl border border-amber-100 bg-white p-6 shadow-2xl max-h-[90vh] overflow-y-auto">
         <div className="mb-4 flex items-start justify-between gap-4">
           <div>
-            <h2 className="text-2xl font-bold text-amber-900">Talk to Dr Divya&apos;s Team</h2>
+            <h2 className="text-2xl font-bold text-amber-900">Talk to Dr. Divya&apos;s Team</h2>
             <p className="mt-1 text-sm text-slate-600">
               Share your concern and get a quick callback from the clinic.
             </p>
