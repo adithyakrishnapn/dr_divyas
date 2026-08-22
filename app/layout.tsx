@@ -6,6 +6,8 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { ContactPopup } from "@/components/contact-popup";
 import { ClinicSchema } from "@/components/clinic-schema";
+import { GoogleAnalytics } from "@next/third-parties/google";
+
 const headingFont = Playfair_Display({
   variable: "--font-heading",
   subsets: ["latin"],
@@ -93,6 +95,7 @@ export default function RootLayout({
           <SiteFooter />
         </div>
         <ClinicSchema />
+        <GoogleAnalytics gaId="G-Y3ZQW5PLKC" />
       </body>
     </html>
   );
