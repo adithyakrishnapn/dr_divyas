@@ -142,6 +142,7 @@ export default function ContactPage() {
                 content: siteConfig.phone,
                 link: `tel:${siteConfig.phone}`,
                 linkText: "Call Now",
+                gtm: "call-to-action",
               },
               {
                 icon: Mail,
@@ -155,7 +156,6 @@ export default function ContactPage() {
                 title: "Hours",
                 content: siteConfig.hoursLabel,
                 linkText: "",
-                gtm: "call-to-action",
               },
             ].map(({ icon: Icon, title, content, link, linkText, gtm }) => (
               <motion.div
