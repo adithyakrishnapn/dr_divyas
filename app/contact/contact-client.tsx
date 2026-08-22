@@ -155,8 +155,9 @@ export default function ContactPage() {
                 title: "Hours",
                 content: siteConfig.hoursLabel,
                 linkText: "",
+                gtm: "call-to-action",
               },
-            ].map(({ icon: Icon, title, content, link, linkText }) => (
+            ].map(({ icon: Icon, title, content, link, linkText, gtm }) => (
               <motion.div
                 key={title}
                 className="card-premium p-8 text-center"
@@ -180,6 +181,7 @@ export default function ContactPage() {
                     rel={link?.startsWith("http") ? "noopener noreferrer" : undefined}
                     whileHover={{ x: 3 }}
                     className="inline-flex text-sm font-semibold text-amber-600 hover:text-amber-700"
+                    data-gtm={gtm}
                   >
                     {linkText} →
                   </motion.a>
