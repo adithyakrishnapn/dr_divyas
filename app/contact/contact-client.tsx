@@ -135,6 +135,8 @@ export default function ContactPage() {
                 content: siteConfig.address,
                 link: siteConfig.mapUrl,
                 linkText: "View on Google Maps",
+                gtm: "call-to-action",
+                ctaType: "map",
               },
               {
                 icon: Phone,
@@ -143,6 +145,7 @@ export default function ContactPage() {
                 link: `tel:${siteConfig.phone}`,
                 linkText: "Call Now",
                 gtm: "call-to-action",
+                ctaType: "call",
               },
               {
                 icon: Mail,
@@ -150,14 +153,18 @@ export default function ContactPage() {
                 content: siteConfig.email,
                 link: `mailto:${siteConfig.email}`,
                 linkText: "Send Email",
+                gtm: "call-to-action",
+                ctaType: "email",
               },
               {
                 icon: Clock,
                 title: "Hours",
                 content: siteConfig.hoursLabel,
                 linkText: "",
+                gtm: "call-to-action",
+                ctaType: "hours",
               },
-            ].map(({ icon: Icon, title, content, link, linkText, gtm }) => (
+            ].map(({ icon: Icon, title, content, link, linkText, gtm, ctaType }) => (
               <motion.div
                 key={title}
                 className="card-premium p-8 text-center"
@@ -182,6 +189,7 @@ export default function ContactPage() {
                     whileHover={{ x: 3 }}
                     className="inline-flex text-sm font-semibold text-amber-600 hover:text-amber-700"
                     data-gtm={gtm}
+                    data-cta-type={ctaType}
                   >
                     {linkText} →
                   </motion.a>
