@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Dr. Divya's Skin Clinic",
+  name: "Dr. Divya's Skin & Hair Clinic",
   description:
     "Dr. Divya's Skin Clinic in Coimbatore provides dermatologist-led care, offering advanced treatments for acne, pigmentation, hair fall, and skin rejuvenation.",
   url: "https://www.drdivyas.in",

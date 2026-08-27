@@ -355,11 +355,11 @@ export const localAreaPages: LocalAreaPage[] = [
   {
     slug: "rs-puram",
     areaName: "RS Puram",
-    seoTitle: "Dermatologist in RS Puram",
+    seoTitle: "Skin Clinic in RS Puram - Dr. Divya's Skin & Hair Clinic",
     metaDescription:
-      "Visit Dr. Divya's Skin Clinic near RS Puram for acne, pigmentation, hair fall, laser, and expert skin care.",
-    focusKeyword: "Dermatologist in rs puram",
-    ogTitle: "Dermatologist in RS Puram",
+      "Visit Dr. Divya's Skin & Hair Clinic near RS Puram for acne, pigmentation, hair fall, laser, and expert skin care.",
+    focusKeyword: "skin clinic in rs puram",
+    ogTitle: "Skin Clinic in RS Puram - Dr. Divya's Skin & Hair Clinic",
     ogDescription:
       "Premium skin and hair care near RS Puram, Coimbatore.",
     keywords: createKeywords("RS Puram", "rs-puram", [
@@ -369,10 +369,12 @@ export const localAreaPages: LocalAreaPage[] = [
       "acne treatment rs puram",
       "laser clinic near rs puram",
     ]),
-    h1: "Skin Clinic in RS Puram for Premium Dermatology Care",
+    h1: "Skin Clinic in RS Puram - Dr. Divya's Skin & Hair Clinic",
     introParagraphs: [
-      "Patients from RS Puram seek a premium, clinical environment that prioritizes patient comfort, absolute transparency, and advanced therapeutic options. Dr. Divya's Skin Clinic delivers sophisticated, evidence-based treatments designed to deliver visible, lasting results.",
-      "We serve RS Puram residents with a personal, highly professional model of care for acne, melasma, advanced laser toning, and clinical hair restoration therapies.",
+      "Patients searching for a trusted skin clinic in RS Puram seek a professional, medical environment that prioritizes skin health, clinical transparency, and dermatologist-supervised therapies. Dr. Divya's Skin & Hair Clinic serves central Coimbatore residents by offering evidence-based treatments for active breakouts, pigmentation, scalp disorders, and advanced laser toning. We prioritize detailed diagnostic evaluations for every patient, ensuring you receive an honest medical plan that addresses the root cause of your skin or hair concern instead of relying on generic skincare routines.",
+      "For individuals traveling from RS Puram, reaching our clinic in Coimbatore North is straightforward. The clinic is highly accessible via major arterial roads, connecting central shopping zones like DB Road, Cowley Brown Road, and Brookefields Mall directly to our location. Patients from Saibaba Colony, Vadavalli, and central Coimbatore find our scheduling system convenient, as it minimizes wait times for consultations and follow-up clinical visits. Whether commuting for routine skin care or returning for specialized procedural sessions, the journey is smooth and well-connected.",
+      "Our dermatological services target key local concerns, including active acne flare-ups, post-acne scarring, melasma, and sun tanning common in the regional climate. We offer clinical chemical peels, subcision, and dermaroller therapy for depressed scars, and laser toning to restore skin luminosity safely. Additionally, our trichology services address stress-induced hair shedding, scalp itching, and hair thinning through customized growth factor applications and Platelet-Rich Plasma (PRP) therapies, helping patients achieve healthy density and scalp comfort under direct dermatologist supervision.",
+      "At our clinic, we combine clinical therapeutics with patient safety. We ensure that all medical devices are dermatologist-approved and that procedures are carried out under strict hygiene standards. By offering transparent timelines and realistic expectations, we establish long-term trust with our RS Puram patient community, supporting them at every step of their dermatological care journey.",
     ],
     localHighlights: [
       "RS Puram commercial and shopping district routes",

@@ -144,6 +144,11 @@ export function SiteFooter() {
               <li><Link href="/treatments" className="hover:text-amber-400 transition-smooth">Hair Care</Link></li>
               <li><Link href="/treatments" className="hover:text-amber-400 transition-smooth">Anti-Aging</Link></li>
               <li><Link href="/treatments" className="hover:text-amber-400 transition-smooth">Acne Solutions</Link></li>
+              <li>
+                <Link href="/skin-and-hair-clinic" className="hover:text-amber-400 transition-smooth">
+                  Dr. Divya Skin & Hair Clinic
+                </Link>
+              </li>
             </ul>
           </motion.div>
 
@@ -201,7 +206,7 @@ export function SiteFooter() {
                     Clinic location
                   </p>
                   <h4 className="mt-2 text-2xl font-bold text-white">
-                    Visit Dr. Divya's Skin Clinic in Coimbatore
+                    Visit Dr. Divya&apos;s Skin Clinic in Coimbatore
                   </h4>
                   <p className="mt-3 text-sm leading-7 text-slate-300">
                     Use the map below to find the clinic location and open directions in Google Maps.

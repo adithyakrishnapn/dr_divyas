@@ -70,16 +70,39 @@ export default function AboutPage() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.2 }}
                 >
-                  About Dr. Divya Shanmugam
+                  Dr. Divya Skin Clinic Coimbatore - About Our Clinic
                 </motion.h1>
-                <motion.p
-                  className="text-xl text-slate-700 leading-relaxed"
+                <motion.div
+                  className="text-slate-700 leading-relaxed space-y-6"
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.3 }}
                 >
-                  Dr. Divya Shanmugam, MD (DVL), Registered Medical Practitioner No. 112496 (Tamil Nadu Medical Council), is a board-certified dermatologist dedicated to providing patient-centric skin and hair care. With 10 years of clinical experience serving over 4,000 patients in Coimbatore, she combines evidence-based medical treatments with advanced skincare protocols to achieve healthy, natural-looking results.
-                </motion.p>
+                  <p className="text-xl">
+                    Dr. Divya Shanmugam, MD (DVL), Registered Medical Practitioner No. 112496 (Tamil Nadu Medical Council), is a board-certified dermatologist dedicated to providing patient-centric skin and hair care. With 10 years of clinical experience serving over 4,000 patients in Coimbatore, she combines evidence-based medical treatments with advanced skincare protocols to achieve healthy, natural-looking results.
+                  </p>
+                  
+                  <div>
+                    <h3 className="text-lg font-bold text-amber-900 mb-2">Our Clinical Philosophy and Patient Care</h3>
+                    <p className="text-base text-slate-700">
+                      At Dr. Divya Skin Clinic, the primary philosophy centers on clinical integrity, absolute transparency, and safety. Every treatment begins with a thorough diagnostic evaluation. We believe in providing honest, medically sound guidance rather than quick fixes or generic cosmetic treatments. By taking time to explain the root causes of skin and hair concerns, we help patients make informed decisions about their health. This patient-focused care ensures that your treatment plan is customized specifically to your lifestyle and skin profile, minimizing risks and optimizing recovery.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-lg font-bold text-amber-900 mb-2">Medical Expertise and Background</h3>
+                    <p className="text-base text-slate-700">
+                      The clinic is led by Dr. Divya Shanmugam, who completed her MD in Dermatology, Venereology, and Leprosy (DVL). Registered under the Tamil Nadu Medical Council (Registration No. 112496), she has dedicated her career to diagnosing and managing complex dermatological and trichological conditions. Her experience spans ten years in both clinical therapeutics and aesthetic dermatology. By staying updated with peer-reviewed medical advancements, she brings safe, scientifically backed treatments to Coimbatore, ensuring clinical excellence in every procedure.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-lg font-bold text-amber-900 mb-2">Verified Clinic Facilities and Technology</h3>
+                    <p className="text-base text-slate-700">
+                      Dr. Divya Skin Clinic features modern facilities designed for safe, sterile, and professional dermatological procedures. To deliver precise results, the clinic utilizes advanced medical devices, including high-frequency radiofrequency (RF) and electrocautery equipment for the removal of skin tags, warts, and moles with minimal downtime. For skin rejuvenation and pigment correction, we offer chemical peeling treatments and laser-assisted toning under strict clinical supervision. All devices and materials used are dermatologist-approved to maintain high safety standards.
+                    </p>
+                  </div>
+                </motion.div>
               </div>
 
               <motion.div

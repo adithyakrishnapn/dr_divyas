@@ -286,7 +286,7 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3, duration: 0.8 }}
                 >
-                  Dermatologist in Coimbatore for Skin, Hair and Aesthetic Concerns
+                  Divya Skin Clinic Coimbatore
                 </motion.h1>
 
                 <motion.p
@@ -295,7 +295,7 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, duration: 0.8 }}
                 >
-                  Dr. Divya&apos;s Skin Clinic provides dermatologist-led medical and cosmetic treatments in Coimbatore. Dr. Divya Shanmugam (MD (DVL), Reg No. 112496) offers 10 years of expertise in acne, pigmentation, hair fall, and skin rejuvenation.
+                  Divya Skin Clinic in Coimbatore (Dr. Divya&apos;s Skin & Hair Clinic) provides dermatologist-led medical and cosmetic treatments. Dr. Divya Shanmugam (MD (DVL), Reg No. 112496) offers 10 years of clinical expertise in acne, pigmentation, hair fall, and skin rejuvenation.
                 </motion.p>
 
                 <motion.div
@@ -566,7 +566,7 @@ export default function Home() {
                   whileHover={{ x: 10 }}
                   className="inline-flex items-center gap-2 text-amber-600 font-bold text-lg hover:text-amber-700"
                 >
-                  About Dr Divya
+                  Dr. Divya Skin Clinic
                   <ArrowRight className="h-5 w-5" />
                 </motion.a>
               </motion.div>

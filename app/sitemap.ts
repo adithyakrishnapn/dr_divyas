@@ -7,14 +7,20 @@ import { siteConfig } from "@/lib/site";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getAllPostsForSitemap();
 
-  const staticRoutes = ["", "/about", "/treatments", "/blog", "/contact", "/coimbatore"].map(
-    (route) => ({
-      url: `${siteConfig.url}${route}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: route === "" ? 1 : 0.7,
-    }),
-  );
+  const staticRoutes = [
+    "",
+    "/about",
+    "/treatments",
+    "/blog",
+    "/contact",
+    "/coimbatore",
+    "/skin-and-hair-clinic",
+  ].map((route) => ({
+    url: `${siteConfig.url}${route}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: route === "" ? 1 : 0.7,
+  }));
 
   const areaRoutes = localAreaPages.map((page) => ({
     url: `${siteConfig.url}/coimbatore/${page.slug}`,
