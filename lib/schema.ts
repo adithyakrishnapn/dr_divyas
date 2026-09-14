@@ -11,7 +11,7 @@ export function buildGlobalBusinessSchema() {
     "@id": `${siteConfig.url}/#clinic`,
     name: siteConfig.name,
     description: siteConfig.description,
-    url: siteConfig.url,
+    url: `${siteConfig.url}/`,
     telephone: siteConfig.phone,
     email: siteConfig.email,
     image: `${siteConfig.url}/images/doctor-about.jpeg`,
@@ -39,14 +39,32 @@ export function buildGlobalBusinessSchema() {
       "@type": "City",
       name: "Coimbatore",
     },
-    medicalSpecialty: ["Dermatology", "Cosmetic Dermatology", "Hair Restoration"],
+    medicalSpecialty: [
+      "https://schema.org/Dermatology",
+      "Cosmetic Dermatology",
+      "Hair Restoration",
+    ],
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: siteConfig.googleReviews.rating,
-      reviewCount: siteConfig.googleReviews.reviewCount,
-      bestRating: 5,
-      worstRating: 1,
+      ratingValue: String(siteConfig.googleReviews.rating),
+      reviewCount: String(siteConfig.googleReviews.reviewCount),
+      bestRating: "5",
+      worstRating: "1",
     },
-    sameAs: [siteConfig.mapUrl, siteConfig.googleReviews.profileUrl],
+    review: siteConfig.googleReviews.highlights.map((rev) => ({
+      "@type": "Review",
+      author: {
+        "@type": "Person",
+        name: rev.author,
+      },
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: String(rev.rating),
+        bestRating: "5",
+        worstRating: "1",
+      },
+      reviewBody: rev.text,
+    })),
+    sameAs: [siteConfig.mapUrl],
   };
 }

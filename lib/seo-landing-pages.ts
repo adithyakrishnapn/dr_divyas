@@ -1047,10 +1047,14 @@ export function buildServiceSchema(page: SeoLandingPage) {
     serviceType: page.focusKeyword,
     provider: {
       "@type": "MedicalClinic",
+      "@id": `${siteConfig.url}/#clinic`,
       name: siteConfig.name,
-      url: siteConfig.url,
+      url: `${siteConfig.url}/`,
     },
-    areaServed: "Coimbatore",
+    areaServed: {
+      "@type": "City",
+      name: "Coimbatore",
+    },
   };
 }
 
