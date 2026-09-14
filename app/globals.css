@@ -285,34 +285,39 @@ main {
 }
 
 /* Article Table Styling */
+.article-content {
+  overflow-x: auto;
+}
+
 .article-content table {
   width: 100%;
   border-collapse: collapse;
   margin: 1.5rem 0;
   font-size: 0.95rem;
-  overflow-x: auto;
-  display: block;
-}
-
-@media (min-width: 640px) {
-  .article-content table {
-    display: table;
-  }
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .article-content th,
 .article-content td {
-  padding: 0.75rem 1rem;
+  padding: 0.85rem 1.1rem;
   border: 1px solid #e2e8f0;
   text-align: left;
+  vertical-align: top;
 }
 
 .article-content th {
   background-color: #fcf8f2;
   color: #6b4e2f;
   font-weight: 700;
+  border-bottom: 2px solid #d4a574;
 }
 
 .article-content tr:nth-child(even) {
   background-color: #faf7f5;
+}
+
+.article-content tr:hover {
+  background-color: #f5eee6;
 }

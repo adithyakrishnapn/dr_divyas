@@ -17,18 +17,107 @@ export function BlogDetailClient({ post }: BlogDetailClientProps) {
   }, [post.slug]);
 
   useEffect(() => {
+    const slugify = (text: string) =>
+      text
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9\s-]/g, "")
+        .replace(/\s+/g, "-")
+        .replace(/-+/g, "-");
+
+    const scrollToTargetId = (targetId: string): boolean => {
+      if (!targetId) return false;
+      const decoded = decodeURIComponent(targetId).trim();
+      if (!decoded) return false;
+
+      // 1. Check exact element ID
+      let el: HTMLElement | null = document.getElementById(decoded);
+
+      // 2. Check selector escape or name attribute
+      if (!el) {
+        try {
+          el = document.querySelector(`[id="${CSS.escape(decoded)}"]`);
+        } catch {
+          // ignore
+        }
+      }
+
+      if (!el) {
+        try {
+          el = document.querySelector(`[name="${CSS.escape(decoded)}"]`);
+        } catch {
+          // ignore
+        }
+      }
+
+      // 3. Fallback: Search headings inside .article-content matching text slug
+      if (!el) {
+        const headings = Array.from(
+          document.querySelectorAll<HTMLElement>(
+            ".article-content h1, .article-content h2, .article-content h3, .article-content h4, .article-content h5, .article-content h6"
+          )
+        );
+
+        const targetSlug = slugify(decoded);
+
+        el =
+          headings.find((h) => slugify(h.textContent || "") === targetSlug) ||
+          headings.find((h) => {
+            const hSlug = slugify(h.textContent || "");
+            return hSlug.length > 0 && (hSlug.includes(targetSlug) || targetSlug.includes(hSlug));
+          }) ||
+          null;
+
+        if (el && !el.id) {
+          el.id = decoded;
+        }
+      }
+
+      if (el) {
+        const headerOffset = 90;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elRect = el.getBoundingClientRect().top;
+        const targetPosition = elRect - bodyRect - headerOffset;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth",
+        });
+
+        return true;
+      }
+
+      return false;
+    };
+
     const handleAnchorClick = (e: MouseEvent) => {
       const target = (e.target as HTMLElement).closest("a");
       if (!target) return;
+
       const href = target.getAttribute("href");
-      if (href && href.startsWith("#")) {
-        const id = href.slice(1);
-        if (!id) return;
-        const element = document.getElementById(id);
-        if (element) {
+      if (!href) return;
+
+      let hash = "";
+      if (href.startsWith("#")) {
+        hash = href;
+      } else if (href.includes("#")) {
+        const hashIdx = href.indexOf("#");
+        const pathPart = href.substring(0, hashIdx);
+        if (
+          !pathPart ||
+          pathPart === window.location.pathname ||
+          window.location.href.includes(pathPart)
+        ) {
+          hash = href.substring(hashIdx);
+        }
+      }
+
+      if (hash && hash.length > 1) {
+        const targetId = hash.slice(1);
+        const handled = scrollToTargetId(targetId);
+        if (handled) {
           e.preventDefault();
-          element.scrollIntoView({ behavior: "smooth" });
-          window.history.pushState(null, "", href);
+          window.history.pushState(null, "", hash);
         }
       }
     };
@@ -36,13 +125,10 @@ export function BlogDetailClient({ post }: BlogDetailClientProps) {
     document.addEventListener("click", handleAnchorClick);
 
     if (window.location.hash) {
-      const id = window.location.hash.slice(1);
-      const element = document.getElementById(id);
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: "smooth" });
-        }, 100);
-      }
+      const targetId = window.location.hash.slice(1);
+      setTimeout(() => {
+        scrollToTargetId(targetId);
+      }, 200);
     }
 
     return () => {
