@@ -17,13 +17,14 @@
 html {
   background: linear-gradient(135deg, #faf7f5 0%, #f5f1ed 50%, #ede9e4 100%);
   background-attachment: fixed;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
 }
 
 body {
   background: transparent;
   color: var(--foreground);
   font-family: var(--font-body), Arial, Helvetica, sans-serif;
-  scroll-behavior: smooth;
 }
 
 h1,
@@ -220,12 +221,31 @@ main {
   }
 }
 
+.article-content h1,
 .article-content h2,
 .article-content h3,
-.article-content h4 {
-  margin-top: 1.5rem;
+.article-content h4,
+.article-content h5,
+.article-content h6 {
+  margin-top: 1.8rem;
   margin-bottom: 0.6rem;
   color: #6b4e2f;
+  scroll-margin-top: 5.5rem;
+}
+
+.article-content h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+.article-content h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.article-content h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
 }
 
 .article-content p,
@@ -240,10 +260,19 @@ main {
   margin: 1rem 0 1rem 1.2rem;
 }
 
+.article-content ul {
+  list-style-type: disc;
+}
+
+.article-content ol {
+  list-style-type: decimal;
+}
+
 .article-content a {
   color: #b45309;
   font-weight: 600;
   text-decoration: underline;
+  scroll-margin-top: 5.5rem;
 }
 
 .article-content img {
@@ -253,4 +282,37 @@ main {
   margin: 1.5rem auto;
   border-radius: 1rem;
   object-fit: cover;
+}
+
+/* Article Table Styling */
+.article-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  overflow-x: auto;
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .article-content table {
+    display: table;
+  }
+}
+
+.article-content th,
+.article-content td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.article-content th {
+  background-color: #fcf8f2;
+  color: #6b4e2f;
+  font-weight: 700;
+}
+
+.article-content tr:nth-child(even) {
+  background-color: #faf7f5;
 }

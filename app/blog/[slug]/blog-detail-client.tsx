@@ -16,6 +16,40 @@ export function BlogDetailClient({ post }: BlogDetailClientProps) {
     void fetch(`/api/blogs/${post.slug}/view`, { method: "POST" });
   }, [post.slug]);
 
+  useEffect(() => {
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement).closest("a");
+      if (!target) return;
+      const href = target.getAttribute("href");
+      if (href && href.startsWith("#")) {
+        const id = href.slice(1);
+        if (!id) return;
+        const element = document.getElementById(id);
+        if (element) {
+          e.preventDefault();
+          element.scrollIntoView({ behavior: "smooth" });
+          window.history.pushState(null, "", href);
+        }
+      }
+    };
+
+    document.addEventListener("click", handleAnchorClick);
+
+    if (window.location.hash) {
+      const id = window.location.hash.slice(1);
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+
+    return () => {
+      document.removeEventListener("click", handleAnchorClick);
+    };
+  }, []);
+
   return (
     <main className="relative min-h-screen">
       {/* Background Decorations */}

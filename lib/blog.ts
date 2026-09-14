@@ -139,12 +139,13 @@ function getRemoteBlogPersistError() {
 
 const sanitizeOptions: sanitizeHtml.IOptions = {
   allowedTags: [
-    "p",
+    "h1",
     "h2",
     "h3",
     "h4",
     "h5",
     "h6",
+    "p",
     "ul",
     "ol",
     "li",
@@ -155,11 +156,21 @@ const sanitizeOptions: sanitizeHtml.IOptions = {
     "a",
     "br",
     "hr",
+    "table",
+    "thead",
+    "tbody",
+    "tr",
+    "th",
+    "td",
+    "span",
+    "div",
   ],
   allowedAttributes: {
-    a: ["href", "title", "target", "rel"],
+    "*": ["id", "class"],
+    a: ["href", "title", "target", "rel", "id", "class"],
   },
   allowedSchemes: ["http", "https", "mailto", "tel"],
+  allowProtocolRelative: true,
 };
 
 function stripTags(input: string) {
