@@ -44,27 +44,6 @@ export function buildGlobalBusinessSchema() {
       "Cosmetic Dermatology",
       "Hair Restoration",
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: String(siteConfig.googleReviews.rating),
-      reviewCount: String(siteConfig.googleReviews.reviewCount),
-      bestRating: "5",
-      worstRating: "1",
-    },
-    review: siteConfig.googleReviews.highlights.map((rev) => ({
-      "@type": "Review",
-      author: {
-        "@type": "Person",
-        name: rev.author,
-      },
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: String(rev.rating),
-        bestRating: "5",
-        worstRating: "1",
-      },
-      reviewBody: rev.text,
-    })),
     sameAs: [siteConfig.mapUrl],
   };
 }
