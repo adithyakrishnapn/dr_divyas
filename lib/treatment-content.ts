@@ -622,50 +622,82 @@ export const moleWartRemovalContent: TreatmentRichContent = {
 
 export const cornFootRemovalContent: TreatmentRichContent = {
   metaDescription:
-    "Dermatologist-led corn and callus foot treatments in Coimbatore. Safe removal of painful pressure spots for comfortable walking. Schedule your foot review.",
+    "Looking for corn removal in Coimbatore? Consult Dr Divya's Skin & Hair Clinic for assessment and treatment of foot corns and calluses. Contact us for appointments.",
   intro: [
-    "Corns and calluses are areas of thickened skin that develop on the feet due to repeated friction, pressure, or ill-fitting footwear.",
-    "At Dr. Divya's Skin Clinic, we offer safe, aseptic removal of painful foot corns using precise clinical procedures. We also guide you on pressure relief and footwear adjustments to prevent recurrence."
+    "Foot corns and calluses are among the most common reasons people search for a corn removal doctor near me or a foot corn specialist. They are areas of thickened, hardened skin that develop in response to repeated friction or concentrated pressure — most often from ill-fitting footwear, walking posture, or bony foot prominences.",
+    "At Dr. Divya's Skin & Hair Clinic in Coimbatore, we offer clinical assessment and dermatologist-led management of foot corns and calluses. Our approach focuses on safe removal under sterile conditions, identifying the underlying pressure cause, and advising on footwear and foot-care habits to reduce the likelihood of recurrence."
   ],
   expandedParagraphs: [
-    "Corns have a hard center or core that presses down on nerve endings, causing sharp pain when walking. Calluses are wider patches of thickened skin, typically less painful, developing on the soles. Simply cutting them at home with blades is highly dangerous and frequently leads to deep bacterial infections.",
-    "Dermatologist-led removal safely targets the core of the corn under sterile conditions. However, if the pressure trigger (like tight shoes or walking posture) is not corrected, corns are highly likely to return."
+    "A corn (heloma) typically has a well-defined hard centre or plug that presses into deeper skin layers, causing a sharp, aching, or burning sensation when you stand or walk. Corns most commonly form on the tops and sides of toes, between the toes (soft corns), or on the sole of the foot. Calluses are broader, flatter patches of thickened skin without a central core. They usually develop on the ball of the foot or the heel and are less painful than corns, though large calluses can cause discomfort with prolonged standing.",
+    "Attempting to cut, shave, or dig out a corn at home with a blade or sharp implement is risky and should be avoided. Unsterile instruments can introduce bacteria into broken skin, leading to painful infections that are far more difficult to treat than the original corn. Over-the-counter corn-removal plasters that contain salicylic acid can soften the skin but require careful application to avoid damaging the surrounding healthy skin — and should not be used at all if you have diabetes, reduced foot sensation, or poor circulation.",
+    "People with diabetes, peripheral neuropathy, or peripheral vascular disease should not attempt any form of self-treatment for foot corns. Reduced sensation means an injury may go unnoticed until it has become infected, and poor circulation slows healing. If you have diabetes and notice a corn, callus, or any unusual thickening on your foot, seek professional assessment promptly rather than waiting."
   ],
   sections: [
     {
-      title: "Removal and management options",
+      title: "How foot corns are assessed and treated",
       items: [
-        "Aseptic paring or enucleation of the corn core in the clinic",
-        "Application of keratolytic agents to soften thickened calluses",
-        "Evaluation of foot pressure points and footwear advice",
-        "Safety instructions for diabetic foot care (diabetic patients require professional care)"
+        "Clinical examination to confirm the diagnosis and rule out plantar warts (verrucas), which look similar but require different treatment",
+        "Careful aseptic paring or enucleation of the corn's hard core using sterile instruments in the clinic",
+        "Application of keratolytic agents (such as urea or salicylic acid preparations) to soften and reduce callus build-up where appropriate",
+        "Assessment of foot pressure distribution and advice on suitable footwear, padding, or orthotic insoles",
+        "Specific aftercare guidance for patients with diabetes or circulatory concerns"
       ]
     },
     {
-      title: "Prevention and aftercare guidelines",
+      title: "Prevention and aftercare",
       items: [
-        "Apply prescribed post-procedure ointment and keep the site clean.",
-        "Avoid wearing tight, narrow-toed, or hard-soled shoes.",
-        "Use silicon corn pads or customized orthotics to distribute pressure evenly.",
-        "Do not use sharp kitchen or household tools to self-treat corns."
+        "Wear properly fitted shoes with adequate toe room and cushioning — the single most effective way to prevent corns from returning.",
+        "Use silicone corn pads or toe sleeves to redistribute pressure away from problem areas between clinic visits.",
+        "Apply prescribed aftercare ointment and keep the treated site clean and dry for the recommended period.",
+        "Moisturise the feet regularly to prevent excessive skin hardening, focusing on the heels and ball of the foot.",
+        "Do not attempt home removal with blades, nail scissors, or over-the-counter plasters if you have diabetes or reduced foot sensation."
+      ]
+    },
+    {
+      title: "Factors that may influence treatment",
+      items: [
+        "Type and location of the corn or callus — hard corns on bony prominences, soft corns between toes, and heel calluses are each managed slightly differently.",
+        "Whether an underlying structural foot issue (such as a hammer toe or prominent metatarsal head) is driving repeated friction.",
+        "Patient health status — diabetes, poor circulation, or immunosuppression changes how treatment is approached and what self-care is safe.",
+        "How well footwear and activity habits can be modified to address the root cause after removal."
       ]
     }
   ],
   faqs: [
     {
-      question: "Is corn removal painful?",
-      answer: "The procedure is done after applying a local anesthetic or numbing agent if needed, making the enucleation comfortable. Most patients experience immediate relief from the sharp pressure pain once the hard core of the corn is removed."
+      question: "What is a foot corn and how is it different from a callus?",
+      answer: "A corn has a concentrated hard centre (the core or plug) that presses into deeper skin layers and causes pain, especially when walking. Calluses are wider, flatter patches of thickened skin with no central core — they are your body's response to repeated broad friction and are usually less painful. Both are caused by pressure and friction, but they look and feel different and may be managed slightly differently."
     },
     {
-      question: "Why do corns keep coming back?",
-      answer: "Corns are secondary to mechanical pressure. Paring or removing them clears the thickened skin, but if the friction trigger—such as narrow shoes, walking habit, or bone structure—remains unchanged, the skin will thicken again to protect itself."
+      question: "Which doctor should I consult for a foot corn in Coimbatore?",
+      answer: "A dermatologist can assess and treat foot corns and calluses. If you have diabetes, neuropathy, or vascular disease affecting your feet, you may also need input from a diabetologist or podiatrist, depending on the severity. At Dr. Divya's Skin & Hair Clinic, we evaluate the corn and advise on the most appropriate care pathway for your specific situation."
+    },
+    {
+      question: "Is corn removal a painful procedure?",
+      answer: "Clinic-based corn removal (paring or enucleation) is generally well tolerated. A topical numbing agent or local anaesthetic is applied beforehand when needed. Most patients feel significant relief from the constant pressure pain immediately after the core is removed. There may be mild tenderness at the site for a day or two, which is normal."
+    },
+    {
+      question: "Why do foot corns keep coming back after removal?",
+      answer: "Corns return when the underlying pressure cause is not resolved. Removing the corn eliminates the existing thickened skin, but if you continue wearing the same tight shoes, walking in the same way, or have a bony prominence that concentrates pressure on that spot, the skin will begin thickening again. Long-term prevention depends on addressing the friction source — usually footwear, padding, or posture."
+    },
+    {
+      question: "Can I treat a foot corn at home?",
+      answer: "For people without diabetes, neuropathy, or circulation problems, gentle use of a pumice stone on callused skin after soaking the feet can help manage mild thickening. Over-the-counter salicylic acid plasters are sometimes used, but require careful, targeted application to avoid damaging surrounding healthy skin. Cutting or shaving a corn at home with any sharp implement is not advisable — it carries a real risk of infection. If you are unsure whether what you have is a corn, a wart, or something else, a clinical assessment is the safest first step."
+    },
+    {
+      question: "Is corn removal safe for people with diabetes?",
+      answer: "People with diabetes should not attempt self-removal of foot corns. Reduced sensation means you may not notice if you cut too deep, and slower healing and poorer circulation increase the risk of infection. Diabetic foot concerns — including corns and calluses — should be reviewed by a healthcare professional. We provide appropriate guidance on diabetic foot care and advise on when specialist referral may be needed."
+    },
+    {
+      question: "What is kaal aani (கால் ஆணி) and how is it treated?",
+      answer: "Kaal aani is the Tamil term for a foot corn. It refers to the hard, nail-like core that forms under pressure, causing pain when walking. Treatment involves removing the hard core under sterile conditions, followed by advice on footwear and pressure relief to prevent it from forming again."
     }
   ],
   caseStudies: [],
   beforeAfter: [],
   relatedLinks: [
-    { label: "Laser treatment in Coimbatore", href: "/laser-treatment-coimbatore" },
-    { label: "Chemical peel in Coimbatore", href: "/chemical-peel-coimbatore" }
+    { label: "Treatments overview", href: "/treatments" },
+    { label: "Mole, wart, and skin tag removal in Coimbatore", href: "/mole-wart-skin-tag-removal-coimbatore" }
   ]
 };
 

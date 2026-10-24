@@ -14,6 +14,7 @@ type FormState = {
   keywords: string;
   metaTitle: string;
   metaDescription: string;
+  canonicalUrl: string;
   contentHtml: string;
   published: boolean;
 };
@@ -33,6 +34,7 @@ const initialState: FormState = {
   keywords: "",
   metaTitle: "",
   metaDescription: "",
+  canonicalUrl: "",
   contentHtml: "",
   published: true,
 };
@@ -51,6 +53,7 @@ function getInitialState(initialValues?: Partial<FormState>): FormState {
     ...initialState,
     ...initialValues,
     keywords: initialValues?.keywords ?? "",
+    canonicalUrl: initialValues?.canonicalUrl ?? "",
     published: initialValues?.published ?? true,
   };
 }
@@ -149,6 +152,9 @@ export function BlogEditorForm({
         ...state,
         slug: state.slug || slugify(state.title),
         keywords: state.keywords,
+        // Send blank string when no custom canonical is set — the API treats
+        // empty string as absent, restoring self-referencing canonical behaviour.
+        canonicalUrl: state.canonicalUrl.trim() || "",
       }),
     });
 
@@ -383,6 +389,25 @@ export function BlogEditorForm({
               onChange={(event) => setState((prev) => ({ ...prev, metaDescription: event.target.value }))}
               className="w-full rounded-lg border border-amber-200 px-3 py-2 focus:border-amber-600 focus:outline-none"
             />
+          </div>
+
+          <div className="md:col-span-2">
+            <label className="mb-1 block text-sm font-semibold text-amber-900">Canonical URL</label>
+            <input
+              type="url"
+              value={state.canonicalUrl}
+              onChange={(event) => setState((prev) => ({ ...prev, canonicalUrl: event.target.value }))}
+              placeholder="Leave blank to use this post's own URL as canonical"
+              className="w-full rounded-lg border border-amber-200 px-3 py-2 focus:border-amber-600 focus:outline-none"
+            />
+            <p className="mt-1.5 text-xs text-slate-500 leading-relaxed">
+              <strong>Leave blank</strong> to use this blog post&rsquo;s own preferred URL as its canonical.
+              Enter a full <code>https://</code> URL only when this page should explicitly identify
+              another URL as its canonical version — for example, when syndicating content that
+              was originally published elsewhere.
+              Setting a canonical URL does not redirect visitors; it is an SEO signal for search engines.
+              External canonical URLs will consolidate indexing signals onto another website — use carefully.
+            </p>
           </div>
 
           <div className="md:col-span-2">

@@ -8,6 +8,13 @@ type BuildMetadataInput = {
   keywords?: string[];
   image?: string;
   absoluteTitle?: boolean;
+  /**
+   * Optional explicit canonical URL. Use only when this page should declare
+   * a different URL as its canonical version (e.g. a blog post that is a
+   * near-duplicate of another). When absent, the canonical is automatically
+   * derived from `path` and the production origin.
+   */
+  canonicalUrl?: string;
 };
 
 export function buildMetadata({
@@ -17,16 +24,21 @@ export function buildMetadata({
   keywords = [],
   image,
   absoluteTitle = false,
+  canonicalUrl,
 }: BuildMetadataInput): Metadata {
   const url = path.startsWith("/") ? path : `/${path}`;
   const resolvedTitle = absoluteTitle ? title : `${title} | ${siteConfig.name}`;
   const metadataTitle = absoluteTitle ? { absolute: resolvedTitle } : title;
 
+  // Use the explicit canonical when provided; otherwise self-reference using path.
+  // Next.js resolves relative paths against metadataBase (siteConfig.url).
+  const canonical = canonicalUrl ?? url;
+
   return {
     title: metadataTitle,
     description,
     keywords,
-    alternates: { canonical: url },
+    alternates: { canonical },
     openGraph: {
       title: resolvedTitle,
       description,

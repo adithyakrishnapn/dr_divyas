@@ -17,6 +17,8 @@ export type BlogPost = {
   metaDescription: string;
   published: boolean;
   views: number;
+  /** Custom canonical URL. When blank or absent, the page self-references as canonical. */
+  canonicalUrl?: string;
 };
 
 type FirestoreBlogDoc = {
@@ -32,6 +34,7 @@ type FirestoreBlogDoc = {
   metaDescription?: string;
   published?: boolean;
   views?: number;
+  canonicalUrl?: string;
 };
 
 export type CreateBlogInput = {
@@ -44,6 +47,8 @@ export type CreateBlogInput = {
   metaTitle?: string;
   metaDescription?: string;
   published?: boolean;
+  /** Optional custom canonical URL. Leave blank for self-referencing canonical. */
+  canonicalUrl?: string;
 };
 
 export type UpdateBlogInput = CreateBlogInput;
@@ -256,6 +261,19 @@ function mapLegacyPost(post: (typeof legacyBlogPosts)[number]): BlogPost {
   };
 }
 
+function normalizeCanonicalUrl(value: string | undefined): string | undefined {
+  if (!value) return undefined;
+  const trimmed = value.trim();
+  if (!trimmed) return undefined;
+  try {
+    const url = new URL(trimmed);
+    if (url.protocol !== "http:" && url.protocol !== "https:") return undefined;
+    return trimmed;
+  } catch {
+    return undefined;
+  }
+}
+
 function mapFirestorePost(data: FirestoreBlogDoc): BlogPost | null {
   const slug = data.slug?.trim().toLowerCase();
   const title = data.title?.trim();
@@ -283,6 +301,7 @@ function mapFirestorePost(data: FirestoreBlogDoc): BlogPost | null {
     metaDescription: data.metaDescription?.trim() || description,
     published: data.published ?? true,
     views: Number(data.views ?? 0),
+    canonicalUrl: normalizeCanonicalUrl(data.canonicalUrl),
   };
 }
 
@@ -299,6 +318,7 @@ function toFirestoreBlogDoc(payload: FirestoreBlogDoc) {
     metaDescription: payload.metaDescription,
     published: payload.published ?? true,
     views: payload.views ?? 0,
+    canonicalUrl: payload.canonicalUrl ?? null,
   };
 
   if (payload.image?.trim()) {
@@ -732,6 +752,7 @@ export async function createBlogPost(input: CreateBlogInput) {
     metaDescription: input.metaDescription?.trim() || input.description.trim(),
     published: input.published ?? true,
     views: 0,
+    canonicalUrl: normalizeCanonicalUrl(input.canonicalUrl),
   };
 
   if (isFirebaseAdminConfigured()) {
@@ -830,6 +851,7 @@ export async function updateBlogPost(currentSlug: string, input: UpdateBlogInput
     metaDescription: input.metaDescription?.trim() || input.description.trim(),
     published: input.published ?? existingPost.published,
     readTime: getReadTimeFromHtml(cleanHtml),
+    canonicalUrl: normalizeCanonicalUrl(input.canonicalUrl),
   };
 
   if (isFirebaseAdminConfigured()) {

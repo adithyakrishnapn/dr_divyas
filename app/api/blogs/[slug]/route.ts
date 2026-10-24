@@ -49,6 +49,8 @@ export async function PATCH(request: Request, context: RouteParams) {
       metaTitle: body.metaTitle ? String(body.metaTitle) : undefined,
       metaDescription: body.metaDescription ? String(body.metaDescription) : undefined,
       published: body.published !== false,
+      // Blank canonicalUrl clears a previously-set custom canonical (self-referencing resumes).
+      canonicalUrl: body.canonicalUrl ? String(body.canonicalUrl).trim() : undefined,
     });
 
     return NextResponse.json(post);

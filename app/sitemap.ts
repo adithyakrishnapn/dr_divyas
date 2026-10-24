@@ -36,12 +36,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.85,
   }));
 
-  const blogRoutes = posts.map((post) => ({
-    url: `${siteConfig.url}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }));
+  // Exclude blog posts whose canonical URL points to a different origin.
+  // Adding such posts to the sitemap would conflict with the canonical declaration.
+  const siteOrigin = new URL(siteConfig.url).origin;
+  const blogRoutes = posts
+    .filter((post) => {
+      if (!post.canonicalUrl) return true;
+      try {
+        return new URL(post.canonicalUrl).origin === siteOrigin;
+      } catch {
+        return true;
+      }
+    })
+    .map((post) => ({
+      url: `${siteConfig.url}/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    }));
 
   return [...staticRoutes, ...areaRoutes, ...seoLandingRoutes, ...blogRoutes];
 }

@@ -32,6 +32,8 @@ export async function POST(request: Request) {
       metaTitle: body.metaTitle ? String(body.metaTitle) : undefined,
       metaDescription: body.metaDescription ? String(body.metaDescription) : undefined,
       published: body.published !== false,
+      // canonicalUrl: empty string is treated the same as absent (self-referencing).
+      canonicalUrl: body.canonicalUrl ? String(body.canonicalUrl).trim() : undefined,
     });
 
     return NextResponse.json(post, { status: 201 });

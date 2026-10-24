@@ -45,6 +45,7 @@ export default async function BlogEditPage({ params }: BlogEditPageProps) {
         keywords: post.keywords.join(", "),
         metaTitle: post.metaTitle,
         metaDescription: post.metaDescription,
+        canonicalUrl: post.canonicalUrl ?? "",
         contentHtml: post.contentHtml,
         published: post.published,
       }}

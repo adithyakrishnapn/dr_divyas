@@ -29,8 +29,12 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
     path: `/blog/${post.slug}`,
     keywords: post.keywords,
     image: post.image,
+    // Pass the custom canonical when explicitly set; otherwise buildMetadata
+    // auto-generates a self-referencing canonical from the path above.
+    canonicalUrl: post.canonicalUrl || undefined,
   });
 }
+
 
 function buildBlogSchema(post: NonNullable<Awaited<ReturnType<typeof getPostBySlug>>>) {
   return {
