@@ -29,6 +29,12 @@ const nextConfig: NextConfig = {
         destination: "/coimbatore/ganapathy",
         permanent: true,
       },
+      // Typo variant of /skin-doctor-ganapathy seen in Search Console crawl errors
+      {
+        source: "/skin-doctor-ganapathyo",
+        destination: "/coimbatore/ganapathy",
+        permanent: true,
+      },
       {
         source: "/dermatologist-thudiyalur",
         destination: "/coimbatore/thudiyalur",
@@ -47,6 +53,12 @@ const nextConfig: NextConfig = {
       {
         source: "/skin-specialist-gandhipuram",
         destination: "/coimbatore/gandhipuram",
+        permanent: true,
+      },
+      // 404 blog URL seen in Search Console — redirect to existing acne treatment page
+      {
+        source: "/blog/best-acne-treatment-in-coimbatore-causes-solutions-expert-skin-care-tip",
+        destination: "/acne-treatment-coimbatore",
         permanent: true,
       },
     ];

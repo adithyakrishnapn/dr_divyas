@@ -579,15 +579,172 @@ const hairLossPost: BlogPost = {
   views: 0,
 };
 
-const hairLossPostVariant: BlogPost = {
-  ...hairLossPost,
-  slug: "best-dermatologist-coimbatore-hair-loss-treatment",
+const hairLossMenPostHtml = sanitizeHtml(
+  ensureHeadingIds(`
+<p>Hair loss in men is one of the most common dermatology concerns we see at clinic. Whether you are noticing a receding hairline, thinning at the crown, or both, understanding why it happens and what options exist can help you make an informed decision about whether to seek treatment.</p>
+
+<p>This article focuses specifically on hair loss treatment for men in Coimbatore — what causes it, when treatment is worth considering, and what a proper dermatology evaluation looks like.</p>
+
+<h2>Table of Contents</h2>
+<ul>
+<li><a href="#male-pattern-baldness">Male Pattern Baldness — What It Really Is</a></li>
+<li><a href="#other-causes-in-men">Other Causes of Hair Loss in Men</a></li>
+<li><a href="#when-to-seek-treatment">When Should Men Seek Hair Loss Treatment?</a></li>
+<li><a href="#treatment-options-for-men">Hair Loss Treatment Options for Men</a></li>
+<li><a href="#medical-therapy-men">Medical Therapy</a></li>
+<li><a href="#prp-men">PRP Therapy for Men</a></li>
+<li><a href="#what-to-expect">What to Expect at Your First Consultation</a></li>
+<li><a href="#realistic-expectations">Realistic Expectations From Hair Loss Treatment</a></li>
+<li><a href="#choosing-dermatologist-men">Choosing the Right Dermatologist for Hair Loss in Coimbatore</a></li>
+<li><a href="#faq-men">Frequently Asked Questions</a></li>
+</ul>
+
+<h2 id="male-pattern-baldness">Male Pattern Baldness — What It Really Is</h2>
+
+<p>Male pattern baldness, medically known as androgenetic alopecia, is the most common type of hair loss in men. It follows a recognizable progression — typically starting with a receding hairline at the temples, followed by thinning at the crown. Over time, these two areas may merge, leaving hair only on the sides and back of the scalp.</p>
+
+<p>This pattern is driven by a combination of genetics and a hormone called dihydrotestosterone (DHT). DHT gradually causes the hair follicles in susceptible areas to shrink, producing progressively thinner and shorter hairs until the follicle eventually stops producing visible hair. This process, called miniaturization, can begin as early as the late teens or early twenties in some men, though it is more commonly noticed in the thirties and forties.</p>
+
+<p>The important point is that male pattern hair loss progresses over time. Early assessment can be useful because some treatments are more effective at slowing or stabilizing hair loss when started before extensive miniaturization has occurred.</p>
+
+<h2 id="other-causes-in-men">Other Causes of Hair Loss in Men</h2>
+
+<p>Not all hair loss in men is pattern hair loss. It is worth knowing about other possible causes:</p>
+
+<ul>
+<li><strong>Telogen effluvium:</strong> Sudden shedding triggered by illness, fever, surgery, rapid weight loss, or severe stress. Usually temporary.</li>
+<li><strong>Alopecia areata:</strong> An autoimmune condition causing patchy round bald spots on the scalp or beard.</li>
+<li><strong>Scalp infections:</strong> Fungal infections of the scalp can cause localised hair loss and require specific treatment.</li>
+<li><strong>Nutritional deficiencies:</strong> Low iron, protein, zinc, or vitamin D can contribute to hair shedding, particularly in men with restricted diets.</li>
+<li><strong>Thyroid dysfunction:</strong> Both hypothyroidism and hyperthyroidism can affect hair thickness and growth rate.</li>
+<li><strong>Medication side effects:</strong> Certain medicines for blood pressure, gout, or other conditions can list hair thinning as a side effect.</li>
+<li><strong>Traction and styling:</strong> Constant pulling from tight hairstyles or frequent heat use can damage follicles over time.</li>
+</ul>
+
+<p>A dermatologist can usually differentiate between these causes based on the pattern of hair loss, your history, and a scalp examination — blood tests are only ordered when medically relevant.</p>
+
+<h2 id="when-to-seek-treatment">When Should Men Seek Hair Loss Treatment?</h2>
+
+<p>Many men delay seeking help, either hoping hair loss will stop on its own, or assuming nothing can be done. While some hair loss is temporary and resolves without treatment, male pattern hair loss is progressive. There are clear signs it is worth getting assessed:</p>
+
+<ul>
+<li>Your hairline has visibly receded compared to two or three years ago</li>
+<li>You can see thinning or scalp visibility at the crown</li>
+<li>You notice more hair on your pillow, in the shower drain, or on your comb</li>
+<li>Round bald patches have appeared — this warrants prompt assessment</li>
+<li>Hair loss started suddenly following an illness, surgery, or stressful event</li>
+<li>You have tried shampoos or supplements for months without any improvement</li>
+</ul>
+
+<p>The earlier a proper evaluation happens, the more options tend to be available. Waiting until hair loss is advanced reduces the effectiveness of most available treatments.</p>
+
+<h2 id="treatment-options-for-men">Hair Loss Treatment Options for Men</h2>
+
+<p>There is no single treatment that works for all men or all types of hair loss. What works depends on the type and stage of hair loss, how long it has been progressing, your age, and other health factors. A dermatologist will evaluate your specific case before recommending anything.</p>
+
+<h3 id="medical-therapy-men">Medical Therapy</h3>
+
+<p>For male pattern baldness, dermatologists may prescribe topical or oral medications that work by addressing the hormonal pathway involved in follicle miniaturization. These treatments can help slow or stabilize hair loss and, in some men, support gradual regrowth in thinning areas.</p>
+
+<p>These medications require consistent use over months to see results, and effects are maintained only as long as treatment continues. They are prescription medications that should be used under medical supervision — your dermatologist will assess whether they are appropriate for you based on your health history.</p>
+
+<h3 id="prp-men">PRP Therapy for Men</h3>
+
+<p>PRP, or platelet-rich plasma therapy, is a procedure where a small blood sample is taken, processed to concentrate the platelets, and then injected into thinning areas of the scalp. Platelets contain growth factors that may support follicle activity.</p>
+
+<p>For men with early to moderate pattern hair loss, PRP may be considered as part of a treatment plan — often alongside medical therapy rather than as a standalone solution. It is not effective for areas where follicles have already been completely lost, and results vary between individuals. Most dermatologists recommend a series of sessions with follow-up assessments to gauge response.</p>
+
+<h3>Scalp and Nutritional Assessment</h3>
+
+<p>For men whose hair loss has a nutritional or scalp-related component, addressing these underlying factors — whether through dietary changes, supplementation, or scalp treatment — is an important part of the overall plan. Treating a scalp condition like dandruff or inflammation alongside other hair loss treatment often improves outcomes.</p>
+
+<h2 id="what-to-expect">What to Expect at Your First Consultation</h2>
+
+<p>A hair loss consultation for men at a dermatology clinic typically covers:</p>
+
+<ol>
+<li><strong>History:</strong> When the hair loss started, how quickly it has progressed, family history of baldness, current medications, and lifestyle factors.</li>
+<li><strong>Scalp examination:</strong> Looking at the pattern of thinning, density, scalp condition, and evidence of miniaturization.</li>
+<li><strong>Diagnosis:</strong> Determining whether this is pattern hair loss, a secondary cause, or a combination.</li>
+<li><strong>Blood tests if indicated:</strong> Only ordered when the history or examination suggests an underlying cause like thyroid dysfunction or nutritional deficiency.</li>
+<li><strong>Treatment discussion:</strong> Explaining the realistic options based on your diagnosis, age, and how far hair loss has progressed.</li>
+<li><strong>Follow-up plan:</strong> Since hair treatment takes months, a follow-up structure helps monitor progress.</li>
+</ol>
+
+<h2 id="realistic-expectations">Realistic Expectations From Hair Loss Treatment</h2>
+
+<p>This is worth emphasising: no treatment reverses hair loss overnight, and no treatment permanently restores hair that has been lost from follicles that have completely stopped producing hair. Effective treatment for men typically achieves one or more of the following:</p>
+
+<ul>
+<li>Slowing or stopping the progression of hair loss</li>
+<li>Stabilizing the current level of hair</li>
+<li>In some cases, modest regrowth in recently thinned areas</li>
+</ul>
+
+<p>Results take time — typically four to six months before meaningful assessment is possible. Consistency matters more than speed. Men who stick with a properly diagnosed treatment plan are more likely to see stable results than those who switch approaches frequently based on what they read online.</p>
+
+<h2 id="choosing-dermatologist-men">Choosing the Right Dermatologist for Hair Loss in Coimbatore</h2>
+
+<p>When looking for a hair loss specialist in Coimbatore, a few factors matter:</p>
+
+<ul>
+<li><strong>Qualified dermatologist:</strong> Hair loss treatment falls within dermatology and trichology. A properly qualified specialist is better placed to diagnose accurately than a general wellness clinic.</li>
+<li><strong>Diagnosis before treatment:</strong> Be cautious of clinics that push a specific treatment (like PRP) before properly examining you or understanding your history.</li>
+<li><strong>Transparent about limitations:</strong> A good dermatologist explains what treatment can and cannot achieve, rather than promising guaranteed results.</li>
+<li><strong>Follow-up support:</strong> Hair treatment is not a one-time event. Ongoing review helps track progress and adjust the plan.</li>
+</ul>
+
+<p>At Dr Divya's Skin &amp; Hair Clinic in Coimbatore, male hair loss is evaluated with a proper scalp assessment and medical history before any treatment is recommended. If you would like to consult about your specific situation, you can view our <a href="https://www.drdivyas.in/hair-fall-treatment-coimbatore">hair fall treatment in Coimbatore</a> page or <a href="https://www.drdivyas.in/contact">contact the clinic</a> directly.</p>
+
+<h2 id="faq-men">Frequently Asked Questions</h2>
+
+<h3>Can hair loss in men be reversed?</h3>
+<p>For male pattern baldness, the goal of treatment is typically to slow or stop progression and, in some men, achieve modest regrowth in early-stage thinning. Complete reversal is not possible once follicles have stopped producing hair. Early treatment gives better outcomes.</p>
+
+<h3>At what age does hair loss treatment work best?</h3>
+<p>Earlier treatment generally means more follicles are still active and can respond. That said, many men benefit from treatment even in their forties and fifties — it depends more on the current stage of hair loss than age alone.</p>
+
+<h3>Is PRP effective for male pattern baldness?</h3>
+<p>PRP may be useful for some men with early to moderate pattern hair loss, but it is not effective for all cases and often works best as part of a broader treatment plan. Suitability depends on individual assessment.</p>
+
+<h3>How long does hair loss treatment take to show results?</h3>
+<p>Most hair loss treatments need at least four to six months of consistent use before meaningful results can be assessed. Hair grows slowly, and changes in density and thickness take time to become visible.</p>
+`),
+  sanitizeOptions,
+);
+
+const hairLossMenPost: BlogPost = {
+  slug: "hair-loss-treatment-for-men-in-coimbatore",
+  title: "Hair Loss Treatment for Men in Coimbatore",
+  description:
+    "A practical guide to male hair loss causes, treatment options including PRP and medical therapy, and what to expect from a dermatologist consultation in Coimbatore.",
+  date: "2026-05-10",
+  readTime: "9 min read",
+  image:
+    "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80",
+  contentHtml: hairLossMenPostHtml,
+  keywords: [
+    "hair loss treatment men coimbatore",
+    "male pattern baldness coimbatore",
+    "hair fall treatment men",
+    "prp hair loss men coimbatore",
+    "dermatologist hair loss coimbatore",
+  ],
+  metaTitle: "Hair Loss Treatment for Men in Coimbatore | Dr. Divya's Clinic",
+  metaDescription:
+    "Guide to hair loss treatment for men in Coimbatore — causes, PRP therapy, medical options, and how a dermatologist evaluates and treats male hair loss.",
+  published: true,
+  views: 0,
 };
 
 export const blogPosts: BlogPost[] = [
   ...legacyBlogPosts.map(mapLegacyPost),
   hairLossPost,
-  hairLossPostVariant,
+  {
+    ...hairLossPost,
+    slug: "best-dermatologist-coimbatore-hair-loss-treatment",
+  },
+  hairLossMenPost,
 ];
 
 async function readLocalPosts() {
