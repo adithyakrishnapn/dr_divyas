@@ -34,7 +34,7 @@ export default function ContactPage() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-  const [concern, setConcern] = useState("General Skin Care");
+  const [concern, setConcern] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
@@ -80,7 +80,7 @@ export default function ContactPage() {
       setName("");
       setPhone("");
       setEmail("");
-      setConcern("General Skin Care");
+      setConcern("");
       setMessage("");
     } catch (error) {
       console.error("Contact form request error:", error);
@@ -220,17 +220,30 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <form className="space-y-4" onSubmit={handleSubmit}>
+              {/*
+                WebMCP declarative API (Chrome Origin Trial — ignored by all other browsers).
+                toolname   : machine-readable identifier agents use to invoke this tool
+                tooldescription : natural-language description of what submitting does
+                These two attributes register the form as a discoverable tool.
+                Omitting either attribute unregisters it automatically.
+              */}
+              <form
+                className="space-y-4"
+                onSubmit={handleSubmit}
+                toolname="requestSkinConsultation"
+                tooldescription="Submit a consultation enquiry to Dr. Divya's Skin & Hair Clinic in Coimbatore. The clinic will call back within 24 hours to arrange an appointment. This is an enquiry only — it does not confirm a booking."
+              >
                 <motion.div
                   initial={{ y: 20, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.1 }}
                 >
-                  <label className="block text-sm font-semibold text-amber-900 mb-2">
+                  <label htmlFor="contact-name" className="block text-sm font-semibold text-amber-900 mb-2">
                     Full Name
                   </label>
                   <input
+                    id="contact-name"
                     type="text"
                     required
                     placeholder="Your full name"
@@ -246,10 +259,11 @@ export default function ContactPage() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
                 >
-                  <label className="block text-sm font-semibold text-amber-900 mb-2">
+                  <label htmlFor="contact-phone" className="block text-sm font-semibold text-amber-900 mb-2">
                     Phone Number
                   </label>
                   <input
+                    id="contact-phone"
                     type="tel"
                     required
                     placeholder="+91 9994759380"
@@ -265,10 +279,11 @@ export default function ContactPage() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 }}
                 >
-                  <label className="block text-sm font-semibold text-amber-900 mb-2">
+                  <label htmlFor="contact-email" className="block text-sm font-semibold text-amber-900 mb-2">
                     Email
                   </label>
                   <input
+                    id="contact-email"
                     type="email"
                     placeholder="your@email.com"
                     value={email}
@@ -283,20 +298,26 @@ export default function ContactPage() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.4 }}
                 >
-                  <label className="block text-sm font-semibold text-amber-900 mb-2">
+                  <label htmlFor="contact-concern" className="block text-sm font-semibold text-amber-900 mb-2">
                     Skin Concern / Treatment Interest
                   </label>
+                  {/*
+                    toolparamdescription gives agents extra context beyond the label text.
+                    It describes valid values so the agent can pick the right option.
+                  */}
                   <select
+                    id="contact-concern"
                     value={concern}
                     onChange={(event) => setConcern(event.target.value)}
                     className="w-full px-4 py-3 rounded-lg border border-amber-200 focus:border-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-100 transition"
+                    toolparamdescription="The patient's primary skin or hair concern. Choose the option that best matches their treatment interest."
                   >
-                    <option>Select a concern...</option>
-                    <option>Acne & Scars</option>
-                    <option>Pigmentation</option>
-                    <option>Hair Loss</option>
-                    <option>Anti-Aging</option>
-                    <option>General Skin Care</option>
+                    <option value="" disabled>Select a concern...</option>
+                    <option value="Acne & Scars">Acne &amp; Scars</option>
+                    <option value="Pigmentation">Pigmentation</option>
+                    <option value="Hair Loss">Hair Loss</option>
+                    <option value="Anti-Aging">Anti-Aging</option>
+                    <option value="General Skin Care">General Skin Care</option>
                   </select>
                 </motion.div>
 
@@ -306,10 +327,11 @@ export default function ContactPage() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.5 }}
                 >
-                  <label className="block text-sm font-semibold text-amber-900 mb-2">
+                  <label htmlFor="contact-message" className="block text-sm font-semibold text-amber-900 mb-2">
                     Message
                   </label>
                   <textarea
+                    id="contact-message"
                     required
                     placeholder="Tell us more about your skin concerns..."
                     rows={5}

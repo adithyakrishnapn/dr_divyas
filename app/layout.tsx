@@ -86,6 +86,8 @@ export default function RootLayout({
           data-key="cVbX34OBmRc070M2V2/VMA"
           async
         />
+        {/* Advertise the llms.txt index to AI agents (llms.txt v2 spec: rel="describedby") */}
+        <link rel="describedby" href="/llms.txt" type="text/plain" />
       </head>
       <body className="min-h-full text-slate-800">
         <div className="flex min-h-full flex-col">

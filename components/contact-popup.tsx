@@ -125,6 +125,9 @@ export function ContactPopup() {
 
         <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-3 md:grid-cols-2">
           <input
+            id="popup-name"
+            name="name"
+            aria-label="Full name"
             required
             placeholder="Full name"
             value={state.name}
@@ -132,6 +135,10 @@ export function ContactPopup() {
             className="rounded-lg border border-amber-200 px-3 py-2 text-sm focus:border-amber-600 focus:outline-none"
           />
           <input
+            id="popup-phone"
+            name="phone"
+            aria-label="Phone number"
+            type="tel"
             required
             placeholder="Phone number"
             value={state.phone}
@@ -139,18 +146,28 @@ export function ContactPopup() {
             className="rounded-lg border border-amber-200 px-3 py-2 text-sm focus:border-amber-600 focus:outline-none"
           />
           <input
+            id="popup-email"
+            name="email"
+            aria-label="Email (optional)"
+            type="email"
             placeholder="Email (optional)"
             value={state.email}
             onChange={(event) => setState((prev) => ({ ...prev, email: event.target.value }))}
             className="rounded-lg border border-amber-200 px-3 py-2 text-sm focus:border-amber-600 focus:outline-none"
           />
           <input
+            id="popup-concern"
+            name="concern"
+            aria-label="Concern"
             placeholder="Concern (acne, hair loss, pigmentation...)"
             value={state.concern}
             onChange={(event) => setState((prev) => ({ ...prev, concern: event.target.value }))}
             className="rounded-lg border border-amber-200 px-3 py-2 text-sm focus:border-amber-600 focus:outline-none"
           />
           <textarea
+            id="popup-message"
+            name="message"
+            aria-label="Tell us about your concern"
             required
             rows={3}
             placeholder="Tell us about your concern"
